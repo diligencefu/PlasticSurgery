@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="93" id="KGk-i7-Jjw" customClass="NewLocationNillTabCell" customModule="healthAndBeautyUser" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="438" height="93"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="438" height="92.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前没有地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYp-9m-wsh">
+                        <rect key="frame" x="20" y="36" width="104" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="00_go_icon_default" translatesAutoresizingMaskIntoConstraints="NO" id="UHD-n4-daU">
+                        <rect key="frame" x="419" y="40" width="7" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="C5u-On-YdT"/>
+                            <constraint firstAttribute="width" constant="7" id="LeB-ng-Qep"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="mYp-9m-wsh" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BWt-7Z-cj2"/>
+                    <constraint firstItem="mYp-9m-wsh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="gEc-6c-8yf"/>
+                    <constraint firstItem="UHD-n4-daU" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="thc-JD-hCM"/>
+                    <constraint firstAttribute="trailing" secondItem="UHD-n4-daU" secondAttribute="trailing" constant="12" id="tsX-a0-3rl"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="93" y="78.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="00_go_icon_default" width="7" height="13"/>
+    </resources>
+</document>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="196" id="KGk-i7-Jjw" customClass="NewReturnPicTableViewCell" customModule="healthAndBeautyUser" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="196"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="195.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvq-y2-zdi">
+                        <rect key="frame" x="12" y="47" width="109" height="90"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="90" id="Tyy-yZ-kH7"/>
+                        </constraints>
+                        <state key="normal" image="add_icon_default"/>
+                        <connections>
+                            <action selector="click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="yVz-Oz-HDn"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhz-3r-amn">
+                        <rect key="frame" x="254" y="47" width="109" height="90"/>
+                        <state key="normal" image="add_icon_default"/>
+                        <connections>
+                            <action selector="click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="C3o-5e-7lA"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择商品图片" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRi-hc-dGW">
+                        <rect key="frame" x="28" y="17" width="92" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aoB-K2-V5l">
+                        <rect key="frame" x="0.0" y="185.5" width="375" height="10"/>
+                        <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="R3m-7A-eOp"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PFU-Rk-Qa9">
+                        <rect key="frame" x="133" y="47" width="109" height="90"/>
+                        <state key="normal" image="add_icon_default"/>
+                        <connections>
+                            <action selector="click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0rR-Ng-XRD"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="yhz-3r-amn" firstAttribute="centerY" secondItem="gvq-y2-zdi" secondAttribute="centerY" id="5oP-H1-NBb"/>
+                    <constraint firstItem="PFU-Rk-Qa9" firstAttribute="centerY" secondItem="gvq-y2-zdi" secondAttribute="centerY" id="8J2-4n-lX4"/>
+                    <constraint firstItem="PFU-Rk-Qa9" firstAttribute="width" secondItem="gvq-y2-zdi" secondAttribute="width" id="Ars-EX-Aef"/>
+                    <constraint firstItem="aoB-K2-V5l" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Mil-9i-oZf"/>
+                    <constraint firstItem="yhz-3r-amn" firstAttribute="width" secondItem="gvq-y2-zdi" secondAttribute="width" id="Vaw-GR-0e5"/>
+                    <constraint firstItem="PFU-Rk-Qa9" firstAttribute="height" secondItem="gvq-y2-zdi" secondAttribute="height" id="XKW-c3-ic3"/>
+                    <constraint firstItem="dRi-hc-dGW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="XdH-cF-sdK"/>
+                    <constraint firstAttribute="trailing" secondItem="yhz-3r-amn" secondAttribute="trailing" constant="12" id="aax-h1-qYn"/>
+                    <constraint firstItem="yhz-3r-amn" firstAttribute="height" secondItem="gvq-y2-zdi" secondAttribute="height" id="bhR-CY-USF"/>
+                    <constraint firstAttribute="bottom" secondItem="aoB-K2-V5l" secondAttribute="bottom" id="ju4-Sx-3HC"/>
+                    <constraint firstItem="gvq-y2-zdi" firstAttribute="top" secondItem="dRi-hc-dGW" secondAttribute="bottom" constant="12" id="pR2-dl-J6u"/>
+                    <constraint firstItem="gvq-y2-zdi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="qsq-su-Rd7"/>
+                    <constraint firstItem="PFU-Rk-Qa9" firstAttribute="leading" secondItem="gvq-y2-zdi" secondAttribute="trailing" constant="12" id="rQk-aI-g4e"/>
+                    <constraint firstItem="yhz-3r-amn" firstAttribute="leading" secondItem="PFU-Rk-Qa9" secondAttribute="trailing" constant="12" id="sCM-1V-b5g"/>
+                    <constraint firstAttribute="trailing" secondItem="aoB-K2-V5l" secondAttribute="trailing" id="tnf-JY-dHm"/>
+                    <constraint firstItem="dRi-hc-dGW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="vEj-1f-020"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="pic1" destination="gvq-y2-zdi" id="Cxl-1X-Qpl"/>
+                <outlet property="pic2" destination="PFU-Rk-Qa9" id="CtD-Oo-3ts"/>
+                <outlet property="pic3" destination="yhz-3r-amn" id="hSS-yS-lcP"/>
+            </connections>
+            <point key="canvasLocation" x="88" y="130"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="add_icon_default" width="22" height="20"/>
+    </resources>
+</document>

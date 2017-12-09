@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="111" id="KGk-i7-Jjw" customClass="PayWayCell" customModule="healthAndBeautyUser" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wy4-8O-0nX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="02_Balancepay_head_default" translatesAutoresizingMaskIntoConstraints="NO" id="5uE-xn-2oT">
+                                <rect key="frame" x="18" y="10" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="SXT-tv-m1H"/>
+                                    <constraint firstAttribute="height" constant="44" id="vY6-X8-8jp"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="余额支付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDd-B0-Cbi">
+                                <rect key="frame" x="71" y="22" width="69.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="Ocp-ty-NIZ"/>
+                                    <constraint firstAttribute="height" constant="21" id="Pex-vn-d05"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selector_selector_default" translatesAutoresizingMaskIntoConstraints="NO" id="mZa-59-YJP">
+                                <rect key="frame" x="343" y="24" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="fKe-2D-2hr"/>
+                                    <constraint firstAttribute="width" constant="16" id="o5b-9r-nWy"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="余额：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYr-dz-ZZf">
+                                <rect key="frame" x="153" y="21.5" width="40" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="uJv-f7-wKJ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="xgb-kl-EDK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mZa-59-YJP" firstAttribute="centerY" secondItem="5uE-xn-2oT" secondAttribute="centerY" id="5N2-aB-tmj"/>
+                            <constraint firstItem="TDd-B0-Cbi" firstAttribute="leading" secondItem="5uE-xn-2oT" secondAttribute="trailing" constant="9" id="OgJ-eP-HfO"/>
+                            <constraint firstAttribute="height" constant="64" id="Sgz-Q0-gtN"/>
+                            <constraint firstAttribute="trailing" secondItem="mZa-59-YJP" secondAttribute="trailing" constant="16" id="WCu-wR-CRq"/>
+                            <constraint firstItem="5uE-xn-2oT" firstAttribute="leading" secondItem="Wy4-8O-0nX" secondAttribute="leading" constant="18" id="ZqE-UB-Q8i"/>
+                            <constraint firstItem="hYr-dz-ZZf" firstAttribute="centerY" secondItem="5uE-xn-2oT" secondAttribute="centerY" id="gZh-ZY-l13"/>
+                            <constraint firstItem="hYr-dz-ZZf" firstAttribute="leading" secondItem="TDd-B0-Cbi" secondAttribute="trailing" constant="12" id="iUO-q5-vYu"/>
+                            <constraint firstItem="TDd-B0-Cbi" firstAttribute="centerY" secondItem="5uE-xn-2oT" secondAttribute="centerY" id="w0o-wh-0et"/>
+                            <constraint firstItem="5uE-xn-2oT" firstAttribute="centerY" secondItem="Wy4-8O-0nX" secondAttribute="centerY" id="y4S-GH-GdZ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Wy4-8O-0nX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="6i5-rq-uv2"/>
+                    <constraint firstAttribute="trailing" secondItem="Wy4-8O-0nX" secondAttribute="trailing" id="Dsh-Jz-XT1"/>
+                    <constraint firstItem="Wy4-8O-0nX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="HeC-Ya-bbS"/>
+                    <constraint firstAttribute="bottom" secondItem="Wy4-8O-0nX" secondAttribute="bottom" id="P8T-ZQ-p84"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="balance" destination="hYr-dz-ZZf" id="eDP-bD-0Y7"/>
+                <outlet property="isSelect" destination="mZa-59-YJP" id="cT0-T9-Hng"/>
+                <outlet property="payImage" destination="5uE-xn-2oT" id="d82-cQ-4pD"/>
+                <outlet property="payWay" destination="TDd-B0-Cbi" id="dID-Yw-NE7"/>
+            </connections>
+            <point key="canvasLocation" x="60.5" y="85"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="02_Balancepay_head_default" width="44" height="44"/>
+        <image name="selector_selector_default" width="18" height="18"/>
+    </resources>
+</document>

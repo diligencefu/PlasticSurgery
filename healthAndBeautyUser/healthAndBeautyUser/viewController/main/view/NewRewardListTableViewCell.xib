@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="136" id="KGk-i7-Jjw" customClass="NewRewardListTableViewCell" customModule="healthAndBeautyUser" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="373" height="136"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="373" height="135.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MwK-Jg-qKr">
+                        <rect key="frame" x="20" y="37.5" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="hdn-dk-XVd"/>
+                            <constraint firstAttribute="width" constant="60" id="l7w-PR-Cgi"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名占位" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wom-Sd-DeJ">
+                        <rect key="frame" x="92" y="42.5" width="61.5" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="nZ2-4Q-Hfh"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.29246953129999997" green="0.29247722030000001" blue="0.29247307779999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="打赏金额占位" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCb-KG-9sT">
+                        <rect key="frame" x="92" y="71.5" width="110.5" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="mAg-7a-Gag"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" red="1" green="0.36470588240000001" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间占位" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNc-Py-nlp">
+                        <rect key="frame" x="295.5" y="43" width="57.5" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="bWr-ua-o3E"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.46388620139999998" green="0.46389764550000001" blue="0.46389150620000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zKG-NW-ETc">
+                        <rect key="frame" x="12" y="134" width="361" height="1"/>
+                        <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="OvT-sf-som"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="oNc-Py-nlp" firstAttribute="top" secondItem="MwK-Jg-qKr" secondAttribute="top" constant="5" id="9tD-hZ-B9p"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="oNc-Py-nlp" secondAttribute="trailing" constant="12" id="A2J-tJ-S6i"/>
+                    <constraint firstItem="PCb-KG-9sT" firstAttribute="leading" secondItem="MwK-Jg-qKr" secondAttribute="trailing" constant="12" id="Bz4-QK-svg"/>
+                    <constraint firstItem="MwK-Jg-qKr" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ExZ-yu-8I9"/>
+                    <constraint firstAttribute="bottom" secondItem="zKG-NW-ETc" secondAttribute="bottom" id="HP9-wn-s62"/>
+                    <constraint firstAttribute="trailing" secondItem="zKG-NW-ETc" secondAttribute="trailing" id="MVD-bC-ruP"/>
+                    <constraint firstItem="wom-Sd-DeJ" firstAttribute="top" secondItem="MwK-Jg-qKr" secondAttribute="top" constant="5" id="f3K-Cd-RTn"/>
+                    <constraint firstItem="zKG-NW-ETc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="kFi-uw-fKu"/>
+                    <constraint firstItem="wom-Sd-DeJ" firstAttribute="leading" secondItem="MwK-Jg-qKr" secondAttribute="trailing" constant="12" id="pa5-ux-bLI"/>
+                    <constraint firstItem="PCb-KG-9sT" firstAttribute="bottom" secondItem="MwK-Jg-qKr" secondAttribute="bottom" constant="-5" id="yCK-B6-VwT"/>
+                    <constraint firstItem="MwK-Jg-qKr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="yEW-34-uLT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="head" destination="MwK-Jg-qKr" id="j11-gT-BVF"/>
+                <outlet property="money" destination="PCb-KG-9sT" id="acN-7R-j2o"/>
+                <outlet property="name" destination="wom-Sd-DeJ" id="Tg1-fU-9WB"/>
+                <outlet property="time" destination="oNc-Py-nlp" id="7JV-YD-mHc"/>
+            </connections>
+            <point key="canvasLocation" x="60.5" y="100"/>
+        </tableViewCell>
+    </objects>
+</document>

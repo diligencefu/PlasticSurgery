@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>HCMJ-mobile.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>armv7</string>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>244EAF391D8824E171830201895C7092359F4280</string>
+				<key>dateExpires</key>
+				<string>2018/11/14</string>
+				<key>type</key>
+				<string>iOS Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>M7SM2N44X9.cn.com.maixun.RiskConsult</string>
+				<key>beta-reports-active</key>
+				<true/>
+				<key>com.apple.developer.team-identifier</key>
+				<string>M7SM2N44X9</string>
+				<key>get-task-allow</key>
+				<false/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>M7SM2N44X9.cn.com.maixun.RiskConsult</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>HCMJ-mobile.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>02f96cba-c73b-47a0-a2b3-10e7a9cf812e</string>
+				<key>name</key>
+				<string>iOS Team Store Provisioning Profile: cn.com.maixun.RiskConsult</string>
+			</dict>
+			<key>symbols</key>
+			<true/>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>M7SM2N44X9</string>
+				<key>name</key>
+				<string>XiaoHei XiaoBai</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
