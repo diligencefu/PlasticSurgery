@@ -17,6 +17,10 @@ class NewMeDetailOrderViewController: Wx_baseViewController {
     
     var canDelete = Bool()
     
+    var isFlag = false
+    
+    
+    
     @IBOutlet weak var controllerBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
     var dataSource = [NewOrderDetail]()
@@ -50,6 +54,16 @@ class NewMeDetailOrderViewController: Wx_baseViewController {
         if canDelete {
             buildAlter("提示", "是否删除订单", "确定")
         }else {
+            
+            if self.isFlag {
+                
+                let detail = FYHRCDetailViewController()
+                detail.id = self.dataSource[0].id
+                detail.type = 1
+                self.navigationController?.pushViewController(detail, animated: true)
+                return
+            }
+            
             delog("退预约金")
             let drewback = NewDrawbackViewController.init(nibName: "NewDrawbackViewController", bundle: nil)
             drewback.dataSource = dataSource
@@ -186,6 +200,13 @@ class NewMeDetailOrderViewController: Wx_baseViewController {
                 model.phone = subJson["phone"].string!
                 model.placeOrderTime = subJson["placeOrderTime"].string!
                 
+                self.isFlag = subJson["isFlag"].boolValue
+                self.canDelete = !self.isFlag
+
+                if subJson["isFlag"].boolValue {
+                    self.createNaviController(title: "订单详情", leftBtn: self.buildLeftBtn(), rightBtn: self.buildRightBtnWithName("返现详情"))
+                }
+                
                 let subJson2 = subJson["productOrder"]
                 model.id = subJson2["id"].string!
                 model.orderNo = subJson2["orderNo"].string!
@@ -199,7 +220,7 @@ class NewMeDetailOrderViewController: Wx_baseViewController {
                 model.num = subJson2["num"].int!
                 model.discountReservation = subJson2["discountReservation"].float!
                 model.discountRetainage = subJson2["discountRetainage"].float!
-
+                model.isFree = subJson2["isFree"].string!
                 model.payStatus = subJson2["payStatus"].string!
                 
                 model.orderStatus = subJson2["orderStatus"].string!
@@ -254,9 +275,13 @@ class NewMeDetailOrderViewController: Wx_baseViewController {
                     }
                 }else {
                     if subJson2["orderStatus"].string! == "2" {
-                        self.createNaviController(title: "订单详情", leftBtn: self.buildLeftBtn(), rightBtn: self.buildRightBtnWithName("删除"))
-                        self.canDelete = true
+                        if !self.isFlag {
+                            self.createNaviController(title: "订单详情", leftBtn: self.buildLeftBtn(), rightBtn: self.buildRightBtnWithName("删除"))
+                            self.canDelete = true
+//                            self.controllerBtn.setTitle("写日记", for: .normal)
+                        }
                         self.controllerBtn.setTitle("写日记", for: .normal)
+
                     }else {
                         self.createNaviController(title: "订单详情", leftBtn: self.buildLeftBtn(), rightBtn: nil)
                         self.controllerBtn.isHidden = true

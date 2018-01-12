@@ -29,6 +29,21 @@ class NewMainViewController: Wx_baseViewController,JTSegmentControlDelegate {
     // MARK: - header
     var segment = UIView()
     
+//    首页轮播广告图片数据
+    var mainCircleList = NSMutableArray()
+    //    中间表格广告数据
+    var mianCenterList = NSMutableArray()
+    //    最后列表广告数据
+    var mianTableList = NSMutableArray()
+//    免费整形广告
+    var freeModel = FYHSowMainADModel()
+    
+    //首页图标
+    var icons = NSMutableArray()
+
+    
+    
+    
     lazy var tableView : UITableView = {
         
         let table = UITableView()
@@ -46,7 +61,8 @@ class NewMainViewController: Wx_baseViewController,JTSegmentControlDelegate {
         
         table.register(NewMineNoteListTableViewCell.self, forCellReuseIdentifier: "NewMineNoteListTableViewCell")
         table.register(NewStoreListTabCell.self, forCellReuseIdentifier: "NewStoreListTabCell")
-        
+        table.register(UINib.init(nibName: "FYHMainShowADCell", bundle: nil), forCellReuseIdentifier: "FYHMainShowADCell")
+
         table.register(UINib.init(nibName: "NewMainADTableViewCell", bundle: nil), forCellReuseIdentifier: "NewMainADTableViewCell")
 
         table.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {
@@ -63,6 +79,36 @@ class NewMainViewController: Wx_baseViewController,JTSegmentControlDelegate {
     
     
     func refreshHeaderAction() {
+        
+//        请求广告
+        let params = [
+            "mobileCode" : Defaults["mobileCode"].stringValue,
+            "SESSIONID" : Defaults["SESSIONID"].stringValue,
+            ]
+        NetWorkForUserbanner_getBanners(params: params) { (datas, flag) in
+            if flag && datas.count > 0{
+                if flag && datas.count > 0{
+                    self.mainCircleList.removeAllObjects()
+                    self.mianCenterList.removeAllObjects()
+                    self.mianTableList.removeAllObjects()
+                    for json in datas {
+                        let model = json as! FYHSowMainADModel
+                        if model.bannerSpecific.locationFlag == "1" {
+                            self.mainCircleList.add(model)
+                        }else if model.bannerSpecific.locationFlag == "2" {
+                            self.mianCenterList.add(model)
+                        }else if model.bannerSpecific.locationFlag == "3" {
+                            self.mianTableList.add(model)
+                        }else if model.bannerSpecific.locationFlag == "4" {
+                            self.freeModel = model
+                        }
+                    }
+                }
+            }
+        }
+
+        
+        page = 1
         var up = ["pageNo": page]
             as [String: Any]
         var url = String()
@@ -105,7 +151,7 @@ class NewMainViewController: Wx_baseViewController,JTSegmentControlDelegate {
                     
                     self.pageMax = json["data"]["totalPage"].int!
                     if self.page == 1 {
-                        self.leftDateSource.removeAll()
+                        self.leftDateSource.removeAllObjects()
                     }
                     let data = json["data"]
                     for (_ , subJson) : (String , JSON) in data["articleList"] {
@@ -122,19 +168,31 @@ class NewMainViewController: Wx_baseViewController,JTSegmentControlDelegate {
                         let article = subJson["article"]
                         model.aId = article["id"].string!
                         model.content = article["content"].string!
-                        model.images = article["images"].string!
+                        model.images = article["images"].stringValue
                         model.createDate = article["createDate"].string!
                         model.comments = article["comments"].string!
                         model.thumbs = article["thumbs"].string!
                         model.hits = article["hits"].string!
-                        self.leftDateSource.append(model)
+                        self.leftDateSource.add(model)
+                    }
+                    if self.mianTableList.count > 0 && self.leftDateSource.count > 0{
+                        for admodel in self.mianTableList {
+                            let model = admodel as! FYHSowMainADModel
+                            var index = Int()
+                            if self.leftDateSource.count == 1 {
+                                index = 0
+                            }else{
+                                index = Int(arc4random() % UInt32(self.leftDateSource.count-1))
+                            }
+                            self.leftDateSource.insert(model, at: index)
+                        }
                     }
                     self.isLoad = true
                     self.tableView.reloadData()
                 }else {
                     self.pageMax = json["data"]["totalPage"].int!
                     if self.page == 1 {
-                        self.rightDateSource.removeAll()
+                        self.rightDateSource.removeAllObjects()
                     }
                     for (_, subJson):(String, JSON) in json["data"]["products"] {
                         let model = NewStoreGoodsModel()
@@ -147,7 +205,20 @@ class NewMainViewController: Wx_baseViewController,JTSegmentControlDelegate {
                         model.reservationCount = subJson["reservationCount"].int!
                         model.salaPrice = subJson["salaPrice"].float!
                         model.thumbnail = subJson["thumbnail"].string!
-                        self.rightDateSource.append(model)
+                        model.isFree = subJson["isFree"].string!
+                        self.rightDateSource.add(model)
+                    }
+                    if self.mianTableList.count > 0 && self.rightDateSource.count > 0{
+                        for admodel in self.mianTableList {
+                            let model = admodel as! FYHSowMainADModel
+                            var index = Int()
+                            if self.rightDateSource.count == 1 {
+                                index = 0
+                            }else{
+                                index = Int(arc4random() % UInt32(self.rightDateSource.count-1))
+                            }
+                            self.rightDateSource.insert(model, at: index)
+                        }
                     }
                     self.isLoad = true
                     self.tableView.reloadData()
@@ -168,8 +239,8 @@ class NewMainViewController: Wx_baseViewController,JTSegmentControlDelegate {
     }
 
     
-    var leftDateSource = [NewMain_NoteListModel]()
-    var rightDateSource = [NewStoreGoodsModel]()
+    var leftDateSource = NSMutableArray()
+    var rightDateSource = NSMutableArray()
     var classDataSource = [NewMainVCClassessModel]()
     
     var page : NSInteger = 1
@@ -216,6 +287,35 @@ class NewMainViewController: Wx_baseViewController,JTSegmentControlDelegate {
     
     private func buildData() {
         
+        //        请求广告
+        let params = [
+            "mobileCode" : Defaults["mobileCode"].stringValue,
+            "SESSIONID" : Defaults["SESSIONID"].stringValue,
+            ]
+        NetWorkForUserbanner_getBanners(params: params) { (datas, flag) in
+            if flag && datas.count > 0{
+                //                let model = datas[0] as! FYHSowMainADModel
+                //                deBugPrint(item: model)
+                
+                self.mainCircleList.removeAllObjects()
+                self.mianCenterList.removeAllObjects()
+                self.mianTableList.removeAllObjects()
+                for json in datas {
+                    let model = json as! FYHSowMainADModel
+                    if model.bannerSpecific.locationFlag == "1" {
+                        self.mainCircleList.add(model)
+                    }else if model.bannerSpecific.locationFlag == "2" {
+                        self.mianCenterList.add(model)
+                    }else if model.bannerSpecific.locationFlag == "3" {
+                        self.mianTableList.add(model)
+                    }else if model.bannerSpecific.locationFlag == "4" {
+                        self.freeModel = model
+                    }
+                }
+                
+            }
+        }
+
         var up = ["pageNo": page]
             as [String: Any]
         var url = String()
@@ -258,7 +358,7 @@ class NewMainViewController: Wx_baseViewController,JTSegmentControlDelegate {
                     
                     self.pageMax = json["data"]["totalPage"].int!
                     if self.page == 1 {
-                        self.leftDateSource.removeAll()
+                        self.leftDateSource.removeAllObjects()
                     }
                     let data = json["data"]
                     for (_ , subJson) : (String , JSON) in data["articleList"] {
@@ -275,13 +375,27 @@ class NewMainViewController: Wx_baseViewController,JTSegmentControlDelegate {
                         let article = subJson["article"]
                             model.aId = article["id"].string!
                             model.content = article["content"].string!
-                            model.images = article["images"].string!
+                            model.images = article["images"].stringValue
                             model.createDate = article["createDate"].string!
                             model.comments = article["comments"].string!
                             model.thumbs = article["thumbs"].string!
                             model.hits = article["hits"].string!
-                        self.leftDateSource.append(model)
+                        self.leftDateSource.add(model)
                     }
+                    
+                    if self.mianTableList.count > 0 && self.leftDateSource.count > 0{
+                        for admodel in self.mianTableList {
+                            let model = admodel as! FYHSowMainADModel
+                            var index = Int()
+                            if self.leftDateSource.count == 1 {
+                                index = 0
+                            }else{
+                                index = Int(arc4random() % UInt32(self.leftDateSource.count-1))
+                            }
+                            self.leftDateSource.insert(model, at: index)
+                        }
+                    }
+
                     self.isLoad = true
                     self.tableView.reloadData()
                     self.tableView.layoutIfNeeded()
@@ -292,7 +406,7 @@ class NewMainViewController: Wx_baseViewController,JTSegmentControlDelegate {
                 }else {
                     self.pageMax = json["data"]["totalPage"].int!
                     if self.page == 1 {
-                        self.rightDateSource.removeAll()
+                        self.rightDateSource.removeAllObjects()
                     }
                     for (_, subJson):(String, JSON) in json["data"]["products"] {
                         let model = NewStoreGoodsModel()
@@ -305,8 +419,24 @@ class NewMainViewController: Wx_baseViewController,JTSegmentControlDelegate {
                         model.reservationCount = subJson["reservationCount"].int!
                         model.salaPrice = subJson["salaPrice"].float!
                         model.thumbnail = subJson["thumbnail"].string!
-                        self.rightDateSource.append(model)
+                        model.isFree = subJson["isFree"].string!
+                        self.rightDateSource.add(model)
                     }
+//                    Int(arc4random() % UInt32(self.rightDateSource.count-1))
+                    
+                    if self.mianTableList.count > 0 && self.rightDateSource.count > 0{
+                        for admodel in self.mianTableList {
+                            let model = admodel as! FYHSowMainADModel
+                            var index = Int()
+                            if self.rightDateSource.count == 1 {
+                                index = 0
+                            }else{
+                                index = Int(arc4random() % UInt32(self.rightDateSource.count-1))
+                            }
+                            self.rightDateSource.insert(model, at: index)
+                        }
+                    }
+
                     self.isLoad = true
                     self.tableView.reloadData()
                     self.tableView.layoutIfNeeded()
@@ -320,6 +450,16 @@ class NewMainViewController: Wx_baseViewController,JTSegmentControlDelegate {
             delog(error)
             SVPwillShowAndHide("请检查您的网路")
         }
+        
+        //首页图标接数据:
+        NetWorkForMainADGroup(params: params) { (datas, flag) in
+            if flag {
+                self.icons.addObjects(from: datas)
+                self.tableView.reloadSections([1], with: .none)
+            }
+        }
+        
+        
     }
     
     private func buildSeg() {
@@ -419,6 +559,10 @@ class NewMainViewController: Wx_baseViewController,JTSegmentControlDelegate {
         searchLab.font = UIFont.systemFont(ofSize: TEXT24)
         searchLab.textAlignment = .left
         searchLab.frame = CGRect(x: 44, y: (searchView.height-16)/2, width: searchView.width-64, height: 16)
+        searchLab.isUserInteractionEnabled = true
+        let tapGes1 = UITapGestureRecognizer.init(target: self, action: #selector(moveToSearch(tap:)))
+        tapGes1.numberOfTouchesRequired = 1
+        searchLab.addGestureRecognizer(tapGes1)
         searchView.addSubview(searchLab)
 
         search.setImage(UIImage(named:"16_search"), for: .normal)
@@ -445,11 +589,22 @@ class NewMainViewController: Wx_baseViewController,JTSegmentControlDelegate {
         tmpNaviView.addSubview(line)
     }
     
+    
+    @objc func moveToSearch(tap:UITapGestureRecognizer) {
+        
+        let destinationStoryboard = UIStoryboard(name:"CXShearchStoryboard",bundle:nil)
+        let search = destinationStoryboard.instantiateViewController(withIdentifier: "CXSearchController") as! CXSearchController
+        search.hidesBottomBarWhenPushed = true
+        let root = Wx_baseNaviViewController.init(rootViewController: search)
+        self.present(root, animated: true, completion: nil)
+    }
+    
     @objc private func click(_ click: UIButton) {
         
         switch click.tag {
         case 101:
-            let search = NewMain_searchViewController()
+            let destinationStoryboard = UIStoryboard(name:"CXShearchStoryboard",bundle:nil)
+            let search = destinationStoryboard.instantiateViewController(withIdentifier: "CXSearchController") as! CXSearchController
             search.hidesBottomBarWhenPushed = true
             let root = Wx_baseNaviViewController.init(rootViewController: search)
             self.present(root, animated: true, completion: nil)
@@ -494,7 +649,63 @@ extension NewMainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        if isSurgery {
+            if ((leftDateSource[indexPath.row] as? NewMain_NoteListModel) != nil) {
+                let model = leftDateSource[indexPath.row]as! NewMain_NoteListModel
+                let detail = NewNote_DetailVC()
+                detail.id = model.id
+                navigationController?.pushViewController(detail, animated: true)
+            }else{
+                let model = leftDateSource[indexPath.row]as! FYHSowMainADModel
+                let webView = FYHShowInfoWithWebViewController()
+                webView.webTitle = model.infoBanner.name
+                webView.webUrl = model.infoBanner.linkUrl
+                self.navigationController?.pushViewController(webView, animated: true)
+
+//                if #available(iOS 10.0, *) {
+//                    UIApplication.shared.open(StringToUTF_8InUrl(str:model.infoBanner.linkUrl), options: [:],
+//                                              completionHandler: {
+//                                                (success) in
+//                                                if !success {
+//                                                    setToast(str: "网址格式错误！")
+//                                                }
+//
+//                    })
+//                } else {
+//                    // Fallback on earlier versions
+//                }
+            }
+        }else{
+            if ((rightDateSource[indexPath.row] as? NewStoreGoodsModel) != nil) {
+                let model = rightDateSource[indexPath.row] as! NewStoreGoodsModel
+                let detail = NewStoresDetailViewController.init(nibName: "NewStoresDetailViewController", bundle: nil)
+                detail.isProject = true
+                detail.id = model.id
+                navigationController?.pushViewController(detail, animated: true)
+            }else{
+                let model = rightDateSource[indexPath.row]as! FYHSowMainADModel
+                
+                let webView = FYHShowInfoWithWebViewController()
+                webView.webTitle = model.infoBanner.name
+                webView.webUrl = model.infoBanner.linkUrl
+                self.navigationController?.pushViewController(webView, animated: true)
+                
+//                if #available(iOS 10.0, *) {
+//                    UIApplication.shared.open(StringToUTF_8InUrl(str:model.infoBanner.linkUrl), options: [:],
+//                                              completionHandler: {
+//                                                (success) in
+//                                                if !success {
+//                                                    setToast(str: "网址格式错误！")
+//                                                }
+//
+//                    })
+//                } else {
+//                    // Fallback on earlier versions
+//                }
+            }
+        }
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
@@ -505,9 +716,18 @@ extension NewMainViewController: UITableViewDelegate {
             return 210
         case 3:
             if isSurgery {
-                return GET_SIZE * 640
+                if ((leftDateSource[indexPath.row] as? NewMain_NoteListModel) != nil) {
+                    return GET_SIZE * 640
+                }else{
+                    return 152
+                }
+//                return GET_SIZE * 550+kGetSizeOnString(leftDateSource[indexPath.row].content, Int(GET_SIZE * 26),width: WIDTH-60).height
             }else {
-                return GET_SIZE * 248
+                if ((rightDateSource[indexPath.row] as? NewStoreGoodsModel) != nil) {
+                    return GET_SIZE * 248
+                }else{
+                    return 152
+                }
             }
         default :
             return 0
@@ -523,41 +743,108 @@ extension NewMainViewController: UITableViewDelegate {
             }
             cell?.chooseAction = {
                 print($0)
+                
+                let webView = FYHShowInfoWithWebViewController()
+                webView.webTitle = $1
+                webView.webUrl = $0
+                self.navigationController?.pushViewController(webView, animated: true)
+
+                
+//                if #available(iOS 10.0, *) {
+//                    UIApplication.shared.open(StringToUTF_8InUrl(str:$0), options: [:],
+//                                              completionHandler: {
+//                                                (success) in
+//                                                if !success {
+//                                                    setToast(str: "网址格式错误！")
+//                                                }
+//                                                
+//                    })
+//                } else {
+//                    // Fallback on earlier versions
+//                }
             }
 
             cell?.selectionStyle = .none
             cell?.tag = 777
-            cell?.buildData()
+            if self.mainCircleList.count > 0 {
+                cell?.buildDataWithImages(images:self.mainCircleList as! [FYHSowMainADModel])
+            }else{
+                cell?.buildData()
+            }
             return cell!
         case 1:
             var cell:NewMainIconGroupCell? = tableView.dequeueReusableCell(withIdentifier: "NewMainIconGroupCell") as? NewMainIconGroupCell
             if nil == cell {
                 cell! = NewMainIconGroupCell.init(style: .default, reuseIdentifier: "NewMainIconGroupCell")
             }
+            cell?.gotoFreeBlock = {
+                if $0 == "1" {
+                    let tmp = NewMain_freeViewController()
+                    tmp.mainModel = self.freeModel
+                    self.navigationController?.pushViewController(tmp, animated: true)
+                }else {
+                    if Defaults.hasKey("SESSIONID") {
+                        let tmp = FYHIntegralStoreViewController1()
+                        self.navigationController?.pushViewController(tmp, animated: true)
+                    }else{
+                        SVPwillShowAndHide("请先登录")
+                    }
+                }
+            }
             cell?.selectionStyle = .none
-            cell?.buildData()
+//            cell?.buildData()
+            cell?.setValuesForNewMainIconGroupCell(icons: icons as! [iconModel])
             return cell!
         case 2:
             let cell:NewMainADTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "NewMainADTableViewCell") as? NewMainADTableViewCell
+            if self.mianCenterList.count > 0 {
+                cell?.setValuesForNewMainADTableViewCell(images: self.mianCenterList as! [FYHSowMainADModel])
+            }
+
             cell?.selectionStyle = .none
             return cell!
         case 3:
             if isSurgery {
-                var cell:NewMineNoteListTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "NewMineNoteListTableViewCell") as? NewMineNoteListTableViewCell
-                if nil == cell {
-                    cell! = NewMineNoteListTableViewCell.init(style: .default, reuseIdentifier: "NewMineNoteListTableViewCell")
+                
+                if ((leftDateSource[indexPath.row] as? NewMain_NoteListModel) != nil) {
+                    
+                    let model = leftDateSource[indexPath.row]as! NewMain_NoteListModel
+                    var cell:NewMineNoteListTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "NewMineNoteListTableViewCell") as? NewMineNoteListTableViewCell
+                    if nil == cell {
+                        cell! = NewMineNoteListTableViewCell.init(style: .default, reuseIdentifier: "NewMineNoteListTableViewCell")
+                    }
+                    cell?.selectionStyle = .none
+                    cell?.model = model
+                    return cell!
+                }else{
+                    
+                    let model = leftDateSource[indexPath.row] as! FYHSowMainADModel
+                    let cell:FYHMainShowADCell? = tableView.dequeueReusableCell(withIdentifier: "FYHMainShowADCell") as? FYHMainShowADCell
+                    cell?.selectionStyle = .none
+                    cell?.setValuesForFYHMainShowADCell(model: model)
+                    return cell!
                 }
-                cell?.selectionStyle = .none
-                cell?.model = leftDateSource[indexPath.row]
-                return cell!
+                
             }else {
-                var cell:NewStoreListTabCell? = tableView.dequeueReusableCell(withIdentifier: "NewStoreListTabCell") as? NewStoreListTabCell
-                if nil == cell {
-                    cell! = NewStoreListTabCell.init(style: .default, reuseIdentifier: "NewStoreListTabCell")
+                
+                if ((rightDateSource[indexPath.row] as? NewStoreGoodsModel) != nil) {
+                    let model = rightDateSource[indexPath.row] as! NewStoreGoodsModel
+                    var cell:NewStoreListTabCell? = tableView.dequeueReusableCell(withIdentifier: "NewStoreListTabCell") as? NewStoreListTabCell
+                    if nil == cell {
+                        cell! = NewStoreListTabCell.init(style: .default, reuseIdentifier: "NewStoreListTabCell")
+                    }
+                    cell?.selectionStyle = .none
+                    cell?.goodsModel = model
+                    return cell!
+
+                }else{
+                    let model = rightDateSource[indexPath.row] as! FYHSowMainADModel
+                    let cell:FYHMainShowADCell? = tableView.dequeueReusableCell(withIdentifier: "FYHMainShowADCell") as? FYHMainShowADCell
+                    cell?.selectionStyle = .none
+                    cell?.setValuesForFYHMainShowADCell(model: model)
+                    return cell!
+
                 }
-                cell?.selectionStyle = .none
-                cell?.goodsModel = rightDateSource[indexPath.row]
-                return cell!
             }
         default :
             return UITableViewCell()

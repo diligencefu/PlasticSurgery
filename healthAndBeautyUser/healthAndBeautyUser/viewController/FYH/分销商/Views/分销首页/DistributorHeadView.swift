@@ -22,7 +22,6 @@ class DistributorHeadView: UIView {
         
         sexMark.clipsToBounds = true
         sexMark.layer.cornerRadius = 1
-        
     }
     
     func setValuesWithModel(model:DistributorModel) {
@@ -37,10 +36,7 @@ class DistributorHeadView: UIView {
         }else{
             sexMark.image = #imageLiteral(resourceName: "nv")
         }
-        
     }
-    
-    
     
     
 }

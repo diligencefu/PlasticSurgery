@@ -200,8 +200,8 @@ class NewNote_DetailEnterVC: Wx_baseViewController {
                             let user = subJson2["user"]
                             model2.userId = user["id"].string!
                             model2.userName = user["name"].string!
-                            model2.admin = user["admin"].bool!
-                            model2.userRoleNames = user["roleNames"].string!
+                            model2.admin = user["admin"].boolValue
+                            model2.userRoleNames = user["roleNames"].stringValue
                             model.replys.append(model2)
                         }
                     }
@@ -342,7 +342,9 @@ class NewNote_DetailEnterVC: Wx_baseViewController {
             up["SESSIONID"] = Defaults["SESSIONID"].stringValue
         }else {
             SVPwillShowAndHide("请登录后重新操作")
-            present(NewLoginLocationViewController(), animated: true, completion: nil)
+            let login = NewLoginLocationViewController.init(nibName: "NewLoginLocationViewController", bundle: nil)
+            let loginVC = Wx_baseNaviViewController.init(rootViewController: login)
+            self.present(loginVC, animated: true, completion: nil)
             return
         }
         
@@ -376,7 +378,9 @@ class NewNote_DetailEnterVC: Wx_baseViewController {
             up["SESSIONID"] = Defaults["SESSIONID"].stringValue
         }else {
             SVPwillShowAndHide("请登录后重新操作")
-            present(NewLoginLocationViewController(), animated: true, completion: nil)
+            let login = NewLoginLocationViewController.init(nibName: "NewLoginLocationViewController", bundle: nil)
+            let loginVC = Wx_baseNaviViewController.init(rootViewController: login)
+            self.present(loginVC, animated: true, completion: nil)
             return
         }
         
@@ -411,7 +415,9 @@ class NewNote_DetailEnterVC: Wx_baseViewController {
             up["SESSIONID"] = Defaults["SESSIONID"].stringValue
         }else {
             SVPwillShowAndHide("请登录后重新操作")
-            present(NewLoginLocationViewController(), animated: true, completion: nil)
+            let login = NewLoginLocationViewController.init(nibName: "NewLoginLocationViewController", bundle: nil)
+            let loginVC = Wx_baseNaviViewController.init(rootViewController: login)
+            self.present(loginVC, animated: true, completion: nil)
             return
         }
         
@@ -508,7 +514,9 @@ class NewNote_DetailEnterVC: Wx_baseViewController {
             up["SESSIONID"] = Defaults["SESSIONID"].stringValue
         }else {
             SVPwillShowAndHide("请登录后重新操作")
-            present(NewLoginLocationViewController(), animated: true, completion: nil)
+            let login = NewLoginLocationViewController.init(nibName: "NewLoginLocationViewController", bundle: nil)
+            let loginVC = Wx_baseNaviViewController.init(rootViewController: login)
+            self.present(loginVC, animated: true, completion: nil)
             return
         }
         

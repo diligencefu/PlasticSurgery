@@ -25,6 +25,7 @@ func getSizeOnLabel(_ labelStr: UILabel, _ width:CGFloat) -> CGSize {
     return size.size
 }
 
+
 /*
  * 获得不限制宽度的尺寸
  */
@@ -50,6 +51,21 @@ func getSizeOnString(_ str: String, _ size:Int) -> CGSize {
     
     var size = CGRect()
     size = content.boundingRect(with: CGSize(width: WIDTH ,
+                                             height: CGFloat(MAXFLOAT)),
+                                options: .usesLineFragmentOrigin,
+                                attributes: attributes,
+                                context: nil)
+    return size.size
+}
+
+
+func kGetSizeOnString(_ str: String, _ size:Int,width:CGFloat) -> CGSize {
+    
+    let content = str as NSString
+    let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: CGFloat(size))] as [String: Any]
+    
+    var size = CGRect()
+    size = content.boundingRect(with: CGSize(width: width  ,
                                              height: CGFloat(MAXFLOAT)),
                                 options: .usesLineFragmentOrigin,
                                 attributes: attributes,
@@ -117,6 +133,8 @@ func StringToUTF_8InUrl(str:String) -> (URL){
     let OCString = str as NSString
     
     let urlString = OCString.addingPercentEscapes(using: String.Encoding.utf8.rawValue)
+    
+//    let url = urlString.cf
     
     return URL(string: urlString!)!
 }
@@ -258,6 +276,8 @@ func getChangeView(_ height: NSInteger) -> CAGradientLayer {
 }
 
 func nowGotoLogin() {
-    
-    UIApplication.shared.keyWindow?.rootViewController?.present(NewLoginLocationViewController(), animated: true, completion: nil)
+    let login = NewLoginLocationViewController.init(nibName: "NewLoginLocationViewController", bundle: nil)
+    let loginVC = Wx_baseNaviViewController.init(rootViewController: login)
+
+    UIApplication.shared.keyWindow?.rootViewController?.present(loginVC, animated: true, completion: nil)
 }

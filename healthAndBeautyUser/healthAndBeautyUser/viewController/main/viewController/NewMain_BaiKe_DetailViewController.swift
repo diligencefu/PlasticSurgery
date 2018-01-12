@@ -81,7 +81,7 @@ class NewMain_BaiKe_DetailViewController: Wx_baseViewController {
                 let data = json["data"]
                 //百科详情相关
                 let projectDetails = data["projectDetails"]
-                self.baiKeDetail.id = projectDetails["id"].string!
+                self.baiKeDetail.id = projectDetails["id"].stringValue
                 self.baiKeDetail.projectName = projectDetails["projectName"].string!
                 self.baiKeDetail.projectAlias = projectDetails["projectAlias"].string!
                 self.baiKeDetail.projectPresent = projectDetails["projectPresent"].string!

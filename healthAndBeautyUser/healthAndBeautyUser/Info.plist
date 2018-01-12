@@ -37,8 +37,6 @@
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
-		<key>NSAllowsArbitraryLoadsInWebContent</key>
-		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>新医美需要访问您的相机</string>

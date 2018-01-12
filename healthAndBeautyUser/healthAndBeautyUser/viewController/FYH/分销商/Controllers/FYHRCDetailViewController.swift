@@ -18,6 +18,10 @@ class FYHRCDetailViewController: Base2ViewController {
     var mainModel = FYHRCDetailModel()
     var id = ""
     
+    //0:会员返现详情，1:已完成的免费整形订单返现详情:
+    var type = 0
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -50,7 +54,13 @@ class FYHRCDetailViewController: Base2ViewController {
         ]
         SVPWillShow("加载中...")
 
-        Alamofire.request(user_VipCashBack,
+        var url = user_VipCashBack
+        
+        if type == 1 {
+            url = user_OrderCashBack
+        }
+        
+        Alamofire.request(url,
                           method: .get, parameters: params,
                           encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
                             deBugPrint(item: response.result)
@@ -59,8 +69,17 @@ class FYHRCDetailViewController: Base2ViewController {
                                 if let j = response.result.value {
                                     //SwiftyJSON解析数据
                                     let JSOnDictory = JSON(j)
-                                    let data =  JSOnDictory["data"]["vipCashBack"]
-                                    let dataDetail =  JSOnDictory["data"]["vipDetaileds"]
+                                    var data = JSON()
+                                    var dataDetail = JSON()
+                                    
+                                    if self.type == 0 {
+                                        data = JSOnDictory["data"]["vipCashBack"]
+                                        dataDetail = JSOnDictory["data"]["vipDetaileds"]
+                                    }else if self.type == 1 {
+                                        data = JSOnDictory["data"]["orderCashBack"]
+                                        dataDetail = JSOnDictory["data"]["orderDetaileds"]
+                                    }
+                                    
                                     let code =  JSOnDictory["code"].stringValue
                                     if code == "0" {
                                         setToast(str: "请求失败")

@@ -25,6 +25,7 @@ class NewStoreGoodsModel: NSObject {
     var reservationPrice = Float()
     var salaPrice = Float()
     var thumbnail = String()
+    var isFree = String()
 }
 
 class NewStoreGoodsClassifies: NSObject {

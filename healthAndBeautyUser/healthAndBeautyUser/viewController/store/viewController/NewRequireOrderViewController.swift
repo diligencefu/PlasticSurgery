@@ -69,6 +69,7 @@ class NewRequireOrderViewController: Wx_baseViewController {
         }
     }
     
+    
     private func buildUI() {
         
         tableView.tableFooterView = UIView.init()
@@ -80,6 +81,7 @@ class NewRequireOrderViewController: Wx_baseViewController {
         tableView.register(UINib.init(nibName: "NewRequireLocationTableViewCell", bundle: nil), forCellReuseIdentifier: "NewRequireLocationTableViewCell")
         tableView.register(UINib.init(nibName: "NewLocationNillTabCell", bundle: nil), forCellReuseIdentifier: "NewLocationNillTabCell")
     }
+    
     
     private func buildData() {
         

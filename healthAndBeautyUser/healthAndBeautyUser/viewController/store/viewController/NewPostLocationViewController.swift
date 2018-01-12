@@ -138,6 +138,7 @@ class NewPostLocationViewController: Wx_baseViewController {
     }
 }
 
+
 // MARK: - UITableViewDelegate
 extension NewPostLocationViewController: UITableViewDelegate {
     
@@ -147,10 +148,12 @@ extension NewPostLocationViewController: UITableViewDelegate {
         self.navigationController?.popViewController(animated: true)
     }
     
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
         return 174
     }
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell:NewLocationListTabCell? = tableView.dequeueReusableCell(withIdentifier: "NewLocationListTabCell") as? NewLocationListTabCell

@@ -131,7 +131,9 @@ class NewShoppingCarTabCell: UITableViewCell {
             up["SESSIONID"] = Defaults["SESSIONID"].stringValue
         }else {
             SVPwillShowAndHide("请登录后重新操作")
-            viewController()?.present(NewLoginLocationViewController(), animated: true, completion: nil)
+            let login = NewLoginLocationViewController.init(nibName: "NewLoginLocationViewController", bundle: nil)
+            let loginVC = Wx_baseNaviViewController.init(rootViewController: login)
+            viewController()?.present(loginVC, animated: true, completion: nil)
             return
         }
         

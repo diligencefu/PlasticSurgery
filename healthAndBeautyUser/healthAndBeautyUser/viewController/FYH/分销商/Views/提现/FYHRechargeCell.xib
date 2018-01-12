@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="真实姓名:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsn-Sb-ARj">
@@ -31,7 +31,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dD8-yw-ixr">
-                        <rect key="frame" x="86.5" y="6.5" width="223.5" height="40"/>
+                        <rect key="frame" x="86.5" y="6.5" width="273.5" height="40"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="JZa-ij-0ia"/>
@@ -44,7 +44,7 @@
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="dD8-yw-ixr" firstAttribute="centerY" secondItem="nsn-Sb-ARj" secondAttribute="centerY" id="5Yr-8d-x3s"/>
-                    <constraint firstAttribute="trailing" secondItem="dD8-yw-ixr" secondAttribute="trailing" constant="65" id="BEF-7r-oMs"/>
+                    <constraint firstAttribute="trailing" secondItem="dD8-yw-ixr" secondAttribute="trailing" constant="15" id="BEF-7r-oMs"/>
                     <constraint firstItem="nsn-Sb-ARj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="CP9-JZ-fyh"/>
                     <constraint firstItem="dD8-yw-ixr" firstAttribute="leading" secondItem="nsn-Sb-ARj" secondAttribute="trailing" constant="5" id="Iiv-UH-1b5"/>
                     <constraint firstItem="nsn-Sb-ARj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="acQ-QN-qZq"/>

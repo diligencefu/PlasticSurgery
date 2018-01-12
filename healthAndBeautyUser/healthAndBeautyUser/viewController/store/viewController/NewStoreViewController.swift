@@ -61,8 +61,17 @@ class NewStoreViewController:  Wx_baseViewController{
         buildSelectData()
         buildDataLeftData()
         buildDataRightData()
+        
+        //  接收登录成功的通知
+        NotificationCenter.default.addObserver(self, selector: #selector(receiveNitification(nitofication:)), name: NSNotification.Name(rawValue: SuccessRefreshNotificationCenter_Login), object: nil)
+        
     }
     
+    @objc func receiveNitification(nitofication:Notification) {
+        self.rightTableView.mj_header.beginRefreshing()
+        self.leftTableView.mj_header.beginRefreshing()
+    }
+
     private func reBuildAllData() {
         
         if isLoadLeft && isLoadRight {
@@ -106,6 +115,7 @@ class NewStoreViewController:  Wx_baseViewController{
                     model.reservationPrice = subJson["reservationPrice"].float!
                     model.salaPrice = subJson["salaPrice"].float!
                     model.thumbnail = subJson["thumbnail"].string!
+                    model.isFree = subJson["isFree"].string!
                     self.leftDateSource.append(model)
                 }
                 self.isLoadLeft = true
@@ -171,6 +181,11 @@ class NewStoreViewController:  Wx_baseViewController{
                     model.reservationCount = subJson["reservationCount"].int!
                     model.salaPrice = subJson["salaPrice"].float!
                     model.thumbnail = subJson["thumbnail"].string!
+                    
+//                    if subJson["isFree"].string! != nil {
+//                        model.isFree = subJson["isFree"].string!
+//                    }
+                    
                     self.rightDateSource.append(model)
                 }
                 self.isLoadRight = true

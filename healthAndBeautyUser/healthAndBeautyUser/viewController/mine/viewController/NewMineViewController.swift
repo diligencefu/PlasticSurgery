@@ -29,7 +29,8 @@ class NewMineViewController: Wx_baseViewController {
                        forCellReuseIdentifier: "NewMineList_otherTableViewCell")
         table.register(NewSettingListTableViewCell.self,
                        forCellReuseIdentifier: "NewSettingListTableViewCell")
-
+        table.register(UINib.init(nibName: "FYHShowIntegralGoodsListCell", bundle: nil),
+                       forCellReuseIdentifier: "FYHShowIntegralGoodsListCell")
         return table
     }()
     
@@ -42,9 +43,19 @@ class NewMineViewController: Wx_baseViewController {
         
         buildUI()
         buildData()
+        
+        
+        //  接收登录成功的通知
+        NotificationCenter.default.addObserver(self, selector: #selector(receiveNitification(nitofication:)), name: NSNotification.Name(rawValue: SuccessRefreshNotificationCenter_Login), object: nil)
+
+        //  接收退出登录的通知
+        NotificationCenter.default.addObserver(self, selector: #selector(receiveNitification(nitofication:)), name: NSNotification.Name(rawValue: SuccessRefreshNotificationCenter_LoginOut), object: nil)
     }
     
-    
+    @objc func receiveNitification(nitofication:Notification) {
+        self.tableView.mj_header.beginRefreshing()
+    }
+
     private func buildUI() {
         
         view.backgroundColor = backGroundColor
@@ -85,6 +96,9 @@ class NewMineViewController: Wx_baseViewController {
         dataSource.append([model2])
         dataSource.append([model3])
         
+        let modelJF = String()
+        dataSource.append([modelJF])
+
         let model4 = String()
         let model5 = String()
         dataSource.append([model4,model5])
@@ -147,6 +161,9 @@ class NewMineViewController: Wx_baseViewController {
                 self.dataSource.append([model2])
                 self.dataSource.append([model3])
                 
+                let modelJF = String()
+                self.dataSource.append([modelJF])
+
                 let model4 = String()
                 let model5 = String()
                 self.dataSource.append([model4,model5])
@@ -187,11 +204,11 @@ extension NewMineViewController: UITableViewDelegate {
         switch indexPath.section {
         case 0:
             return GET_SIZE * 400 + (HEIGHT == 812 ? 44 : 20)
-        case 1,2:
+        case 1,2,3:
             return GET_SIZE * 220
-        case 3:
-            return GET_SIZE * 125
         case 4:
+            return GET_SIZE * 125
+        case 5:
             return GET_SIZE * 88
         default:
             break
@@ -212,40 +229,54 @@ extension NewMineViewController: UITableViewDelegate {
             cell?.buildData()
             cell?.model = meModel
             return cell!
-        case 1,2:
+        case 1:
             var cell:NewMineList_MessageOrOrderTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "NewMineList_MessageOrOrderTableViewCell") as? NewMineList_MessageOrOrderTableViewCell
             if nil == cell {
                 cell! = NewMineList_MessageOrOrderTableViewCell.init(style: .default, reuseIdentifier: "NewMineList_MessageOrOrderTableViewCell")
             }
             cell?.selectionStyle = .none
-            if indexPath.section == 1 {
-                cell?.isMessage = true
-            }else {
-                cell?.isMessage = false
-            }
+            cell?.isMessage = false
             cell?.buildData()
             return cell!
-        case 3:
+        case 2,3:
+            
+            let cell : FYHShowIntegralGoodsListCell = tableView.dequeueReusableCell(withIdentifier: "FYHShowIntegralGoodsListCell", for: indexPath) as! FYHShowIntegralGoodsListCell
+            
+            if indexPath.section == 2 {
+                cell.layoutForMainList(isMessage: true)
+            }else{
+                cell.layoutForMainList(isMessage: false)
+            }
+            cell.selectionStyle = .none
+            return cell
+        case 4:
             var cell:NewMineList_otherTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "NewMineList_otherTableViewCell") as? NewMineList_otherTableViewCell
             if nil == cell {
                 cell! = NewMineList_otherTableViewCell.init(style: .default, reuseIdentifier: "NewMineList_otherTableViewCell")
             }
             
             cell?.chooseAction = {
+                
+                if !Defaults.hasKey("SESSIONID") {
+                    SVPwillShowAndHide("请先登录")
+                    return
+                }
                 switch $0 {
                 case "400":
-                    
+                    let tmp = FYHIntegralStoreViewController1()
+                    self.navigationController?.pushViewController(tmp, animated: true)
+
                     break
                 case "401":
                     
+                    let tmp = FYHMissionCenterViewController()
+                    self.navigationController?.pushViewController(tmp, animated: true)
                     break
                 case "402":
                     self.navigationController?.pushViewController(FYHDistributorViewController(), animated: true)
-
                     break
                 case "403":
                     self.navigationController?.pushViewController(MemberViewController(), animated: true)
-
                     break
                 default:
                     break
@@ -254,7 +285,7 @@ extension NewMineViewController: UITableViewDelegate {
             cell?.selectionStyle = .none
             cell?.model = "\(indexPath.row)"
             return cell!
-        case 4:
+        case 5:
             var cell:NewSettingListTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "NewSettingListTableViewCell") as? NewSettingListTableViewCell
             if nil == cell {
                 cell! = NewSettingListTableViewCell.init(style: .default, reuseIdentifier: "NewSettingListTableViewCell")

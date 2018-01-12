@@ -103,13 +103,15 @@ class PayMemberViewController: Wx_baseViewController,UITableViewDelegate,UITable
     
     @objc func certainPayAction(sender:UIButton) {
 //        sender.isEnabled = false
-        
         if selectWay == 0 {
             toAliPay()
         }else if selectWay == 1 {
             toWeichat(Float(model.price)!)
         }else if selectWay == 2 {
              toApp()
+        }else if selectWay == 10 {
+            setToast(str: "请选择支付方式")
+            return
         }
         
     }
@@ -151,7 +153,7 @@ class PayMemberViewController: Wx_baseViewController,UITableViewDelegate,UITable
                 select = true
             }
             
-            if Int(model.balance)! > Int(model.price)! {
+            if Float(model.balance)! > Float(model.price)! {
                 balance = model.balance
             }else{
                 balance = "余额不足"
@@ -172,7 +174,7 @@ class PayMemberViewController: Wx_baseViewController,UITableViewDelegate,UITable
         tableView.deselectRow(at: indexPath, animated: true)
         
         if model.balance != nil {
-            if Int(model.balance)! < Int(model.price)! && indexPath.row == 2{
+            if Float(model.balance)! < Float(model.price)! && indexPath.row == 2{
                 setToast(str: "余额不足")
                 return
             }
@@ -316,11 +318,8 @@ class PayMemberViewController: Wx_baseViewController,UITableViewDelegate,UITable
             }else if json["code"].int == 1 {
                 let passwd = HBAlertPasswordView.init(frame: self.view.bounds)
                 passwd.delegate = self
-                var label = "余额"+self.model.balance
-                if Int(self.model.balance)! < Int(self.model.price)!{
-                    label = "余额不足"
-                }
-//                passwd.balance.text = label
+
+                //                passwd.balance.text = label
                 passwd.titleLabel.text = "请支付"+self.model.price+"元"
                 self.view.addSubview(passwd)
             }

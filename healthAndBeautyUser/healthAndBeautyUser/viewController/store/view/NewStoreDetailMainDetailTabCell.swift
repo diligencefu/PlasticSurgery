@@ -43,6 +43,13 @@ class NewStoreDetailMainDetailTabCell: UITableViewCell {
         }else {
             post.isHidden = true
         }
+        
+        if model.isFree == "1" {
+            isFree.isHidden = false
+        }else{
+            isFree.isHidden = true
+        }
+        
     }
     
     override func awakeFromNib() {
@@ -61,6 +68,9 @@ class NewStoreDetailMainDetailTabCell: UITableViewCell {
     
     //是否包邮
     @IBOutlet weak var post: UILabel!
+    
+//    是否是免费项目
+    @IBOutlet weak var isFree: UILabel!
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

@@ -120,7 +120,9 @@ class NewMineFollowViewController: Wx_baseViewController {
             up["SESSIONID"] = Defaults["SESSIONID"].stringValue
         }else {
             SVPwillShowAndHide("请登录后重新操作")
-            present(NewLoginLocationViewController(), animated: true, completion: nil)
+            let login = NewLoginLocationViewController.init(nibName: "NewLoginLocationViewController", bundle: nil)
+            let loginVC = Wx_baseNaviViewController.init(rootViewController: login)
+            self.present(loginVC, animated: true, completion: nil)
             return
         }
         
@@ -180,7 +182,9 @@ class NewMineFollowViewController: Wx_baseViewController {
             up["SESSIONID"] = Defaults["SESSIONID"].stringValue
         }else {
             SVPwillShowAndHide("请登录后重新操作")
-            present(NewLoginLocationViewController(), animated: true, completion: nil)
+            let login = NewLoginLocationViewController.init(nibName: "NewLoginLocationViewController", bundle: nil)
+            let loginVC = Wx_baseNaviViewController.init(rootViewController: login)
+            self.present(loginVC, animated: true, completion: nil)
             return
         }
         if isUser {
@@ -263,6 +267,21 @@ extension NewMineFollowViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let model = dateSource[indexPath.row]
+        if self.type == .follow && !self.isUser {
+            
+            let doctorView = NewDoctorMainPageViewController()
+            doctorView.doctorID = model.doctorId
+           self.navigationController?.pushViewController(doctorView, animated: true)
+        }else{
+            
+            let me = newMineMeViewController()
+            me.id = model.userId
+            me.isMe = false
+            self.navigationController?.pushViewController(me, animated: true)
+        }
+
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return GET_SIZE * 132

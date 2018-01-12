@@ -43,6 +43,10 @@ class NewOrderDetail: NSObject {
 //    remarks 退款失败原因（只有退款状态失败时才有该字段）
     var handleDate = String()
     var remarks = String()
+    
+    //是否免费
+    var isFree = String()
+
 }
 
 class NewOrderDetailDoctorModel: NSObject {

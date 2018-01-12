@@ -99,7 +99,9 @@ class NewMineNoteViewController: Wx_baseViewController {
             up["SESSIONID"] = Defaults["SESSIONID"].stringValue
         }else {
             SVPwillShowAndHide("请登录后重新操作")
-            present(NewLoginLocationViewController(), animated: true, completion: nil)
+            let login = NewLoginLocationViewController.init(nibName: "NewLoginLocationViewController", bundle: nil)
+            let loginVC = Wx_baseNaviViewController.init(rootViewController: login)
+            self.present(loginVC, animated: true, completion: nil)
             return
         }
         

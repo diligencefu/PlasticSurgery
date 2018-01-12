@@ -27,8 +27,8 @@ class NewLoginLocationViewController: Wx_baseViewController {
 //            passwordTF.text = "123"
 //            phoneTF.text = "18771980865"
 //            passwordTF.text = "123456"
-            phoneTF.text = "18571720073"
-            passwordTF.text = "123456"
+//            phoneTF.text = "13260646603"
+//            passwordTF.text = "123456"
         #endif
     }
     
@@ -69,7 +69,7 @@ class NewLoginLocationViewController: Wx_baseViewController {
         if (passwordTF.text?.count)! < 6 {
             
             SVPwillShowAndHide("请输入6位数以上密码")
-            return
+//            return
         }
         
         let up = ["username": phoneTF.text!,
@@ -100,8 +100,24 @@ class NewLoginLocationViewController: Wx_baseViewController {
     }
     
     private func back() {
+        
+        
         self.dismiss(animated: true, completion: nil)
+        
+        NotificationCenter.default.post(name: Notification.Name(rawValue: SuccessRefreshNotificationCenter_Login), object: self, userInfo: nil)
+
+//        let vc = MainTabBarController()
+////        vc.isLoginPresent = true
+//        self.view.window?.rootViewController = vc
+
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//         phoneTF.text = "18771980865"
+//         passwordTF.text = "123456"
+    }
+    
+    
 }
 
 extension NewLoginLocationViewController: UITextFieldDelegate {

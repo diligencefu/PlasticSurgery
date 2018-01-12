@@ -62,6 +62,8 @@ class NewNowPayViewController: Wx_baseViewController {
         }
     }
     
+    
+    
     private func buildUI() {
         
         tableView.tableFooterView = UIView.init()

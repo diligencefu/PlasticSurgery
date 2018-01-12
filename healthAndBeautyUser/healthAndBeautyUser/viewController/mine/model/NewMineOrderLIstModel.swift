@@ -40,6 +40,9 @@ class NewMineOrderLIstModel: Wx_baseModel {
     var refundStatus = String()
     var refundCost = Float()
     var productId = String()
+    
+//    是否是免费
+    var isFree = String()
 }
 
 class NewMineOrderLIstModelDoctor: Wx_baseModel {

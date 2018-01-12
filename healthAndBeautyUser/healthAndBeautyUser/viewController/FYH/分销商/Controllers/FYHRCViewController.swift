@@ -153,6 +153,7 @@ class FYHRCViewController: Base2ViewController {
         let model = mainTableArr[indexPath.section] as! FYHRCModel
         let detailVC = FYHRCDetailViewController()
         detailVC.id = model.id
+        detailVC.type = 0
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
     

@@ -114,6 +114,8 @@ class NewStoresDetailViewController: Wx_baseViewController {
                     self.goodsDetail.disPrice = product["disPrice"].float!
                     self.goodsDetail.reservationCount = product["reservationCount"].int!
                     
+                    self.goodsDetail.isFree = product["isFree"].string!
+
                     self.goodsDetail.productType = data["productType"].string!
                     self.goodsDetail.isEnshrine = data["isEnshrine"].bool!
                     self.isEnshrine = data["isEnshrine"].bool!
@@ -144,6 +146,8 @@ class NewStoresDetailViewController: Wx_baseViewController {
                     self.goodsDetail.disPrice = goodItem["disPrice"].float!
                     self.goodsDetail.reservationCount = goodItem["reservationCount"].int!
                     
+//                    self.goodsDetail.isFree = goodItem["isFree"].string!
+
 //                    if goodItem["isFreeShipping"].string != nil {
                         self.goodsDetail.isFreeShipping = goodItem["isFreeShipping"].string!
 //                    }
@@ -337,7 +341,9 @@ class NewStoresDetailViewController: Wx_baseViewController {
             up["SESSIONID"] = Defaults["SESSIONID"].stringValue
         }else {
             SVPwillShowAndHide("请登录后重新操作")
-            present(NewLoginLocationViewController(), animated: true, completion: nil)
+            let login = NewLoginLocationViewController.init(nibName: "NewLoginLocationViewController", bundle: nil)
+            let loginVC = Wx_baseNaviViewController.init(rootViewController: login)
+            self.present(loginVC, animated: true, completion: nil)
             return
         }
         
@@ -358,7 +364,9 @@ class NewStoresDetailViewController: Wx_baseViewController {
                 self.navigationController?.pushViewController(require, animated: true)
             }else {
                 if json["message"].string! == "尚未登录,请登录!" || json["message"].string! == "尚未登录,请登录!" {
-                    self.present(NewLoginLocationViewController(), animated: true, completion: nil)
+                    let login = NewLoginLocationViewController.init(nibName: "NewLoginLocationViewController", bundle: nil)
+                    let loginVC = Wx_baseNaviViewController.init(rootViewController: login)
+                    self.present(loginVC, animated: true, completion: nil)
                     SVPwillShowAndHide(json["message"].string!)
                 }
             }
@@ -381,7 +389,9 @@ class NewStoresDetailViewController: Wx_baseViewController {
             up["SESSIONID"] = Defaults["SESSIONID"].stringValue
         }else {
             SVPwillShowAndHide("请登录后重新操作")
-            present(NewLoginLocationViewController(), animated: true, completion: nil)
+            let login = NewLoginLocationViewController.init(nibName: "NewLoginLocationViewController", bundle: nil)
+            let loginVC = Wx_baseNaviViewController.init(rootViewController: login)
+            self.present(loginVC, animated: true, completion: nil)
             return
         }
         
@@ -416,7 +426,9 @@ class NewStoresDetailViewController: Wx_baseViewController {
             up["SESSIONID"] = Defaults["SESSIONID"].stringValue
         }else {
             SVPwillShowAndHide("请登录后重新操作")
-            present(NewLoginLocationViewController(), animated: true, completion: nil)
+            let login = NewLoginLocationViewController.init(nibName: "NewLoginLocationViewController", bundle: nil)
+            let loginVC = Wx_baseNaviViewController.init(rootViewController: login)
+            self.present(loginVC, animated: true, completion: nil)
             return
         }
         
@@ -518,7 +530,7 @@ extension NewStoresDetailViewController: UITableViewDelegate {
             
             let str = goodsDetail.productName + goodsDetail.productChildName
             let sizes = getSizeOnString( str, 18)
-            return 310 + sizes.height
+            return 310 + sizes.height+20
         case 1:
             
             if isProject {

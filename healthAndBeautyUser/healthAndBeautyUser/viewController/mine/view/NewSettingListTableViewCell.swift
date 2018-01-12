@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class NewSettingListTableViewCell: Wx_baseTableViewCell {
+    var changePsWAction:(()->())?  //声明闭包
 
     private var _model : NewSettingListModel?
     var model : NewSettingListModel? {
@@ -105,8 +107,11 @@ class NewSettingListTableViewCell: Wx_baseTableViewCell {
             viewController()?.navigationController?.pushViewController(find, animated: true)
             break
         case "支付密码"?:
-            let view = NewSetPasswordViewController.init(nibName: "NewSetPasswordViewController", bundle: nil)
-            viewController()?.navigationController?.pushViewController(view, animated: true)
+            
+            if changePsWAction != nil{
+                changePsWAction!()
+            }
+                        
             break
         case "意见反馈"?:
             
@@ -146,4 +151,8 @@ class NewSettingListTableViewCell: Wx_baseTableViewCell {
             break
         }
     }
+    
+    
+
+
 }

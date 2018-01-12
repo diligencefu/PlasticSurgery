@@ -170,6 +170,14 @@ class NewRegistViewController: UIViewController {
             SVPHide()
             if json["code"].int == 1 {
                 self.secrotCode.becomeFirstResponder()
+                
+                if self.isRegist {
+                    let vc = MainTabBarController()
+//                    vc.isLoginPresent = true
+                    NotificationCenter.default.post(name: Notification.Name(rawValue: SuccessRefreshNotificationCenter_Login), object: self, userInfo: nil)
+
+                    self.view.window?.rootViewController = vc
+                }
             }else {
                 SVPwillShowAndHide(json["message"].string!)
             }

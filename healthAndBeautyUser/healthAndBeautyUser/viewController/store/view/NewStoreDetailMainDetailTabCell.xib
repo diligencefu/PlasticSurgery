@@ -78,6 +78,16 @@
                         <color key="textColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="免费项目啊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7q-YJ-53H">
+                        <rect key="frame" x="31" y="363.5" width="66.5" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="4xd-ov-L13"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="5hn-cg-89t"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.99829036000000004" green="0.36283600329999999" blue="0.36932253840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="eaw-2h-emx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="5a3-C4-rOT"/>
@@ -94,7 +104,9 @@
                     <constraint firstItem="MqN-gJ-etC" firstAttribute="top" secondItem="eaw-2h-emx" secondAttribute="bottom" constant="12" id="gEP-fl-728"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Fq0-y1-UX5" secondAttribute="bottom" id="h4S-cz-4TB"/>
                     <constraint firstAttribute="trailingMargin" secondItem="MqN-gJ-etC" secondAttribute="trailing" constant="4" id="hbk-mG-T0e"/>
+                    <constraint firstItem="r7q-YJ-53H" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="15" id="icz-gR-leg"/>
                     <constraint firstItem="MWf-62-hWj" firstAttribute="width" secondItem="xhF-g6-U2F" secondAttribute="width" id="kxW-Qf-j78"/>
+                    <constraint firstItem="5s2-hE-rpi" firstAttribute="centerY" secondItem="r7q-YJ-53H" secondAttribute="centerY" id="mpo-md-1bP"/>
                     <constraint firstItem="eaw-2h-emx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="pHF-Aq-H6d"/>
                     <constraint firstItem="xhF-g6-U2F" firstAttribute="leading" secondItem="nSA-AS-iYN" secondAttribute="trailing" constant="12" id="ulI-q7-RKd"/>
                 </constraints>
@@ -102,6 +114,7 @@
             <connections>
                 <outlet property="adView" destination="eaw-2h-emx" id="CmW-85-ZlR"/>
                 <outlet property="appointment" destination="Fq0-y1-UX5" id="c0y-uL-5Ni"/>
+                <outlet property="isFree" destination="r7q-YJ-53H" id="o0V-ei-qxH"/>
                 <outlet property="newPrice" destination="nSA-AS-iYN" id="ict-IW-ceC"/>
                 <outlet property="oldPrice" destination="xhF-g6-U2F" id="faP-VF-Kza"/>
                 <outlet property="post" destination="5s2-hE-rpi" id="eZ4-ax-68r"/>

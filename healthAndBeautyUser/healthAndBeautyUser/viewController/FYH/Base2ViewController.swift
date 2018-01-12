@@ -22,6 +22,8 @@ class Base2ViewController: UIViewController,UITableViewDataSource,UITableViewDel
     var totalPage = ""
     var currentPage = 1
 
+    var navigaView = UIView()
+    
     var navHeight = 64
     let identyfierTable = "identyfierTable"
     let identyfierTable1 = "identyfierTable1"
@@ -88,7 +90,7 @@ class Base2ViewController: UIViewController,UITableViewDataSource,UITableViewDel
             navHeight = 88
         }
         
-        let navigaView = UIView.init(frame: CGRect(x: 0, y: 0, width: Int(kSCREEN_WIDTH), height: navHeight))
+        navigaView = UIView.init(frame: CGRect(x: 0, y: 0, width: Int(kSCREEN_WIDTH), height: navHeight))
         let backBtn = UIButton.init(frame: CGRect(x: 16, y: 24, width: 11, height: 20))
         backBtn.centerY = navigaView.centerY+10
         
@@ -108,6 +110,7 @@ class Base2ViewController: UIViewController,UITableViewDataSource,UITableViewDel
         titleLabel.centerY = backBtn.centerY
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont.systemFont(ofSize: 18)
+        
         titleLabel.textColor = UIColor.black
         navigaView.addSubview(titleLabel)
         

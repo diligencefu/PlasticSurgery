@@ -31,7 +31,7 @@ class NewShoppingCarViewController: Wx_baseViewController {
         createNaviController(title: "购物车", leftBtn: buildLeftBtn(), rightBtn: nil)
         
         buildUI()
-        buildData()
+//        buildData()
     }
     
     private func buildUI() {
@@ -91,6 +91,7 @@ class NewShoppingCarViewController: Wx_baseViewController {
                     model.thumbnail = subJson["thumbnail"].string!
                     model.doctorName = subJson["doctorName"].string!
                     model.id = subJson["id"].string!
+                    delog(model.id)
                     model.goodType = subJson["goodType"].string!
                     model.payPrice = subJson["payPrice"].float!
                     model.goodChildName = subJson["goodChildName"].string!
@@ -185,6 +186,10 @@ class NewShoppingCarViewController: Wx_baseViewController {
         navigationController?.pushViewController(require, animated: true)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        buildData()
+    }
+    
     //显示底部分开结算按钮
     private func selectPayFunction() {
         
@@ -255,6 +260,8 @@ class NewShoppingCarViewController: Wx_baseViewController {
     }
 }
 
+
+
 // MARK: - UITableViewDelegate
 extension NewShoppingCarViewController: UITableViewDelegate {
     
@@ -317,6 +324,7 @@ extension NewShoppingCarViewController: UITableViewDelegate {
         }else{
             model = productDateSource[indexPath.row]
         }
+        delog(model.id)
         let up = ["SESSIONID":Defaults["SESSIONID"].stringValue,
                   "mobileCode":Defaults["mobileCode"].stringValue,
                   "id":model.id]

@@ -27,6 +27,11 @@ class NewMineFollowListModel: Wx_baseModel {
     var age = String()
     var name = String()
     
+    
+    var cases = String()
+    var bespoke = String()
+
+    
     var doctorId = String()
     var doctorName = String()
     var headImage = String()

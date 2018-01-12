@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwiftyJSON
 
-class NewSettingsViewController: Wx_baseViewController {
+class NewSettingsViewController: Wx_baseViewController,HBAlertPasswordViewDelegate {
     
     lazy var tableView : UITableView = {
         let table = UITableView()
@@ -107,11 +108,78 @@ extension NewSettingsViewController: UITableViewDelegate {
             if nil == cell {
                 cell! = NewSettingListTableViewCell.init(style: .default, reuseIdentifier: "NewSettingListTableViewCell")
             }
+            cell?.changePsWAction = {
+                //判断是否设置过密码
+                let up = ["mobileCode":Defaults["mobileCode"].stringValue,
+                          "SESSIONID":Defaults["SESSIONID"].stringValue]
+                    as [String: Any]
+                
+                delog(up)
+                SVPWillShow("载入中...")
+                
+                Net.share.postRequest(urlString: checkBalance_28_joggle, params: up, success: { (datas) in
+                    let json = JSON(datas)
+                    SVPHide()
+                    delog(json)
+                    if json["code"].int == 3 {
+                        
+                        //                    SVPwillShowAndHide("您没有设置支付密码，正在前往支付密码设置页面")
+                        let reSet = NewSetPasswordViewController.init(nibName: "NewSetPasswordViewController", bundle: nil)
+                        reSet.firstSet = true
+                        self.navigationController?.pushViewController(reSet, animated: true)
+                    }else if json["code"].int == 1 {
+                        
+                        let passwd = HBAlertPasswordView.init(frame: self.view.bounds)
+                        passwd.delegate = self
+                        //                passwd.balance.text = label
+                        passwd.titleLabel.text = "请输入支付密码"
+                        self.view.addSubview(passwd)
+                        //                    viewController()?.view.addSubview(passwd)
+                    }
+                }) { (error) in
+                    delog(error)
+                }
+            }
+            
             cell?.selectionStyle = .none
             cell?.model = dateSource[indexPath.section][indexPath.row]
             return cell!
         }
     }
+    //    HBAlertPasswordViewDelegate 密码弹框代理
+    func sureAction(with alertPasswordView: HBAlertPasswordView!, password: String!) {
+        alertPasswordView.removeFromSuperview()
+        checkPassword(password)
+    }
+
+    private func checkPassword(_ password: String) {
+        
+        //判断密码是否正确
+        let up = ["mobileCode":Defaults["mobileCode"].stringValue,
+                  "SESSIONID":Defaults["SESSIONID"].stringValue,
+                  "pwd":password]
+            as [String: Any]
+        
+        delog(up)
+        SVPWillShow("载入中...")
+        
+        Net.share.postRequest(urlString: checkPayPwd_29_joggle, params: up, success: { (datas) in
+            let json = JSON(datas)
+            delog(json)
+            if json["code"].int == 1 {
+                
+                let reSet = NewSetPasswordViewController.init(nibName: "NewSetPasswordViewController", bundle: nil)
+                reSet.firstSet = false
+                self.navigationController?.pushViewController(reSet, animated: true)
+            }else {
+                SVPHide()
+                SVPwillShowAndHide("密码错误")
+            }
+        }) { (error) in
+            delog(error)
+        }
+    }
+
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
         let foot = UIView()

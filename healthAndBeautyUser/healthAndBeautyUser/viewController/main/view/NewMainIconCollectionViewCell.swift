@@ -18,12 +18,19 @@ class NewMainIconCollectionViewCell: UICollectionViewCell {
         }
     }
     
+//    private func didSetModel(_ model: iconModel) {
+//
+//        icon.image = UIImage(named: model.img)
+//        title.text = model.title
+//    }
+    
     private func didSetModel(_ model: iconModel) {
-        
-        icon.image = UIImage(named: model.img)
+
+        icon.kf.setImage(with: StringToUTF_8InUrl(str:model.img))
+        icon.kf.setImage(with: StringToUTF_8InUrl(str:model.img), placeholder: #imageLiteral(resourceName: "10_renwuzhongxin_icon_default"), options: nil, progressBlock: nil, completionHandler: nil)
         title.text = model.title
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

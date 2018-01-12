@@ -34,6 +34,9 @@ class NewStoreDetailModel: NSObject {
     var productType = String()
     var isEnshrine = Bool()
     
+//    是否是免费项目
+    var isFree = String()
+    
     //是否包邮以及邮费
     var isFreeShipping = String()
     var postage = Float()

@@ -167,7 +167,9 @@
 
 - (void)taps:(UITapGestureRecognizer *)tap{
     
-    _block([NSString stringWithFormat: @"%ld",tap.view.tag-10086]);
+    if (_block != nil) {
+        _block([NSString stringWithFormat: @"%ld",tap.view.tag-10086]);
+    }
 }
 
 #pragma mark UIScrollViewDelegate

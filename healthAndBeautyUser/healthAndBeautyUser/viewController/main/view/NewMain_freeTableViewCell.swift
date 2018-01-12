@@ -20,6 +20,10 @@ class NewMain_freeTableViewCell: NewsStoreProjectListTableViewCell {
 //    private func didSetModel(_ model: NewMineMessageModel) {
 //        
 //    }
+    
+    let ADModel = FYHSowMainADModel()
+    
+    
     let buyIMG = UIImageView()
     let buy = UILabel()
     

@@ -122,7 +122,7 @@ class NewMainMe_meTableViewCell: Wx_baseTableViewCell {
         
         follow.setTitle("关注", for: .normal)
         follow.setTitleColor(UIColor.white, for: .normal)
-        follow.addTarget(self, action: #selector(followClick), for: .touchUpInside)
+        follow.addTarget(self, action: #selector(followAction), for: .touchUpInside)
         contentView.addSubview(follow)
         _ = follow.sd_layout()?
             .centerXEqualToView(followLab)?
@@ -209,6 +209,33 @@ class NewMainMe_meTableViewCell: Wx_baseTableViewCell {
             SVPwillShowAndHide("请检查您的网路")
         }
     }
+    
+    func followAction() {
+        
+        if _model!.isFollow {
+            
+            
+            let alert = UIAlertController.init(title: "提示", message: "确定要取消关注吗？", preferredStyle: .alert)
+            
+            let action1 = UIAlertAction.init(title: "确定", style: .destructive) { (alertAction) in
+                self.followClick()
+            }
+            let action2 = UIAlertAction.init(title: "取消", style: .cancel) { (alertAction) in
+                return
+            }
+            
+            alert.addAction(action1)
+            alert.addAction(action2)
+            
+            viewController()?.present(alert, animated: true, completion: nil)
+            
+        }else{
+            followClick()
+        }
+    }
+    
+
+    
     
     @objc private func sendMessageClick() {
         

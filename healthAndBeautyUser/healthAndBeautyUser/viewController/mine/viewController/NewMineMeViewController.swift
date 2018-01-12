@@ -68,8 +68,16 @@ class newMineMeViewController: Wx_baseViewController {
         }
         buildUI()
         buildData()
+        
+        //  接收登录成功的通知
+        NotificationCenter.default.addObserver(self, selector: #selector(receiveNitification(nitofication:)), name: NSNotification.Name(rawValue: SuccessRefreshNotificationCenter_Login), object: nil)
+        
     }
     
+    @objc func receiveNitification(nitofication:Notification) {
+        self.tableView.mj_header.beginRefreshing()
+    }
+
     private func buildUI() {
         
         view.backgroundColor = backGroundColor
@@ -117,7 +125,9 @@ class newMineMeViewController: Wx_baseViewController {
             up["SESSIONID"] = Defaults["SESSIONID"].stringValue
         }else {
             SVPwillShowAndHide("请登录后重新操作")
-            present(NewLoginLocationViewController(), animated: true, completion: nil)
+            let login = NewLoginLocationViewController.init(nibName: "NewLoginLocationViewController", bundle: nil)
+            let loginVC = Wx_baseNaviViewController.init(rootViewController: login)
+            self.present(loginVC, animated: true, completion: nil)
             return
         }
         

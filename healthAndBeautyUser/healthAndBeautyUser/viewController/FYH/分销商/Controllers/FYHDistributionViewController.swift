@@ -90,13 +90,14 @@ class FYHDistributionViewController: Base2ViewController {
                                             let model = DistriDetailModel.setValueForDistriDetailModel(json: data[index])
                                             self.mainTableArr.add(model)
                                         }
-                                        
+                                        SVPHide()
                                         self.mainTableView.reloadData()
                                     }
                                 }
                                 break
                             case .failure(let error):
                                 deBugPrint(item: error)
+                                SVPwillShowAndHide("加载失败")
                                 setToast(str: "请求失败")
                             }
         }

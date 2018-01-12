@@ -20,4 +20,6 @@ class NewStoreProjectModel: NSObject {
     var reservationPrice = Float()
     var salaPrice = Float()
     var thumbnail = String()
+    var isFree = String()
+    
 }

@@ -10,6 +10,10 @@ import UIKit
 import SwiftyUserDefaults
 
 
+let SuccessRefreshNotificationCenter_Login = "SuccessRefreshNotificationCenter_Login"
+let SuccessRefreshNotificationCenter_LoginOut = "SuccessRefreshNotificationCenter_LoginOut"
+
+
 
 let kSCREEN_WIDTH = UIScreen.main.bounds.size.width
 let kSCREEN_HEIGHT = UIScreen.main.bounds.size.height
@@ -45,9 +49,8 @@ func kSetRGBAColor (r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat) -> UIColor {
 }
 
 func kMainColor() -> UIColor {
-    return kSetRGBColor(r: 0, g: 180, b: 255)
+    return kSetRGBColor(r: 255, g: 93, b: 94)
 }
-
 
 
 func kTextColor() -> UIColor {
@@ -89,7 +92,6 @@ func getNavigationView(_ height: NSInteger,fromColor:UIColor,toColor:UIColor) ->
 
 
 //MARK: 设置一个提醒
-
 func setToast(str:String) {
     
     let window = UIApplication.shared.keyWindow
@@ -121,6 +123,39 @@ func setToast(str:String) {
         })
     }
 }
+
+
+//获取首页icon的名字
+func kGetIconName(str:String) -> String {
+    if str == "zxbk" {
+        return "整形百科"
+    }
+    if str == "rjal" {
+        return "日记案例"
+    }
+    if str == "mfzx" {
+        return "免费整形"
+    }
+    if str == "ssxc" {
+        return "手术现场"
+    }
+    if str == "jfsc" {
+        return "积分商城"
+    }
+    if str == "rwzx" {
+        return "任务中心"
+    }
+    if str == "zjtd" {
+        return "专家团队"
+    }
+    if str == "jhtj" {
+        return "精华推荐"
+    }
+    return "出错了吧这是"
+}
+
+
+
 
 
 //调试模式输出

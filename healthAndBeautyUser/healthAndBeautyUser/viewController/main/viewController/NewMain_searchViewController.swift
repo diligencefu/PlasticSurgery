@@ -64,7 +64,7 @@ class NewMain_searchViewController: Wx_baseViewController {
         scroller.isPagingEnabled = true
         scroller.delegate = self
         scroller.bounces = false
-        scroller.contentSize = CGSize.init(width: WIDTH*2, height: HEIGHT-68)
+        scroller.contentSize = CGSize.init(width: WIDTH, height: HEIGHT-68)
         view.addSubview(scroller)
         _ = scroller.sd_layout()?
             .topSpaceToView(view,0)?
@@ -72,39 +72,39 @@ class NewMain_searchViewController: Wx_baseViewController {
             .rightSpaceToView(view,0)?
             .bottomSpaceToView(view,0)
         
-        pageController.frame = CGRect.init(x: (WIDTH-64)/2, y: 6, width: 64, height: 12)
-        pageController.numberOfPages = 2
-        pageController.currentPage = 0
-        pageController.pageIndicatorTintColor = UIColor.lightGray
-        pageController.currentPageIndicatorTintColor = UIColor.darkGray
-        view.addSubview(pageController)
-        
-        let titleArray = ["找项目","找产品"]
-        let segmentController = UISegmentedControl(items: titleArray)
-        segmentController.frame = CGRect(x:0,y:0,width:GET_SIZE * 256,height:GET_SIZE * 58)
-        segmentController.tintColor = UIColor.lightGray
-        segmentController.addTarget(self, action: #selector(segmentDidChangeValue(controller:)), for: .valueChanged)
-        segmentController.selectedSegmentIndex = 0
-        scroller.addSubview(segmentController)
-        _ = segmentController.sd_layout()?
-            .topSpaceToView(scroller,GET_SIZE * 49)?
-            .leftSpaceToView(scroller,(WIDTH - GET_SIZE * 256)/2)?
-            .widthIs(GET_SIZE * 256)?
-            .heightIs(GET_SIZE * 58)
-        
-        let baikeView = Wx_twoTableView()
-        scroller.addSubview(baikeView)
-        _ = baikeView.sd_layout()?
-            .topSpaceToView(segmentController,GET_SIZE * 24)?
-            .leftSpaceToView(scroller,0)?
-            .widthIs(WIDTH)?
-            .bottomSpaceToView(scroller,0)
-        baikeView.reBuildData()
+//        pageController.frame = CGRect.init(x: (WIDTH-64)/2, y: 6, width: 64, height: 12)
+//        pageController.numberOfPages = 2
+//        pageController.currentPage = 0
+//        pageController.pageIndicatorTintColor = UIColor.lightGray
+//        pageController.currentPageIndicatorTintColor = UIColor.darkGray
+//        view.addSubview(pageController)
+//
+//        let titleArray = ["找项目","找产品"]
+//        let segmentController = UISegmentedControl(items: titleArray)
+//        segmentController.frame = CGRect(x:0,y:0,width:GET_SIZE * 256,height:GET_SIZE * 58)
+//        segmentController.tintColor = UIColor.lightGray
+//        segmentController.addTarget(self, action: #selector(segmentDidChangeValue(controller:)), for: .valueChanged)
+//        segmentController.selectedSegmentIndex = 0
+//        scroller.addSubview(segmentController)
+//        _ = segmentController.sd_layout()?
+//            .topSpaceToView(scroller,GET_SIZE * 49)?
+//            .leftSpaceToView(scroller,(WIDTH - GET_SIZE * 256)/2)?
+//            .widthIs(GET_SIZE * 256)?
+//            .heightIs(GET_SIZE * 58)
+//
+//        let baikeView = Wx_twoTableView()
+//        scroller.addSubview(baikeView)
+//        _ = baikeView.sd_layout()?
+//            .topSpaceToView(segmentController,GET_SIZE * 24)?
+//            .leftSpaceToView(scroller,0)?
+//            .widthIs(WIDTH)?
+//            .bottomSpaceToView(scroller,0)
+//        baikeView.reBuildData()
         
         scroller.addSubview(self.rightTableView)
         _ = rightTableView.sd_layout()?
             .topSpaceToView(scroller,GET_SIZE * 48)?
-            .leftSpaceToView(baikeView,0)?
+            .leftSpaceToView(scroller,0)?
             .widthIs(WIDTH)?
             .bottomSpaceToView(scroller,0)
     }
@@ -136,7 +136,6 @@ class NewMain_searchViewController: Wx_baseViewController {
             print(weakSelf!)
             print(type)
         }
-        
     }
     
     private func buildData() {
@@ -165,7 +164,7 @@ class NewMain_searchViewController: Wx_baseViewController {
         search.font = UIFont.systemFont(ofSize: GET_SIZE * 28)
         search.backgroundColor = UIColor.white
         searchView.addSubview(search)
-        viewRadius(search, 5.0, 0.5, UIColor.black)
+        viewRadius(search, 6.0, 1, UIColor.gray)
         search.leftView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: GET_SIZE * 20, height: GET_SIZE * 20))
         search.leftViewMode = .always
         _ = search.sd_layout()?
@@ -188,14 +187,6 @@ class NewMain_searchViewController: Wx_baseViewController {
             .bottomSpaceToView(searchView,0)
     }
     
-    
-    func segmentDidChangeValue(controller:UISegmentedControl) {
-        if controller.selectedSegmentIndex == 0 {
-            
-        }else {
-            
-        }
-    }
     
     @objc private func cancel(_ btn: UIButton) {
         search.resignFirstResponder()
@@ -240,48 +231,14 @@ extension NewMain_searchViewController: UITableViewDelegate {
         }
         return 240
     }
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if tableView.isEqual(rightTableView) && indexPath.section == 0 {
-            var cell:NewMain_hotTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "NewMain_hotTableViewCell") as? NewMain_hotTableViewCell
-            if nil == cell {
-                cell! = NewMain_hotTableViewCell.init(style: .default, reuseIdentifier: "NewMain_hotTableViewCell")
-            }
-            cell?.selectionStyle = .none
-            cell?.model = ["定点双眼皮",
-                           "外切去眼袋",
-                           "内切去眼袋",
-                           "玻尿酸去黑眼圈",
-                           "手术去黑眼圈",
-                           "种植眉毛",
-                           "半永久纹眉"]
-            return cell!
-        }else if tableView.isEqual(rightTableView) && indexPath.section == 1 {
-            if indexPath.row != rightDateSource.count - 1 {
-                
-                var cell:NewMain_historyTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "NewMain_historyTableViewCell") as? NewMain_historyTableViewCell
-                if nil == cell {
-                    cell! = NewMain_historyTableViewCell.init(style: .default, reuseIdentifier: "NewMain_historyTableViewCell")
-                }
-                cell?.selectionStyle = .none
-                cell?.model = rightDateSource[indexPath.row]
-                return cell!
-            }else {
-                var cell:NewMain_DeleteAllTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "NewMain_DeleteAllTableViewCell") as? NewMain_DeleteAllTableViewCell
-                if nil == cell {
-                    cell! = NewMain_DeleteAllTableViewCell.init(style: .default, reuseIdentifier: "NewMain_DeleteAllTableViewCell")
-                }
-                cell?.selectionStyle = .none
-                return cell!
-            }
-        }
-        var cell:NewsStoreProjectListTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "NewsStoreProjectListTableViewCell") as? NewsStoreProjectListTableViewCell
-        if nil == cell {
-            cell! = NewsStoreProjectListTableViewCell.init(style: .default, reuseIdentifier: "NewsStoreProjectListTableViewCell")
-        }
-        cell?.selectionStyle = .none
-        cell?.buildModel()
-        return cell!
+        
+        
+        return UITableViewCell()
     }
+    
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if tableView.isEqual(rightTableView) {
@@ -292,9 +249,13 @@ extension NewMain_searchViewController: UITableViewDelegate {
             return UIView()
         }
     }
+    
+    
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 10
     }
+    
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if tableView.isEqual(rightTableView) {
             let tmp = UIView()
@@ -309,16 +270,14 @@ extension NewMain_searchViewController: UITableViewDelegate {
                 .leftSpaceToView(tmp,GET_SIZE * 24)?
                 .widthIs(WIDTH)?
                 .heightIs(GET_SIZE * 34)
-            if section == 0 {
-                Title.text = "热门搜索"
-            }else {
-                Title.text = "历史记录"
-            }
+            Title.text = "历史记录"
             return tmp
         } else {
             return UIView()
         }
     }
+    
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if tableView.isEqual(rightTableView) {
             return GET_SIZE * 72
@@ -332,19 +291,14 @@ extension NewMain_searchViewController: UITableViewDelegate {
 extension NewMain_searchViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        if tableView.isEqual(rightTableView) {
-            return 2
-        }
         return 1
     }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView.isEqual(rightTableView) && section == 0 {
-            return 1
-        }else if tableView.isEqual(rightTableView) && section == 1 {
-            return rightDateSource.count
-        }
         return rightDateSource.count
     }
+    
 }
 
 

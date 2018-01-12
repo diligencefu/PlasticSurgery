@@ -128,8 +128,17 @@ class Wx_twoTableView: UIView  {
                     model.id = subJson["id"].string!
                     model.name = subJson["name"].string!
                     model.parentId = subJson["parentId"].string!
+                    
+
                     self.tableDateSource.append(model)
                 }
+                
+                let first = Wx_twoTableModel()
+                first.name = "全部项目"
+                first.id = ""
+//                self.tableDateSource.insert(first, at: 0)
+                self.tableDateSource.append(first)
+                
                 //右边目录
                 for (_, subJson):(String, JSON) in data["projectList"] {
                     
@@ -142,6 +151,7 @@ class Wx_twoTableView: UIView  {
                     }
                     model.parentId = subJson["parentId"].string!
                     self.headDateSource.append(model)
+
                     
                     //3级cell内容
                     let collectionModel = NSMutableArray()
@@ -155,6 +165,8 @@ class Wx_twoTableView: UIView  {
                     }
                     self.collectionDateSource.append(collectionModel)
                 }
+                
+                
                 self.leftTableView.reloadData()
                 self.rightCollectionView.reloadData()
                 self.leftTableView.selectRow(at: IndexPath.init(row: 0, section: 0), animated: true, scrollPosition: .top)
@@ -239,7 +251,33 @@ extension Wx_twoTableView : UITableViewDelegate, UITableViewDataSource {
         cell?.selectionStyle = .none
         return cell!
     }
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == self.tableDateSource.count-1 {
+            if willClick != nil {
+                willClick!((""),
+                               ("全部项目"))
+            }
+            self.collectionDateSource.removeAll()
+            let collectionModel = NSMutableArray()
+            
+            let first3 = Wx_twoTableModel()
+            first3.name = "全部项目"
+            first3.id = ""
+            collectionModel.add(first3)
+            self.collectionDateSource.append(collectionModel)
+
+            self.headDateSource.removeAll()
+            let first2 = Wx_twoTableModel()
+            first2.name = "全部项目"
+            first2.id = ""
+            self.headDateSource.append(first2)
+            self.leftTableView.reloadData()
+            self.rightCollectionView.reloadData()
+            return
+        }
         clickLeft(tableDateSource[indexPath.row])
     }
 }

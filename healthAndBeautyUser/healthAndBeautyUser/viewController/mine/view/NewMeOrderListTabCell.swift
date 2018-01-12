@@ -36,6 +36,7 @@ class NewMeOrderListTabCell: UITableViewCell {
         label2_2.text = "￥ \(model.goodPrice)"
         label2_2.textColor = UIColor.red
         label4.isHidden = true
+        freeMark.isHidden = true
     }
     
     //商品列表
@@ -63,6 +64,8 @@ class NewMeOrderListTabCell: UITableViewCell {
         label2_2.text = "￥ \(model.list.goodPrice)"
         label2_2.textColor = UIColor.red
         label4.isHidden = true
+        freeMark.isHidden = true
+
     }
     
     //项目详情使用
@@ -109,6 +112,13 @@ class NewMeOrderListTabCell: UITableViewCell {
             label4.isHidden = false
             label4.text = "项目类型: \(model.projectName)"
         }
+        
+        if model.isFree == "1" {
+            freeMark.isHidden = false
+        }else{
+            freeMark.isHidden = true
+        }
+
     }
     
     //列表
@@ -128,6 +138,12 @@ class NewMeOrderListTabCell: UITableViewCell {
         viewRadius(head, 3.0, 0.5, lineColor)
         
         title.text = "【\(model.productName)】\(model.productChildName)"
+        
+        if model.isFree == "1" {
+            freeMark.isHidden = false
+        }else{
+            freeMark.isHidden = true
+        }
         
         if model.type == 0 {
             //待支付
@@ -203,7 +219,8 @@ class NewMeOrderListTabCell: UITableViewCell {
     
     @IBOutlet weak var head: UIImageView!
     @IBOutlet weak var title: UILabel!
-    
+    @IBOutlet weak var freeMark: UIImageView!
+
     //标题下面的文字
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!

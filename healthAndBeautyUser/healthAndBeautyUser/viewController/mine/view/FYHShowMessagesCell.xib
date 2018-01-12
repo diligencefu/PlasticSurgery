@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="140" id="KGk-i7-Jjw" customClass="FYHShowMessagesCell" customModule="healthAndBeautyUser" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="372" height="140"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="372" height="139.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBd-YA-Wc0">
+                        <rect key="frame" x="16" y="11" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="ROm-yZ-x5g"/>
+                            <constraint firstAttribute="height" constant="50" id="d62-7g-FT7"/>
+                        </constraints>
+                        <state key="normal" image="11_banner_secondary_default"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KI4-Or-0ne">
+                        <rect key="frame" x="74" y="14" width="46" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="pKE-2u-Fyh"/>
+                            <constraint firstAttribute="height" constant="15" id="q1e-IJ-evv"/>
+                        </constraints>
+                        <state key="normal" title="季总监">
+                            <color key="titleColor" red="0.14655521369999999" green="0.14655521369999999" blue="0.14655521369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017-12-25 16:24:23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tg-vs-yyd">
+                        <rect key="frame" x="74" y="37" width="128.5" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="b8r-Wb-xBx"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="qS8-XG-dyi"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.62750971499119168" green="0.62750971499119168" blue="0.62750971499119168" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R8m-gQ-sBb">
+                        <rect key="frame" x="16" y="69" width="340" height="60"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="季总监评论了你的日记" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bzd-hI-sme">
+                                <rect key="frame" x="8" y="8" width="133" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="Ryt-w8-Kt1"/>
+                                    <constraint firstAttribute="height" constant="15" id="eSn-PF-Gd7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你真的牛逼啊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SER-w3-AZD">
+                                <rect key="frame" x="8" y="31" width="324" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="bbr-DK-6wo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93031661159533674" green="0.93031661159533674" blue="0.93031661159533674" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Bzd-hI-sme" firstAttribute="top" secondItem="R8m-gQ-sBb" secondAttribute="top" constant="8" id="0CT-KR-z1R"/>
+                            <constraint firstAttribute="trailing" secondItem="SER-w3-AZD" secondAttribute="trailing" constant="8" id="1DH-7O-bbl"/>
+                            <constraint firstItem="Bzd-hI-sme" firstAttribute="leading" secondItem="R8m-gQ-sBb" secondAttribute="leading" constant="8" id="YCD-9J-nJ5"/>
+                            <constraint firstAttribute="bottom" secondItem="SER-w3-AZD" secondAttribute="bottom" constant="3" id="j40-kP-UYZ"/>
+                            <constraint firstItem="SER-w3-AZD" firstAttribute="leading" secondItem="R8m-gQ-sBb" secondAttribute="leading" constant="8" id="jag-iO-LCe"/>
+                            <constraint firstItem="SER-w3-AZD" firstAttribute="top" secondItem="Bzd-hI-sme" secondAttribute="bottom" constant="8" id="kOq-MY-Yle"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="R8m-gQ-sBb" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="2vz-Sg-5p4"/>
+                    <constraint firstItem="KI4-Or-0ne" firstAttribute="top" secondItem="FBd-YA-Wc0" secondAttribute="top" constant="3" id="DP5-R1-R2m"/>
+                    <constraint firstItem="3Tg-vs-yyd" firstAttribute="leading" secondItem="FBd-YA-Wc0" secondAttribute="trailing" constant="8" id="J2v-mF-XAt"/>
+                    <constraint firstItem="R8m-gQ-sBb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="K1H-lx-u9l"/>
+                    <constraint firstItem="FBd-YA-Wc0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Nkx-lj-7f0"/>
+                    <constraint firstItem="3Tg-vs-yyd" firstAttribute="top" secondItem="KI4-Or-0ne" secondAttribute="bottom" constant="8" id="TN3-gr-DMx"/>
+                    <constraint firstItem="R8m-gQ-sBb" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="fEH-b5-qar"/>
+                    <constraint firstItem="FBd-YA-Wc0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="fmt-9c-7Nj"/>
+                    <constraint firstItem="R8m-gQ-sBb" firstAttribute="top" secondItem="FBd-YA-Wc0" secondAttribute="bottom" constant="8" id="ohK-Pi-ahW"/>
+                    <constraint firstItem="KI4-Or-0ne" firstAttribute="leading" secondItem="FBd-YA-Wc0" secondAttribute="trailing" constant="8" id="sd0-ua-mpl"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="backView" destination="R8m-gQ-sBb" id="F0S-8J-i9R"/>
+                <outlet property="comment" destination="SER-w3-AZD" id="fqg-2q-jn8"/>
+                <outlet property="createDate" destination="3Tg-vs-yyd" id="bVr-gA-0XA"/>
+                <outlet property="eventDetail" destination="Bzd-hI-sme" id="j5s-ub-qbs"/>
+                <outlet property="userIcon" destination="FBd-YA-Wc0" id="Z1R-hX-ocE"/>
+                <outlet property="userName" destination="KI4-Or-0ne" id="Anc-Fp-ZLO"/>
+            </connections>
+            <point key="canvasLocation" x="59" y="108"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="11_banner_secondary_default" width="178" height="188"/>
+    </resources>
+</document>

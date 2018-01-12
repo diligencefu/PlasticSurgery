@@ -76,6 +76,8 @@ class NewEditMeViewController: Wx_baseViewController,
                                                     delog(json)
                                                     if json["code"].int == 1 {
                                                         SVPwillSuccessShowAndHide("上传数据成功")
+                                                        NotificationCenter.default.post(name: Notification.Name(rawValue: SuccessRefreshNotificationCenter_Login), object: self, userInfo: nil)
+
                                                         self.navigationController?.popViewController(animated: true)
                                                     }else {
                                                         SVPwillShowAndHide(json["message"].string!)

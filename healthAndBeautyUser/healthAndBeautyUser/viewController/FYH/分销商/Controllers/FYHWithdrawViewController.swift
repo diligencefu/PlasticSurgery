@@ -22,6 +22,11 @@ class FYHWithdrawViewController: Base2ViewController {
     
     override func configSubViews() {
         setupTitleViewSectionStyle(titleStr: "提现")
+        btnTitle = "提现须知"
+        
+        if withdrawalType == "2" {
+            titles = [["真实姓名:","微信号:"],["提现金额:",""]]
+        }
         
         mainTableView = UITableView.init(frame: CGRect(x: 0,
                                                        y: CGFloat(navHeight),
@@ -41,7 +46,7 @@ class FYHWithdrawViewController: Base2ViewController {
         certainBtn.clipsToBounds = true
         certainBtn.setTitle("提现", for: .normal)
         self.certainBtn.isEnabled = false
-        self.certainBtn.setTitleColor(kSetRGBColor(r: 69, g: 69, b: 69), for: .normal)
+        self.certainBtn.setTitleColor(kSetRGBColor(r: 117, g: 117, b: 117), for: .normal)
         self.certainBtn.backgroundColor = kSetRGBColor(r: 222, g: 222, b: 222)
         certainBtn.addTarget(self, action: #selector(certainPayAction(sender:)), for: .touchUpInside)
         footView.addSubview(certainBtn)
@@ -49,10 +54,41 @@ class FYHWithdrawViewController: Base2ViewController {
     }
     
     
+    override func addHeaderRefresh() {
+        
+    }
+    
+    override func rightAction(sender: UIButton) {
+        let tipVC = FYHWithdrawTipVC()
+        tipVC.mainModel = mainModel
+        self.navigationController?.pushViewController(tipVC, animated: true)
+    }
+
+    
     @objc func certainPayAction(sender:UIButton) {
+        
+        let cell3 = mainTableView.cellForRow(at: IndexPath.init(row: 0, section: 1)) as! FYHRechargeCell
+
+        let str = "您选择提现:"+cell3.content.text!+"元，加上手续费"+String(Float(cell3.content.text!)!*Float(mainModel.withdrawDiscount!)!)+"元，实际扣款:"+String(Float(cell3.content.text!)!+Float(cell3.content.text!)!*Float(mainModel.withdrawDiscount!)!)+"元。"
+        
+        let alert = UIAlertController.init(title: "提示", message: str, preferredStyle: .alert)
+        
+        let action1 = UIAlertAction.init(title: "确定提现", style: .default) { (alertAction) in
+            self.withdrawAction()
+        }
+        let action2 = UIAlertAction.init(title: "取消", style: .destructive, handler: nil)
+        
+        alert.addAction(action1)
+        alert.addAction(action2)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    func withdrawAction() {
+        
         let cell1 = mainTableView.cellForRow(at: IndexPath.init(row: 0, section: 0)) as! FYHRechargeCell
-        let cell2 = mainTableView.cellForRow(at: IndexPath.init(row: 0, section: 1)) as! FYHRechargeCell
-        let cell3 = mainTableView.cellForRow(at: IndexPath.init(row: 1, section: 0)) as! FYHRechargeCell
+        let cell2 = mainTableView.cellForRow(at: IndexPath.init(row: 1, section: 0)) as! FYHRechargeCell
+        let cell3 = mainTableView.cellForRow(at: IndexPath.init(row: 0, section: 1)) as! FYHRechargeCell
         
         let params = [
             "mobileCode" : Defaults["mobileCode"].stringValue,
@@ -61,7 +97,7 @@ class FYHWithdrawViewController: Base2ViewController {
             "account":cell2.content.text!,
             "amount":cell3.content.text!,
             "withdrawalType":withdrawalType,
-        ]
+            ]
         Alamofire.request(withdraw_ByAlipay,
                           method: .post, parameters: params,
                           encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
@@ -71,7 +107,6 @@ class FYHWithdrawViewController: Base2ViewController {
                                 if let j = response.result.value {
                                     //SwiftyJSON解析数据
                                     let JSOnDictory = JSON(j)
-                                    let data =  JSOnDictory["data"]
                                     let code =  JSOnDictory["code"].stringValue
                                     if code == "0" {
                                         setToast(str: "提现失败")
@@ -86,9 +121,9 @@ class FYHWithdrawViewController: Base2ViewController {
                                 setToast(str: "提现失败")
                             }
         }
-
     }
-
+    
+    
 
     override func requestData() {
         
@@ -150,13 +185,14 @@ class FYHWithdrawViewController: Base2ViewController {
             index = indexPath.row+3
         }
         
-        if mainModel.cashBalance.count == 0 {
+        if mainModel.cashBalance == nil {
             titles[1][1] = "可提现金额:￥"+"0"
         }
         
         cell.FYHRechargeCellSetValues(title: titles[indexPath.section][indexPath.row],index:index,model:mainModel)
-
+        cell.selectionStyle = .none
         cell.textDidChangedBlock = {
+            
             
             let cell1 = tableView.cellForRow(at: IndexPath.init(row: 0, section: 0)) as! FYHRechargeCell
             let cell2 = tableView.cellForRow(at: IndexPath.init(row: 0, section: 1)) as! FYHRechargeCell
@@ -167,7 +203,26 @@ class FYHWithdrawViewController: Base2ViewController {
                 self.certainBtn.isEnabled = true
                 self.certainBtn.setTitleColor(kSetRGBColor(r: 255, g: 255, b: 255), for: .normal)
                 self.certainBtn.backgroundColor = kSetRGBColor(r: 255, g: 93, b: 94)
+            }else{
+                
+                self.certainBtn.isEnabled = false
+                self.certainBtn.setTitleColor(kSetRGBColor(r: 117, g: 117, b: 117), for: .normal)
+                self.certainBtn.backgroundColor = kSetRGBColor(r: 222, g: 222, b: 222)
             }
+            
+            if !$0 {
+                self.titles[1][1] = $1
+                tableView.reloadRows(at: [IndexPath.init(row: 1, section: 1)], with: .none)
+                
+                self.certainBtn.isEnabled = false
+                self.certainBtn.setTitleColor(kSetRGBColor(r: 117, g: 117, b: 117), for: .normal)
+                self.certainBtn.backgroundColor = kSetRGBColor(r: 222, g: 222, b: 222)
+            }else{
+                
+                self.titles[1][1] = "可提现金额:￥"+self.mainModel.cashBalance
+                tableView.reloadRows(at: [IndexPath.init(row: 1, section: 1)], with: .none)
+            }
+
         }
         return cell
     }
@@ -196,10 +251,6 @@ class FYHWithdrawViewController: Base2ViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let model = mainTableArr[indexPath.section] as! FYHRCModel
-        let detailVC = FYHRCDetailViewController()
-        detailVC.id = model.id
-        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 
 }

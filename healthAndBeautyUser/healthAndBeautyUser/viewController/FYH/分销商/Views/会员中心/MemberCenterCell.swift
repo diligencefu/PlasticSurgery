@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MemberCenterCell: UITableViewCell {
 
@@ -27,7 +28,8 @@ class MemberCenterCell: UITableViewCell {
 
     func MemberCenterCellsetValuesWithModel(model:MemberModel) {
         
-        productImage.kf.setImage(with:  StringToUTF_8InUrl(str:model.memberImage))
+        productImage.kf.setImage(with: OCTools.getEfficientAddress(model.memberImage))
+        
         memberLevel.text = model.memberName
         rewardCount.text = "奖励"+model.integral+"积分"
         discount.text = "项目折扣: " + String(Float(model.discount)!*10)+"折"

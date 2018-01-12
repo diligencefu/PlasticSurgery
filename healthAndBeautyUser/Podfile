@@ -22,8 +22,10 @@ target 'healthAndBeautyUser' do
   pod 'ZFPlayer'
   pod 'FMDB'
   pod 'DZNEmptyDataSet'
-
+  pod 'SnapKit', '~> 3.0.0'
+  pod 'SDWebImage'
   # 滑动视图
   pod 'CDDPagerController'
+  pod 'WebViewJavascriptBridge'
   
 end

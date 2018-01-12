@@ -26,7 +26,6 @@ class FYHDistributorViewController: Wx_baseViewController,UITableViewDelegate,UI
 
     var distriModel = DistributorModel()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configSubViews()
@@ -123,9 +122,9 @@ class FYHDistributorViewController: Wx_baseViewController,UITableViewDelegate,UI
         if indexPath.section == 0 {
             
             if indexPath.row == 5 {
-                
                 let cell : DistributorCell2 = tableView.dequeueReusableCell(withIdentifier: identyfierTable1, for: indexPath) as! DistributorCell2
                 var flag = false
+                cell.selectionStyle = .none
                 if distriModel.isCash == "1" {
                     flag = true
                 }

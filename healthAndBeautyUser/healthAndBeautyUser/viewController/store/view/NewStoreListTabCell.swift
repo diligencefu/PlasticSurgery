@@ -27,6 +27,7 @@ class NewStoreListTabCell: NewMainCaseListTableViewCell {
         newPrice.text = "\(model.disPrice)"
         oldPrice.text = "\(model.salaPrice)"
         
+
         var sizes = getSizeOnLabel(newPrice)
         _ = newPrice.sd_layout()?
             .topSpaceToView(contentView,GET_SIZE * 175)?
@@ -47,6 +48,12 @@ class NewStoreListTabCell: NewMainCaseListTableViewCell {
             .widthIs(sizes.width+4)?
             .heightIs(0.5)
         type.isHidden = true
+        if model.isFree == "1" {
+            freeMark.isHidden = false
+        }else{
+            freeMark.isHidden = true
+        }
+
     }
     
     private var _goodsModel : NewStoreGoodsModel?
@@ -66,6 +73,7 @@ class NewStoreListTabCell: NewMainCaseListTableViewCell {
         newPrice.text = "\(model.disPrice)"
         oldPrice.text = "\(model.salaPrice)"
         
+        
         var sizes = getSizeOnLabel(newPrice)
         _ = newPrice.sd_layout()?
             .topSpaceToView(contentView,GET_SIZE * 175)?
@@ -86,5 +94,11 @@ class NewStoreListTabCell: NewMainCaseListTableViewCell {
             .widthIs(sizes.width+4)?
             .heightIs(0.5)
         type.isHidden = true
+        
+        if model.isFree == "1" {
+            freeMark.isHidden = false
+        }else{
+            freeMark.isHidden = true
+        }
     }
 }

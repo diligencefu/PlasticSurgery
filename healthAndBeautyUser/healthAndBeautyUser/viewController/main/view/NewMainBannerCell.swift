@@ -9,7 +9,35 @@
 import UIKit
 
 class NewMainBannerCell: Wx_baseTableViewCell {
-    var chooseAction:((String)->())?  //声明闭包
+    var chooseAction:((String,String)->())?  //声明闭包
+
+    func buildDataWithImages(images:[FYHSowMainADModel]) {
+        
+        var imageArr = [String]()
+        var imageArr2 = [String]()
+        var imageArr3 = [String]()
+        for model in images {
+            imageArr.append(model.infoBanner.imgUrl)
+            imageArr2.append(model.infoBanner.linkUrl)
+            imageArr3.append(model.infoBanner.name)
+        }
+        let model = NSMutableArray.init(array: imageArr)
+        banner.removeFromSuperview()
+        banner = ADView.init(frame:CGRect.init(x: 0, y: 0, width: WIDTH, height: GET_SIZE * 528),
+                             andImageURLArray: model,
+                             andIsRunning: true)
+        banner.block = {
+            delog($0)
+            if self.chooseAction != nil {
+//                for model in images {
+//                    if model.id == "" {
+//                    }
+//                }
+                self.chooseAction!(imageArr2[Int($0!)!-1],imageArr3[Int($0!)!-1])
+            }
+        }
+        contentView.addSubview(banner)
+    }
 
     func buildData() {
         
@@ -24,7 +52,7 @@ class NewMainBannerCell: Wx_baseTableViewCell {
         banner.block = {
             delog($0)
             if self.chooseAction != nil {
-                self.chooseAction!("")
+                self.chooseAction!("","")
             }
         }
         contentView.addSubview(banner)

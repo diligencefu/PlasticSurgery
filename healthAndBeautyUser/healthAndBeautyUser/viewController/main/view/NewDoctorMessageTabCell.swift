@@ -46,11 +46,7 @@ class NewDoctorMessageTabCell: UITableViewCell {
         anli.titleLabel?.lineBreakMode = .byWordWrapping
         anli.titleLabel?.numberOfLines = 0
         anli.titleLabel?.textAlignment = .center
-        zixun.setTitle("1\n咨询排行", for: .normal)
-        zixun.titleLabel?.lineBreakMode = .byWordWrapping
-        zixun.titleLabel?.numberOfLines = 0
-        zixun.titleLabel?.textAlignment = .center
-        
+
         follow.layer.cornerRadius = 5.0
         follow.layer.masksToBounds = true
         follow.layer.borderWidth = 0.5
@@ -72,7 +68,7 @@ class NewDoctorMessageTabCell: UITableViewCell {
     //懒得查了  预约 案例 咨询排行
     @IBOutlet weak var yuyue: UIButton!
     @IBOutlet weak var anli: UIButton!
-    @IBOutlet weak var zixun: UIButton!
+//    @IBOutlet weak var zixun: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -87,7 +83,7 @@ class NewDoctorMessageTabCell: UITableViewCell {
         switch sender.tag {
         case 666:
             delog("关注按钮")
-            followController()
+            followAction()
             break
         case 667:
             delog("预约")
@@ -164,4 +160,33 @@ class NewDoctorMessageTabCell: UITableViewCell {
         }
 
     }
+    
+    
+    func followAction() {
+        
+        if _model!.isFollow {
+            
+            
+            let alert = UIAlertController.init(title: "提示", message: "确定要取消关注吗？", preferredStyle: .alert)
+            
+            let action1 = UIAlertAction.init(title: "确定", style: .destructive) { (alertAction) in
+                self.followController()
+            }
+            let action2 = UIAlertAction.init(title: "取消", style: .cancel) { (alertAction) in
+                return
+            }
+            
+            alert.addAction(action1)
+            alert.addAction(action2)
+            
+            viewController()?.present(alert, animated: true, completion: nil)
+
+        }else{
+            followController()
+        }
+
+    }
+    
+    
+    
 }

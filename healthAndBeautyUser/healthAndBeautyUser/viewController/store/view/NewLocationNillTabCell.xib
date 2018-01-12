@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,7 +21,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前没有地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYp-9m-wsh">
-                        <rect key="frame" x="20" y="36" width="104" height="21"/>
+                        <rect key="frame" x="32" y="36" width="104" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Cql-oq-tde"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
@@ -36,9 +39,11 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="mYp-9m-wsh" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BWt-7Z-cj2"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="mYp-9m-wsh" secondAttribute="bottom" constant="25" id="Rxu-Y1-02e"/>
                     <constraint firstItem="mYp-9m-wsh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="gEc-6c-8yf"/>
                     <constraint firstItem="UHD-n4-daU" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="thc-JD-hCM"/>
                     <constraint firstAttribute="trailing" secondItem="UHD-n4-daU" secondAttribute="trailing" constant="12" id="tsX-a0-3rl"/>
+                    <constraint firstItem="mYp-9m-wsh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="25" id="uYb-Nb-bjE"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

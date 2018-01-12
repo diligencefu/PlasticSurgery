@@ -10,14 +10,14 @@ import UIKit
 
 class NewStoreDetailMostTableViewCell: Wx_baseTableViewCell {
     
-    private var _model : NewMineMessageModel?
-    var model : NewMineMessageModel? {
+    private var _model : FYHMineMessgeAllModel?
+    var model : FYHMineMessgeAllModel? {
         didSet {
             _model = model
             self.didSetModel(model!)
         }
     }
-    private func didSetModel(_ model: NewMineMessageModel) {
+    private func didSetModel(_ model: FYHMineMessgeAllModel) {
         
     }
     

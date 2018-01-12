@@ -18,6 +18,10 @@ class NewMineMessage_privateLetter_noticeTableViewCell: Wx_baseTableViewCell {
         }
     }
     
+    var whereCome = 1
+    var mainModel = NewMineMessageAssitModel()
+    
+    
     let head = UIImageView()
     let title = UILabel()
     let detail = UILabel()
@@ -69,7 +73,7 @@ class NewMineMessage_privateLetter_noticeTableViewCell: Wx_baseTableViewCell {
         _ = detail.sd_layout()?
             .topSpaceToView(title,4)?
             .leftSpaceToView(head,GET_SIZE * 24)?
-            .widthIs(GET_SIZE * 600)?
+            .minWidthIs(GET_SIZE * 600)?
             .heightIs(GET_SIZE * 30)
         
         time.textColor = UIColor.blue
@@ -90,15 +94,44 @@ class NewMineMessage_privateLetter_noticeTableViewCell: Wx_baseTableViewCell {
             .leftSpaceToView(contentView,0)?
             .widthIs(WIDTH)?
             .heightIs(0.5)
+        head.isUserInteractionEnabled = true
+        title.isUserInteractionEnabled = true
+        let tapGes = UITapGestureRecognizer.init(target: self, action: #selector(moveToBigImage(tap:)))
+        head.addGestureRecognizer(tapGes)
+        let tapGes1 = UITapGestureRecognizer.init(target: self, action: #selector(moveToBigImage(tap:)))
+        title.addGestureRecognizer(tapGes1)
+        
     }
     
+    @objc func moveToBigImage(tap:UITapGestureRecognizer) {
+        let me = newMineMeViewController()
+        if whereCome == 0 {
+//            me.id = _model!.
+            me.isMe = false
+        }else{
+            me.id = mainModel.personal.id
+            me.isMe = false
+        }
+        viewController()?.navigationController?.pushViewController(me, animated: true)
+    }
+
     private func didSetModel(_ model: NewMineMessageModel) {
-        
+        whereCome = 1
         head.image = UIImage(named:model.head)
         
         time.text = model.time
         detail.text = model.detail
         title.text = model.name
+    }
+    
+//    新粉丝
+    func SetValueWithModel(model: NewMineMessageAssitModel) {
+//        whereCome = 2
+//        mainModel = model
+//        head.kf.setImage(with:  StringToUTF_8InUrl(str:model.personal.photo))
+//        time.text = model.createDate
+//        detail.text = "关注了您"
+//        title.text = model.personal.nickName
     }
     
 }

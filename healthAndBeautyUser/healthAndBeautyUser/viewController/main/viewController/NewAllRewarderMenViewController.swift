@@ -108,9 +108,11 @@ extension NewAllRewarderMenViewController: UITableViewDelegate {
         me.isMe = false
         navigationController?.pushViewController(me, animated: true)
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 88
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row >= dataSource.count - 3 {
@@ -119,6 +121,7 @@ extension NewAllRewarderMenViewController: UITableViewDelegate {
                 buildData()
             }
         }
+        
         let cell : NewRewardListTableViewCell = tableView.dequeueReusableCell(withIdentifier: "NewRewardListTableViewCell", for: indexPath) as! NewRewardListTableViewCell
         cell.model = dataSource[indexPath.row]
         return cell

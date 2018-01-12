@@ -147,7 +147,7 @@ class NewMineNoteListTableViewCell: Wx_baseTableViewCell {
         follow.backgroundColor = backGroundColor
         follow.setTitleColor(tabbarColor, for: .normal)
         follow.titleLabel?.font = UIFont.systemFont(ofSize: GET_SIZE * 32)
-        follow.addTarget(self, action: #selector(followController), for: .touchUpInside)
+        follow.addTarget(self, action: #selector(followAction), for: .touchUpInside)
         viewRadius(follow, 5.0, 0.5, tabbarColor)
         contentView.addSubview(follow)
         _ = follow.sd_layout()?
@@ -165,7 +165,8 @@ class NewMineNoteListTableViewCell: Wx_baseTableViewCell {
             .topSpaceToView(head,5)?
             .leftSpaceToView(contentView,GET_SIZE * 30)?
             .rightSpaceToView(contentView,GET_SIZE * 30)?
-            .heightIs(GET_SIZE * 95)
+            .maxHeightIs(GET_SIZE * 95)
+//        .bottomSpaceToView(leftImg.top_sd,5)
         
         leftImg.contentMode = .scaleAspectFill
         leftImg.tag = 100
@@ -343,6 +344,32 @@ class NewMineNoteListTableViewCell: Wx_baseTableViewCell {
             SVPwillShowAndHide("请检查您的网路")
         }
     }
+    
+    
+    func followAction() {
+        
+        if _model!.follow {
+            
+            let alert = UIAlertController.init(title: "提示", message: "确定要取消关注吗？", preferredStyle: .alert)
+            
+            let action1 = UIAlertAction.init(title: "确定", style: .destructive) { (alertAction) in
+                self.followController()
+            }
+            let action2 = UIAlertAction.init(title: "取消", style: .cancel) { (alertAction) in
+                return
+            }
+            
+            alert.addAction(action1)
+            alert.addAction(action2)
+            
+            viewController()?.present(alert, animated: true, completion: nil)
+            
+        }else{
+            followController()
+        }
+    }
+
+    
     
     @objc private func gotoUser() {
         

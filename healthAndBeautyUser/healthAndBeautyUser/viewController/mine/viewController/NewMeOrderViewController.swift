@@ -67,7 +67,9 @@ class NewMeOrderViewController: Wx_baseViewController {
             up["SESSIONID"] = Defaults["SESSIONID"].stringValue
         }else {
             SVPwillShowAndHide("请登录后重新操作")
-            present(NewLoginLocationViewController(), animated: true, completion: nil)
+            let login = NewLoginLocationViewController.init(nibName: "NewLoginLocationViewController", bundle: nil)
+            let loginVC = Wx_baseNaviViewController.init(rootViewController: login)
+            self.present(loginVC, animated: true, completion: nil)
             return
         }
         
@@ -194,7 +196,6 @@ class NewMeOrderViewController: Wx_baseViewController {
                             model.productTotal = subJson["orderMain"]["productTotal"].float!
                             model.pickType = subJson["orderMain"]["pickType"].string!
 
-
                             model.list.goodId = subJson2["goodId"].string!
                             model.list.goodName = subJson2["goodName"].string!
                             model.list.goodChildName = subJson2["goodChildName"].string!
@@ -224,7 +225,9 @@ class NewMeOrderViewController: Wx_baseViewController {
             up["SESSIONID"] = Defaults["SESSIONID"].stringValue
         }else {
             SVPwillShowAndHide("请登录后重新操作")
-            present(NewLoginLocationViewController(), animated: true, completion: nil)
+            let login = NewLoginLocationViewController.init(nibName: "NewLoginLocationViewController", bundle: nil)
+            let loginVC = Wx_baseNaviViewController.init(rootViewController: login)
+            self.present(loginVC, animated: true, completion: nil)
             return
         }
         
@@ -257,6 +260,7 @@ class NewMeOrderViewController: Wx_baseViewController {
                                 model.productChildName = subJson2["productChildName"].string!
                                 model.reservationPrice = subJson2["reservationPrice"].float!
                                 model.prepaidPrice = subJson2["prepaidPrice"].float!
+                                model.isFree = subJson2["isFree"].string!
                                 model.num = subJson2["num"].int!
                                 model.discountReservation = subJson2["discountReservation"].float!
                                 model.discountRetainage = subJson2["discountRetainage"].float!
@@ -307,6 +311,7 @@ class NewMeOrderViewController: Wx_baseViewController {
                             model.residualPrice = subJson["residualPrice"].float!
                             model.num = subJson["num"].int!
                             model.discountReservation = subJson["discountReservation"].float!
+                            model.isFree = subJson["isFree"].string!
                             model.discountRetainage = subJson["discountRetainage"].float!
                             model.payStatus = subJson["payStatus"].string!
                             model.orderStatus = subJson["orderStatus"].string!

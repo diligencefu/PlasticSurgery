@@ -39,7 +39,8 @@ class NewSettingListExitAccountTableViewCell: Wx_baseTableViewCell {
     }
     
     @objc private func quiteAccount() {
-        
+        NotificationCenter.default.post(name: Notification.Name(rawValue: SuccessRefreshNotificationCenter_Login), object: self, userInfo: nil)
+
         delog("退出当前账号")
         Defaults.remove("SESSIONID")
         viewController()?.navigationController?.popToRootViewController(animated: true)

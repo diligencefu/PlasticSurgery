@@ -58,15 +58,15 @@ class FYHRechargeOrCashVC: Base2ViewController {
             textField = UITextField.init(frame: CGRect(x: 0, y: 0, width: kSCREEN_WIDTH, height: 45))
             textField.placeholder = "请输入充值金额"
             textField.textColor = kGaryColor(num: 117)
-            textField.leftViewRect(forBounds: CGRect(x: 0, y: 0, width: 180, height: 45))
+            textField.leftViewRect(forBounds: CGRect(x: 0, y: 0, width: 80, height: 45))
             textField.center = headView.center
             textField.backgroundColor = UIColor.white
             textField.leftViewMode = .always
-
-            let leftBG1 = UIView.init(frame: CGRect(x: 0, y: 0, width: 35, height: 45))
-            let leftView = UILabel.init(frame: CGRect(x: 0, y: 0, width: 32*kSCREEN_SCALE, height: 32*kSCREEN_SCALE))
+            textField.keyboardType = .numberPad
+            let leftBG1 = UIView.init(frame: CGRect(x: 0, y: 0, width: 80, height: 45))
+            let leftView = UILabel.init(frame: CGRect(x: 0, y: 0, width: 80, height: 45))
             leftView.textColor = kGaryColor(num: 117)
-            leftView.text = " 充值：(元)"
+            leftView.text = " 充值:(元)"
             leftBG1.addSubview(leftView)
             textField.leftView = leftBG1
             headView.addSubview(textField)
@@ -110,12 +110,9 @@ class FYHRechargeOrCashVC: Base2ViewController {
     
     
     override func rightAction(sender: UIButton) {
-        
-        if isRecharge {
-            
-        }else{
-            
-        }
+        let recordVC = FYHBsRecordViewController()
+        recordVC.isRecharge = isRecharge
+        self.navigationController?.pushViewController(recordVC, animated: true)
     }
     
     

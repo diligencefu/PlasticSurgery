@@ -16,6 +16,7 @@
 		1838896B1FD0EC5900485A84 /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183889641FD0EC5900485A84 /* VideoModel.swift */; };
 		1838896C1FD0EC5900485A84 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183889651FD0EC5900485A84 /* VideoViewController.swift */; };
 		1838896E1FD0F5DA00485A84 /* videoData.json in Resources */ = {isa = PBXBuildFile; fileRef = 1838896D1FD0F5D900485A84 /* videoData.json */; };
+		183D6DDC1FDE24BF00D097BA /* OCTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 183D6DDB1FDE24BF00D097BA /* OCTools.m */; };
 		184298ED1FDB7498003A852A /* FYHRCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184298EC1FDB7498003A852A /* FYHRCModel.swift */; };
 		184298EF1FDB74A9003A852A /* FYHRCDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184298EE1FDB74A9003A852A /* FYHRCDetailModel.swift */; };
 		184298F11FDB752C003A852A /* DistriDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184298F01FDB752C003A852A /* DistriDetailModel.swift */; };
@@ -42,6 +43,14 @@
 		1843A2FF1FDAABA800E69C6C /* FYHRCDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1843A2FE1FDAABA800E69C6C /* FYHRCDetailViewController.swift */; };
 		1843A3011FDAAD7300E69C6C /* FYHRecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1843A3001FDAAD7300E69C6C /* FYHRecommendViewController.swift */; };
 		1843A3031FDAAE0A00E69C6C /* FYHDistributionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1843A3021FDAAE0A00E69C6C /* FYHDistributionViewController.swift */; };
+		184ED52B1FF1D96400FBD0DC /* FYHShowIntegralStateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184ED5291FF1D96400FBD0DC /* FYHShowIntegralStateCell.swift */; };
+		184ED52C1FF1D96400FBD0DC /* FYHShowIntegralStateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184ED52A1FF1D96400FBD0DC /* FYHShowIntegralStateCell.xib */; };
+		184ED52E1FF1DBC500FBD0DC /* FYHMineMessgeAllModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184ED52D1FF1DBC500FBD0DC /* FYHMineMessgeAllModel.swift */; };
+		184ED5A61FF1F93A00FBD0DC /* FYHShowMessagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184ED5A41FF1F93A00FBD0DC /* FYHShowMessagesCell.swift */; };
+		184ED5A71FF1F93A00FBD0DC /* FYHShowMessagesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184ED5A51FF1F93A00FBD0DC /* FYHShowMessagesCell.xib */; };
+		184ED5BE1FF23ABC00FBD0DC /* FYHMineShowNitifCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184ED5BC1FF23ABC00FBD0DC /* FYHMineShowNitifCell.swift */; };
+		184ED5BF1FF23ABC00FBD0DC /* FYHMineShowNitifCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184ED5BD1FF23ABC00FBD0DC /* FYHMineShowNitifCell.xib */; };
+		184ED5C11FF23EC800FBD0DC /* FYHShowNotiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184ED5C01FF23EC800FBD0DC /* FYHShowNotiModel.swift */; };
 		185331DD1FD6AEDD008C9121 /* FYHDistributorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185331DC1FD6AEDD008C9121 /* FYHDistributorViewController.swift */; };
 		185331DF1FD6AF5C008C9121 /* TheGlobalVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185331DE1FD6AF5C008C9121 /* TheGlobalVariable.swift */; };
 		185331E11FD6B0BB008C9121 /* DistributorHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185331E01FD6B0BB008C9121 /* DistributorHeadView.swift */; };
@@ -52,6 +61,23 @@
 		185331EB1FD6B9ED008C9121 /* DistributorCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185331E91FD6B9ED008C9121 /* DistributorCell2.xib */; };
 		185331EE1FD6BC2D008C9121 /* DistributorCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185331EC1FD6BC2D008C9121 /* DistributorCell3.swift */; };
 		185331EF1FD6BC2D008C9121 /* DistributorCell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185331ED1FD6BC2D008C9121 /* DistributorCell3.xib */; };
+		1854141F1FF090E700C92482 /* FYHGetFreeGoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854141E1FF090E700C92482 /* FYHGetFreeGoodsViewController.swift */; };
+		185612E51FF0DE6C00B6758E /* FYHShowIntegralGoodsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185612E31FF0DE6C00B6758E /* FYHShowIntegralGoodsListCell.swift */; };
+		185612E61FF0DE6C00B6758E /* FYHShowIntegralGoodsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185612E41FF0DE6C00B6758E /* FYHShowIntegralGoodsListCell.xib */; };
+		185612EA1FF1017000B6758E /* FYHOrderForIntegralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185612E91FF1017000B6758E /* FYHOrderForIntegralViewController.swift */; };
+		185816D21FEA010F003E0A49 /* FYHIntegralModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185816D11FEA010F003E0A49 /* FYHIntegralModel.swift */; };
+		185816D41FEA157E003E0A49 /* FYHShowDoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185816D31FEA157E003E0A49 /* FYHShowDoneView.swift */; };
+		185816D61FEA1587003E0A49 /* FYHShowDoneView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185816D51FEA1587003E0A49 /* FYHShowDoneView.xib */; };
+		185816D91FEA3ECA003E0A49 /* FYHShowCJGooddsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185816D71FEA3ECA003E0A49 /* FYHShowCJGooddsCell.swift */; };
+		185816DA1FEA3ECA003E0A49 /* FYHShowCJGooddsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185816D81FEA3ECA003E0A49 /* FYHShowCJGooddsCell.xib */; };
+		185816E01FEA4289003E0A49 /* FYHConvertGoodsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185816DF1FEA4288003E0A49 /* FYHConvertGoodsModel.swift */; };
+		185816E21FEA5ACF003E0A49 /* FYHIntegralStoreViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185816E11FEA5ACF003E0A49 /* FYHIntegralStoreViewController1.swift */; };
+		185816E51FEA5D78003E0A49 /* FYHIntegralHeadCell0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185816E31FEA5D78003E0A49 /* FYHIntegralHeadCell0.swift */; };
+		185816E61FEA5D78003E0A49 /* FYHIntegralHeadCell0.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185816E41FEA5D78003E0A49 /* FYHIntegralHeadCell0.xib */; };
+		185816E91FEA5E4D003E0A49 /* FYHChoujiangCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185816E71FEA5E4D003E0A49 /* FYHChoujiangCollectionViewCell.swift */; };
+		185816EA1FEA5E4D003E0A49 /* FYHChoujiangCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185816E81FEA5E4D003E0A49 /* FYHChoujiangCollectionViewCell.xib */; };
+		185816ED1FEA5E68003E0A49 /* FYHGoodsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185816EB1FEA5E68003E0A49 /* FYHGoodsCollectionViewCell.swift */; };
+		185816EE1FEA5E68003E0A49 /* FYHGoodsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185816EC1FEA5E68003E0A49 /* FYHGoodsCollectionViewCell.xib */; };
 		1859DBDD1FD7890900D50619 /* APIUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859DBDC1FD7890900D50619 /* APIUrls.swift */; };
 		1859DBDF1FD78C9800D50619 /* DistributorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859DBDE1FD78C9800D50619 /* DistributorModel.swift */; };
 		1859DBE41FD79F8E00D50619 /* MemberCenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859DBE21FD79F8E00D50619 /* MemberCenterCell.swift */; };
@@ -64,7 +90,43 @@
 		1859DBF31FD7E65100D50619 /* PayWayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859DBF11FD7E65100D50619 /* PayWayCell.swift */; };
 		1859DBF41FD7E65100D50619 /* PayWayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1859DBF21FD7E65100D50619 /* PayWayCell.xib */; };
 		1859DBF61FD7E9D700D50619 /* FYHPayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859DBF51FD7E9D700D50619 /* FYHPayModel.swift */; };
+		185BDD9C1FE9055700C1A4DE /* LuckView.m in Sources */ = {isa = PBXBuildFile; fileRef = 185BDD9B1FE9055700C1A4DE /* LuckView.m */; };
+		185BDD9F1FE905DA00C1A4DE /* FYHIntegralStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185BDD9E1FE905DA00C1A4DE /* FYHIntegralStoreViewController.swift */; };
+		185BDDE31FE9103B00C1A4DE /* FYHLuckyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 185BDDE21FE9103B00C1A4DE /* FYHLuckyModel.m */; };
+		186E18C81FF375F500F7EB83 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186E18B01FF375F500F7EB83 /* Image.xcassets */; };
+		186E18C91FF375F500F7EB83 /* CXSearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E18B31FF375F500F7EB83 /* CXSearchModel.m */; };
+		186E18CA1FF375F500F7EB83 /* CXSearchSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E18B51FF375F500F7EB83 /* CXSearchSectionModel.m */; };
+		186E18CB1FF375F500F7EB83 /* CXShearchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186E18B71FF375F500F7EB83 /* CXShearchStoryboard.storyboard */; };
+		186E18CC1FF375F500F7EB83 /* CXDBHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E18BA1FF375F500F7EB83 /* CXDBHandle.m */; };
+		186E18CD1FF375F500F7EB83 /* CXSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E18BD1FF375F500F7EB83 /* CXSearchController.m */; };
+		186E18CE1FF375F500F7EB83 /* CXSearchCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E18C01FF375F500F7EB83 /* CXSearchCollectionViewCell.m */; };
+		186E18CF1FF375F500F7EB83 /* CXSearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186E18C11FF375F500F7EB83 /* CXSearchCollectionViewCell.xib */; };
+		186E18D01FF375F500F7EB83 /* CXTexeFileBgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E18C31FF375F500F7EB83 /* CXTexeFileBgView.m */; };
+		186E18D11FF375F500F7EB83 /* SelectCollectionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E18C51FF375F500F7EB83 /* SelectCollectionLayout.m */; };
+		186E18D21FF375F500F7EB83 /* SelectCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E18C71FF375F500F7EB83 /* SelectCollectionReusableView.m */; };
+		186E18D41FF37E8000F7EB83 /* FYHSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E18D31FF37E8000F7EB83 /* FYHSearchViewController.swift */; };
 		187394F61FD92ADB00AF26FC /* HBAlertPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 187394F51FD92ADA00AF26FC /* HBAlertPasswordView.m */; };
+		187D4B081FF32DA300EC552F /* FYHIntergralGoodsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D4B071FF32DA300EC552F /* FYHIntergralGoodsModel.swift */; };
+		187FB71A1FECEB5D00F9ADA9 /* FYHMainShowADCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187FB7181FECEB5D00F9ADA9 /* FYHMainShowADCell.swift */; };
+		187FB71B1FECEB5D00F9ADA9 /* FYHMainShowADCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187FB7191FECEB5D00F9ADA9 /* FYHMainShowADCell.xib */; };
+		187FB71D1FED090700F9ADA9 /* FYHMissionCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187FB71C1FED090700F9ADA9 /* FYHMissionCenterViewController.swift */; };
+		187FB7201FED0AF500F9ADA9 /* FYHTaskCenrtInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187FB71F1FED0AF500F9ADA9 /* FYHTaskCenrtInfoModel.swift */; };
+		187FB7221FED0BA500F9ADA9 /* FYHTaskCenterShowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187FB7211FED0BA500F9ADA9 /* FYHTaskCenterShowModel.swift */; };
+		187FB7251FED0E6A00F9ADA9 /* FYHTaskCenterHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187FB7231FED0E6A00F9ADA9 /* FYHTaskCenterHeadCell.swift */; };
+		187FB7261FED0E6A00F9ADA9 /* FYHTaskCenterHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187FB7241FED0E6A00F9ADA9 /* FYHTaskCenterHeadCell.xib */; };
+		187FB7291FED0E7B00F9ADA9 /* FYHTaskCenterShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187FB7271FED0E7B00F9ADA9 /* FYHTaskCenterShowCell.swift */; };
+		187FB72A1FED0E7B00F9ADA9 /* FYHTaskCenterShowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187FB7281FED0E7B00F9ADA9 /* FYHTaskCenterShowCell.xib */; };
+		18895DD81FEB8FF900F4723F /* FYHShowMyAwardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18895DD71FEB8FF900F4723F /* FYHShowMyAwardViewController.swift */; };
+		18895DDA1FEB959A00F4723F /* FYHShowGetGoodsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18895DD91FEB959A00F4723F /* FYHShowGetGoodsModel.swift */; };
+		18895DDD1FEBB8F900F4723F /* FYHSowMainADModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18895DDC1FEBB8F900F4723F /* FYHSowMainADModel.swift */; };
+		18AD15101FE50E9300DCEB80 /* FYHNetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AD150F1FE50E9300DCEB80 /* FYHNetWorkTools.swift */; };
+		18BCBEE71FE0FD1500FC05D6 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCBEE61FE0FD1500FC05D6 /* MainTabBarController.swift */; };
+		18BEC4261FF24BC800C13745 /* FYHShowInfoWithWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEC4251FF24BC800C13745 /* FYHShowInfoWithWebViewController.swift */; };
+		18CF003E1FDE667A00E46E05 /* FYHWithdrawTipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF003D1FDE667A00E46E05 /* FYHWithdrawTipVC.swift */; };
+		18CF00411FDE781100E46E05 /* FYHAccountRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF003F1FDE781100E46E05 /* FYHAccountRecordCell.swift */; };
+		18CF00421FDE781100E46E05 /* FYHAccountRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CF00401FDE781100E46E05 /* FYHAccountRecordCell.xib */; };
+		18CF00441FDE79AE00E46E05 /* FYHWRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF00431FDE79AE00E46E05 /* FYHWRecordModel.swift */; };
+		18CF00461FDE7AC600E46E05 /* FYHBsRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF00451FDE7AC600E46E05 /* FYHBsRecordViewController.swift */; };
 		AE01A5161FAB0A7900B958B5 /* NewSelectBookListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE01A5151FAB0A7900B958B5 /* NewSelectBookListModel.swift */; };
 		AE027FF51FB15444007EE587 /* NewMeOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE027FF41FB15444007EE587 /* NewMeOrderViewController.swift */; };
 		AE0D84B61FB3F10000D00847 /* NewOrderDetailDoctorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0D84B41FB3F10000D00847 /* NewOrderDetailDoctorTableViewCell.swift */; };
@@ -514,6 +576,8 @@
 		183889641FD0EC5900485A84 /* VideoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		183889651FD0EC5900485A84 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		1838896D1FD0F5D900485A84 /* videoData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = videoData.json; sourceTree = "<group>"; };
+		183D6DDA1FDE24BF00D097BA /* OCTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCTools.h; sourceTree = "<group>"; };
+		183D6DDB1FDE24BF00D097BA /* OCTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCTools.m; sourceTree = "<group>"; };
 		184298EC1FDB7498003A852A /* FYHRCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHRCModel.swift; sourceTree = "<group>"; };
 		184298EE1FDB74A9003A852A /* FYHRCDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHRCDetailModel.swift; sourceTree = "<group>"; };
 		184298F01FDB752C003A852A /* DistriDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistriDetailModel.swift; sourceTree = "<group>"; };
@@ -540,6 +604,14 @@
 		1843A2FE1FDAABA800E69C6C /* FYHRCDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHRCDetailViewController.swift; sourceTree = "<group>"; };
 		1843A3001FDAAD7300E69C6C /* FYHRecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHRecommendViewController.swift; sourceTree = "<group>"; };
 		1843A3021FDAAE0A00E69C6C /* FYHDistributionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHDistributionViewController.swift; sourceTree = "<group>"; };
+		184ED5291FF1D96400FBD0DC /* FYHShowIntegralStateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHShowIntegralStateCell.swift; sourceTree = "<group>"; };
+		184ED52A1FF1D96400FBD0DC /* FYHShowIntegralStateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYHShowIntegralStateCell.xib; sourceTree = "<group>"; };
+		184ED52D1FF1DBC500FBD0DC /* FYHMineMessgeAllModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHMineMessgeAllModel.swift; sourceTree = "<group>"; };
+		184ED5A41FF1F93A00FBD0DC /* FYHShowMessagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHShowMessagesCell.swift; sourceTree = "<group>"; };
+		184ED5A51FF1F93A00FBD0DC /* FYHShowMessagesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYHShowMessagesCell.xib; sourceTree = "<group>"; };
+		184ED5BC1FF23ABC00FBD0DC /* FYHMineShowNitifCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHMineShowNitifCell.swift; sourceTree = "<group>"; };
+		184ED5BD1FF23ABC00FBD0DC /* FYHMineShowNitifCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYHMineShowNitifCell.xib; sourceTree = "<group>"; };
+		184ED5C01FF23EC800FBD0DC /* FYHShowNotiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHShowNotiModel.swift; sourceTree = "<group>"; };
 		185331DC1FD6AEDD008C9121 /* FYHDistributorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHDistributorViewController.swift; sourceTree = "<group>"; };
 		185331DE1FD6AF5C008C9121 /* TheGlobalVariable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheGlobalVariable.swift; sourceTree = "<group>"; };
 		185331E01FD6B0BB008C9121 /* DistributorHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorHeadView.swift; sourceTree = "<group>"; };
@@ -550,6 +622,23 @@
 		185331E91FD6B9ED008C9121 /* DistributorCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DistributorCell2.xib; sourceTree = "<group>"; };
 		185331EC1FD6BC2D008C9121 /* DistributorCell3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorCell3.swift; sourceTree = "<group>"; };
 		185331ED1FD6BC2D008C9121 /* DistributorCell3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DistributorCell3.xib; sourceTree = "<group>"; };
+		1854141E1FF090E700C92482 /* FYHGetFreeGoodsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHGetFreeGoodsViewController.swift; sourceTree = "<group>"; };
+		185612E31FF0DE6C00B6758E /* FYHShowIntegralGoodsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHShowIntegralGoodsListCell.swift; sourceTree = "<group>"; };
+		185612E41FF0DE6C00B6758E /* FYHShowIntegralGoodsListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYHShowIntegralGoodsListCell.xib; sourceTree = "<group>"; };
+		185612E91FF1017000B6758E /* FYHOrderForIntegralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHOrderForIntegralViewController.swift; sourceTree = "<group>"; };
+		185816D11FEA010F003E0A49 /* FYHIntegralModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHIntegralModel.swift; sourceTree = "<group>"; };
+		185816D31FEA157E003E0A49 /* FYHShowDoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHShowDoneView.swift; sourceTree = "<group>"; };
+		185816D51FEA1587003E0A49 /* FYHShowDoneView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYHShowDoneView.xib; sourceTree = "<group>"; };
+		185816D71FEA3ECA003E0A49 /* FYHShowCJGooddsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHShowCJGooddsCell.swift; sourceTree = "<group>"; };
+		185816D81FEA3ECA003E0A49 /* FYHShowCJGooddsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYHShowCJGooddsCell.xib; sourceTree = "<group>"; };
+		185816DF1FEA4288003E0A49 /* FYHConvertGoodsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHConvertGoodsModel.swift; sourceTree = "<group>"; };
+		185816E11FEA5ACF003E0A49 /* FYHIntegralStoreViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHIntegralStoreViewController1.swift; sourceTree = "<group>"; };
+		185816E31FEA5D78003E0A49 /* FYHIntegralHeadCell0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHIntegralHeadCell0.swift; sourceTree = "<group>"; };
+		185816E41FEA5D78003E0A49 /* FYHIntegralHeadCell0.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYHIntegralHeadCell0.xib; sourceTree = "<group>"; };
+		185816E71FEA5E4D003E0A49 /* FYHChoujiangCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHChoujiangCollectionViewCell.swift; sourceTree = "<group>"; };
+		185816E81FEA5E4D003E0A49 /* FYHChoujiangCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYHChoujiangCollectionViewCell.xib; sourceTree = "<group>"; };
+		185816EB1FEA5E68003E0A49 /* FYHGoodsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHGoodsCollectionViewCell.swift; sourceTree = "<group>"; };
+		185816EC1FEA5E68003E0A49 /* FYHGoodsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYHGoodsCollectionViewCell.xib; sourceTree = "<group>"; };
 		1859DBDC1FD7890900D50619 /* APIUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIUrls.swift; path = "healthAndBeautyUser/viewController/FYH/分销商/Views/APIUrls.swift"; sourceTree = SOURCE_ROOT; };
 		1859DBDE1FD78C9800D50619 /* DistributorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorModel.swift; sourceTree = "<group>"; };
 		1859DBE21FD79F8E00D50619 /* MemberCenterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCenterCell.swift; sourceTree = "<group>"; };
@@ -562,8 +651,56 @@
 		1859DBF11FD7E65100D50619 /* PayWayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWayCell.swift; sourceTree = "<group>"; };
 		1859DBF21FD7E65100D50619 /* PayWayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayWayCell.xib; sourceTree = "<group>"; };
 		1859DBF51FD7E9D700D50619 /* FYHPayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHPayModel.swift; sourceTree = "<group>"; };
+		185BDD9A1FE9055700C1A4DE /* LuckView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckView.h; sourceTree = "<group>"; };
+		185BDD9B1FE9055700C1A4DE /* LuckView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckView.m; sourceTree = "<group>"; };
+		185BDD9E1FE905DA00C1A4DE /* FYHIntegralStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHIntegralStoreViewController.swift; sourceTree = "<group>"; };
+		185BDDA71FE90C3A00C1A4DE /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		185BDDA81FE90C3A00C1A4DE /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Extension.h"; path = "../../../../../../../Downloads/Lottery-master/Lottery/UIView+Extension.h"; sourceTree = "<group>"; };
+		185BDDE11FE9103B00C1A4DE /* FYHLuckyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYHLuckyModel.h; sourceTree = "<group>"; };
+		185BDDE21FE9103B00C1A4DE /* FYHLuckyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYHLuckyModel.m; sourceTree = "<group>"; };
+		186E18B01FF375F500F7EB83 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
+		186E18B21FF375F500F7EB83 /* CXSearchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXSearchModel.h; sourceTree = "<group>"; };
+		186E18B31FF375F500F7EB83 /* CXSearchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXSearchModel.m; sourceTree = "<group>"; };
+		186E18B41FF375F500F7EB83 /* CXSearchSectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXSearchSectionModel.h; sourceTree = "<group>"; };
+		186E18B51FF375F500F7EB83 /* CXSearchSectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXSearchSectionModel.m; sourceTree = "<group>"; };
+		186E18B71FF375F500F7EB83 /* CXShearchStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CXShearchStoryboard.storyboard; sourceTree = "<group>"; };
+		186E18B91FF375F500F7EB83 /* CXDBHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXDBHandle.h; sourceTree = "<group>"; };
+		186E18BA1FF375F500F7EB83 /* CXDBHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXDBHandle.m; sourceTree = "<group>"; };
+		186E18BC1FF375F500F7EB83 /* CXSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXSearchController.h; sourceTree = "<group>"; };
+		186E18BD1FF375F500F7EB83 /* CXSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXSearchController.m; sourceTree = "<group>"; };
+		186E18BF1FF375F500F7EB83 /* CXSearchCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXSearchCollectionViewCell.h; sourceTree = "<group>"; };
+		186E18C01FF375F500F7EB83 /* CXSearchCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXSearchCollectionViewCell.m; sourceTree = "<group>"; };
+		186E18C11FF375F500F7EB83 /* CXSearchCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CXSearchCollectionViewCell.xib; sourceTree = "<group>"; };
+		186E18C21FF375F500F7EB83 /* CXTexeFileBgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXTexeFileBgView.h; sourceTree = "<group>"; };
+		186E18C31FF375F500F7EB83 /* CXTexeFileBgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXTexeFileBgView.m; sourceTree = "<group>"; };
+		186E18C41FF375F500F7EB83 /* SelectCollectionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCollectionLayout.h; sourceTree = "<group>"; };
+		186E18C51FF375F500F7EB83 /* SelectCollectionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCollectionLayout.m; sourceTree = "<group>"; };
+		186E18C61FF375F500F7EB83 /* SelectCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCollectionReusableView.h; sourceTree = "<group>"; };
+		186E18C71FF375F500F7EB83 /* SelectCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCollectionReusableView.m; sourceTree = "<group>"; };
+		186E18D31FF37E8000F7EB83 /* FYHSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHSearchViewController.swift; sourceTree = "<group>"; };
 		187394F41FD92ADA00AF26FC /* HBAlertPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAlertPasswordView.h; sourceTree = "<group>"; };
 		187394F51FD92ADA00AF26FC /* HBAlertPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAlertPasswordView.m; sourceTree = "<group>"; };
+		187D4B071FF32DA300EC552F /* FYHIntergralGoodsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHIntergralGoodsModel.swift; sourceTree = "<group>"; };
+		187FB7181FECEB5D00F9ADA9 /* FYHMainShowADCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHMainShowADCell.swift; sourceTree = "<group>"; };
+		187FB7191FECEB5D00F9ADA9 /* FYHMainShowADCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYHMainShowADCell.xib; sourceTree = "<group>"; };
+		187FB71C1FED090700F9ADA9 /* FYHMissionCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHMissionCenterViewController.swift; sourceTree = "<group>"; };
+		187FB71F1FED0AF500F9ADA9 /* FYHTaskCenrtInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHTaskCenrtInfoModel.swift; sourceTree = "<group>"; };
+		187FB7211FED0BA500F9ADA9 /* FYHTaskCenterShowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHTaskCenterShowModel.swift; sourceTree = "<group>"; };
+		187FB7231FED0E6A00F9ADA9 /* FYHTaskCenterHeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHTaskCenterHeadCell.swift; sourceTree = "<group>"; };
+		187FB7241FED0E6A00F9ADA9 /* FYHTaskCenterHeadCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYHTaskCenterHeadCell.xib; sourceTree = "<group>"; };
+		187FB7271FED0E7B00F9ADA9 /* FYHTaskCenterShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHTaskCenterShowCell.swift; sourceTree = "<group>"; };
+		187FB7281FED0E7B00F9ADA9 /* FYHTaskCenterShowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYHTaskCenterShowCell.xib; sourceTree = "<group>"; };
+		18895DD71FEB8FF900F4723F /* FYHShowMyAwardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHShowMyAwardViewController.swift; sourceTree = "<group>"; };
+		18895DD91FEB959A00F4723F /* FYHShowGetGoodsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHShowGetGoodsModel.swift; sourceTree = "<group>"; };
+		18895DDC1FEBB8F900F4723F /* FYHSowMainADModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHSowMainADModel.swift; sourceTree = "<group>"; };
+		18AD150F1FE50E9300DCEB80 /* FYHNetWorkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHNetWorkTools.swift; sourceTree = "<group>"; };
+		18BCBEE61FE0FD1500FC05D6 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		18BEC4251FF24BC800C13745 /* FYHShowInfoWithWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHShowInfoWithWebViewController.swift; sourceTree = "<group>"; };
+		18CF003D1FDE667A00E46E05 /* FYHWithdrawTipVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHWithdrawTipVC.swift; sourceTree = "<group>"; };
+		18CF003F1FDE781100E46E05 /* FYHAccountRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHAccountRecordCell.swift; sourceTree = "<group>"; };
+		18CF00401FDE781100E46E05 /* FYHAccountRecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYHAccountRecordCell.xib; sourceTree = "<group>"; };
+		18CF00431FDE79AE00E46E05 /* FYHWRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHWRecordModel.swift; sourceTree = "<group>"; };
+		18CF00451FDE7AC600E46E05 /* FYHBsRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FYHBsRecordViewController.swift; sourceTree = "<group>"; };
 		8E53B1BB753D2B9B530A791F /* Pods-healthAndBeautyUser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-healthAndBeautyUser.release.xcconfig"; path = "Pods/Target Support Files/Pods-healthAndBeautyUser/Pods-healthAndBeautyUser.release.xcconfig"; sourceTree = "<group>"; };
 		AE01A5151FAB0A7900B958B5 /* NewSelectBookListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSelectBookListModel.swift; sourceTree = "<group>"; };
 		AE027FF41FB15444007EE587 /* NewMeOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMeOrderViewController.swift; sourceTree = "<group>"; };
@@ -1265,6 +1402,8 @@
 			children = (
 				184299021FDBE126003A852A /* FYHRechargeCell.swift */,
 				184299031FDBE126003A852A /* FYHRechargeCell.xib */,
+				18CF003F1FDE781100E46E05 /* FYHAccountRecordCell.swift */,
+				18CF00401FDE781100E46E05 /* FYHAccountRecordCell.xib */,
 			);
 			path = "提现";
 			sourceTree = "<group>";
@@ -1273,6 +1412,7 @@
 			isa = PBXGroup;
 			children = (
 				184299071FDBE33F003A852A /* FYHWithdrawModel.swift */,
+				18CF00431FDE79AE00E46E05 /* FYHWRecordModel.swift */,
 			);
 			path = "提现";
 			sourceTree = "<group>";
@@ -1313,17 +1453,6 @@
 				1843A2F71FDA9BDA00E69C6C /* FYHMyRecommendCell.xib */,
 			);
 			path = "我的推荐";
-			sourceTree = "<group>";
-		};
-		185331D51FD6ADF2008C9121 /* FYH */ = {
-			isa = PBXGroup;
-			children = (
-				1843A2FC1FDAA9FC00E69C6C /* Base2ViewController.swift */,
-				187394F31FD92ADA00AF26FC /* 密码弹框 */,
-				1859DBDB1FD788E100D50619 /* NetWorkTools */,
-				185331D91FD6AE67008C9121 /* 分销商 */,
-			);
-			path = FYH;
 			sourceTree = "<group>";
 		};
 		185331D61FD6AE06008C9121 /* Models */ = {
@@ -1369,6 +1498,8 @@
 				184298F81FDBC01F003A852A /* FYHRewardViewController.swift */,
 				184298FD1FDBCF70003A852A /* FYHRechargeOrCashVC.swift */,
 				184298FF1FDBE054003A852A /* FYHWithdrawViewController.swift */,
+				18CF003D1FDE667A00E46E05 /* FYHWithdrawTipVC.swift */,
+				18CF00451FDE7AC600E46E05 /* FYHBsRecordViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1384,10 +1515,40 @@
 			path = "分销商";
 			sourceTree = "<group>";
 		};
+		185612E71FF0DE7400B6758E /* 积分订单 */ = {
+			isa = PBXGroup;
+			children = (
+				185612E31FF0DE6C00B6758E /* FYHShowIntegralGoodsListCell.swift */,
+				185612E41FF0DE6C00B6758E /* FYHShowIntegralGoodsListCell.xib */,
+				184ED5291FF1D96400FBD0DC /* FYHShowIntegralStateCell.swift */,
+				184ED52A1FF1D96400FBD0DC /* FYHShowIntegralStateCell.xib */,
+			);
+			name = "积分订单";
+			sourceTree = "<group>";
+		};
+		185612E81FF1013C00B6758E /* 积分订单 */ = {
+			isa = PBXGroup;
+			children = (
+				185612E91FF1017000B6758E /* FYHOrderForIntegralViewController.swift */,
+			);
+			name = "积分订单";
+			sourceTree = "<group>";
+		};
+		185816CD1FEA00D2003E0A49 /* 积分商城 */ = {
+			isa = PBXGroup;
+			children = (
+				185816D11FEA010F003E0A49 /* FYHIntegralModel.swift */,
+				185816DF1FEA4288003E0A49 /* FYHConvertGoodsModel.swift */,
+				18895DD91FEB959A00F4723F /* FYHShowGetGoodsModel.swift */,
+			);
+			path = "积分商城";
+			sourceTree = "<group>";
+		};
 		1859DBDB1FD788E100D50619 /* NetWorkTools */ = {
 			isa = PBXGroup;
 			children = (
 				1859DBDC1FD7890900D50619 /* APIUrls.swift */,
+				18AD150F1FE50E9300DCEB80 /* FYHNetWorkTools.swift */,
 			);
 			path = NetWorkTools;
 			sourceTree = "<group>";
@@ -1427,6 +1588,130 @@
 			path = "支付";
 			sourceTree = "<group>";
 		};
+		185BDD991FE9054600C1A4DE /* 抽奖 */ = {
+			isa = PBXGroup;
+			children = (
+				185BDDA71FE90C3A00C1A4DE /* UIView+Extension.h */,
+				185BDDA81FE90C3A00C1A4DE /* UIView+Extension.h */,
+				185BDD9A1FE9055700C1A4DE /* LuckView.h */,
+				185BDD9B1FE9055700C1A4DE /* LuckView.m */,
+				185BDDE11FE9103B00C1A4DE /* FYHLuckyModel.h */,
+				185BDDE21FE9103B00C1A4DE /* FYHLuckyModel.m */,
+			);
+			path = "抽奖";
+			sourceTree = "<group>";
+		};
+		185BDD9D1FE9059300C1A4DE /* 积分商城 */ = {
+			isa = PBXGroup;
+			children = (
+				185BDD9E1FE905DA00C1A4DE /* FYHIntegralStoreViewController.swift */,
+				185816E11FEA5ACF003E0A49 /* FYHIntegralStoreViewController1.swift */,
+				18895DD71FEB8FF900F4723F /* FYHShowMyAwardViewController.swift */,
+				1854141E1FF090E700C92482 /* FYHGetFreeGoodsViewController.swift */,
+			);
+			name = "积分商城";
+			sourceTree = "<group>";
+		};
+		185BDDA01FE9073000C1A4DE /* 积分商城 */ = {
+			isa = PBXGroup;
+			children = (
+				185816E31FEA5D78003E0A49 /* FYHIntegralHeadCell0.swift */,
+				185816E41FEA5D78003E0A49 /* FYHIntegralHeadCell0.xib */,
+				185816E71FEA5E4D003E0A49 /* FYHChoujiangCollectionViewCell.swift */,
+				185816E81FEA5E4D003E0A49 /* FYHChoujiangCollectionViewCell.xib */,
+				185816EB1FEA5E68003E0A49 /* FYHGoodsCollectionViewCell.swift */,
+				185816EC1FEA5E68003E0A49 /* FYHGoodsCollectionViewCell.xib */,
+				185816D31FEA157E003E0A49 /* FYHShowDoneView.swift */,
+				185816D51FEA1587003E0A49 /* FYHShowDoneView.xib */,
+				185816D71FEA3ECA003E0A49 /* FYHShowCJGooddsCell.swift */,
+				185816D81FEA3ECA003E0A49 /* FYHShowCJGooddsCell.xib */,
+			);
+			name = "积分商城";
+			sourceTree = "<group>";
+		};
+		185BDDA61FE9097E00C1A4DE /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		186E18AE1FF375E100F7EB83 /* 搜索 */ = {
+			isa = PBXGroup;
+			children = (
+				188C51451FF4931200011502 /* model */,
+				188C51461FF4931C00011502 /* viewcontoller */,
+				186E18AF1FF375F500F7EB83 /* CXSearch */,
+			);
+			path = "搜索";
+			sourceTree = "<group>";
+		};
+		186E18AF1FF375F500F7EB83 /* CXSearch */ = {
+			isa = PBXGroup;
+			children = (
+				186E18B01FF375F500F7EB83 /* Image.xcassets */,
+				186E18B11FF375F500F7EB83 /* Model */,
+				186E18B61FF375F500F7EB83 /* Storyboard */,
+				186E18B81FF375F500F7EB83 /* Tools */,
+				186E18BB1FF375F500F7EB83 /* VC */,
+				186E18BE1FF375F500F7EB83 /* View */,
+			);
+			path = CXSearch;
+			sourceTree = "<group>";
+		};
+		186E18B11FF375F500F7EB83 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				186E18B21FF375F500F7EB83 /* CXSearchModel.h */,
+				186E18B31FF375F500F7EB83 /* CXSearchModel.m */,
+				186E18B41FF375F500F7EB83 /* CXSearchSectionModel.h */,
+				186E18B51FF375F500F7EB83 /* CXSearchSectionModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		186E18B61FF375F500F7EB83 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				186E18B71FF375F500F7EB83 /* CXShearchStoryboard.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		186E18B81FF375F500F7EB83 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				186E18B91FF375F500F7EB83 /* CXDBHandle.h */,
+				186E18BA1FF375F500F7EB83 /* CXDBHandle.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		186E18BB1FF375F500F7EB83 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				186E18BC1FF375F500F7EB83 /* CXSearchController.h */,
+				186E18BD1FF375F500F7EB83 /* CXSearchController.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		186E18BE1FF375F500F7EB83 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				186E18BF1FF375F500F7EB83 /* CXSearchCollectionViewCell.h */,
+				186E18C01FF375F500F7EB83 /* CXSearchCollectionViewCell.m */,
+				186E18C11FF375F500F7EB83 /* CXSearchCollectionViewCell.xib */,
+				186E18C21FF375F500F7EB83 /* CXTexeFileBgView.h */,
+				186E18C31FF375F500F7EB83 /* CXTexeFileBgView.m */,
+				186E18C41FF375F500F7EB83 /* SelectCollectionLayout.h */,
+				186E18C51FF375F500F7EB83 /* SelectCollectionLayout.m */,
+				186E18C61FF375F500F7EB83 /* SelectCollectionReusableView.h */,
+				186E18C71FF375F500F7EB83 /* SelectCollectionReusableView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		187394F31FD92ADA00AF26FC /* 密码弹框 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1434,6 +1719,71 @@
 				187394F51FD92ADA00AF26FC /* HBAlertPasswordView.m */,
 			);
 			path = "密码弹框";
+			sourceTree = "<group>";
+		};
+		187D4B061FF32D6B00EC552F /* 积分订单 */ = {
+			isa = PBXGroup;
+			children = (
+				187D4B071FF32DA300EC552F /* FYHIntergralGoodsModel.swift */,
+			);
+			name = "积分订单";
+			sourceTree = "<group>";
+		};
+		187FB7171FECEB2C00F9ADA9 /* 广告 */ = {
+			isa = PBXGroup;
+			children = (
+				187FB7181FECEB5D00F9ADA9 /* FYHMainShowADCell.swift */,
+				187FB7191FECEB5D00F9ADA9 /* FYHMainShowADCell.xib */,
+			);
+			name = "广告";
+			sourceTree = "<group>";
+		};
+		187FB71E1FED0ACA00F9ADA9 /* 任务中心 */ = {
+			isa = PBXGroup;
+			children = (
+				187FB71F1FED0AF500F9ADA9 /* FYHTaskCenrtInfoModel.swift */,
+				187FB7211FED0BA500F9ADA9 /* FYHTaskCenterShowModel.swift */,
+			);
+			name = "任务中心";
+			sourceTree = "<group>";
+		};
+		18895DDB1FEBB8DD00F4723F /* 广告 */ = {
+			isa = PBXGroup;
+			children = (
+				18895DDC1FEBB8F900F4723F /* FYHSowMainADModel.swift */,
+			);
+			path = "广告";
+			sourceTree = "<group>";
+		};
+		188C51451FF4931200011502 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		188C51461FF4931C00011502 /* viewcontoller */ = {
+			isa = PBXGroup;
+			children = (
+				186E18D31FF37E8000F7EB83 /* FYHSearchViewController.swift */,
+			);
+			path = viewcontoller;
+			sourceTree = "<group>";
+		};
+		189101F11FDF8A0B003C3569 /* FYH */ = {
+			isa = PBXGroup;
+			children = (
+				183D6DDA1FDE24BF00D097BA /* OCTools.h */,
+				183D6DDB1FDE24BF00D097BA /* OCTools.m */,
+				1843A2FC1FDAA9FC00E69C6C /* Base2ViewController.swift */,
+				18BEC4251FF24BC800C13745 /* FYHShowInfoWithWebViewController.swift */,
+				185BDD991FE9054600C1A4DE /* 抽奖 */,
+				187394F31FD92ADA00AF26FC /* 密码弹框 */,
+				1859DBDB1FD788E100D50619 /* NetWorkTools */,
+				186E18AE1FF375E100F7EB83 /* 搜索 */,
+				185331D91FD6AE67008C9121 /* 分销商 */,
+			);
+			path = FYH;
 			sourceTree = "<group>";
 		};
 		19E70AC447CAC600142C2962 /* Pods */ = {
@@ -1831,6 +2181,10 @@
 				D841D6C91F45645400C2C152 /* NewMineMessage_privateLetter_noticeTableViewCell.swift */,
 				D841D6D41F457B9100C2C152 /* NewMineMessage_assitTableViewCell.swift */,
 				D841D6D81F45811800C2C152 /* NewMineMessage_CommentTableViewCell.swift */,
+				184ED5A41FF1F93A00FBD0DC /* FYHShowMessagesCell.swift */,
+				184ED5A51FF1F93A00FBD0DC /* FYHShowMessagesCell.xib */,
+				184ED5BC1FF23ABC00FBD0DC /* FYHMineShowNitifCell.swift */,
+				184ED5BD1FF23ABC00FBD0DC /* FYHMineShowNitifCell.xib */,
 			);
 			name = "消息";
 			sourceTree = "<group>";
@@ -1841,6 +2195,8 @@
 				D841D6D21F457A8000C2C152 /* NewMineMessageModel.swift */,
 				D841D6D61F457E1B00C2C152 /* NewMineMessageAssitModel.swift */,
 				D841D6DA1F458F4A00C2C152 /* NewMineMessageCommentModel.swift */,
+				184ED52D1FF1DBC500FBD0DC /* FYHMineMessgeAllModel.swift */,
+				184ED5C01FF23EC800FBD0DC /* FYHShowNotiModel.swift */,
 			);
 			name = "消息";
 			sourceTree = "<group>";
@@ -2089,6 +2445,7 @@
 			isa = PBXGroup;
 			children = (
 				D8621E081F552E4D00186DE8 /* NewMineJobViewController.swift */,
+				187FB71C1FED090700F9ADA9 /* FYHMissionCenterViewController.swift */,
 			);
 			name = "任务中心";
 			sourceTree = "<group>";
@@ -2392,6 +2749,10 @@
 			children = (
 				D8A103441F5538F30074BD41 /* NewMineJob_topTableViewCell.swift */,
 				D86C59461F5649F00039BBB3 /* NewMineJob_listTableViewCell.swift */,
+				187FB7231FED0E6A00F9ADA9 /* FYHTaskCenterHeadCell.swift */,
+				187FB7241FED0E6A00F9ADA9 /* FYHTaskCenterHeadCell.xib */,
+				187FB7271FED0E7B00F9ADA9 /* FYHTaskCenterShowCell.swift */,
+				187FB7281FED0E7B00F9ADA9 /* FYHTaskCenterShowCell.xib */,
 			);
 			name = "任务中心";
 			sourceTree = "<group>";
@@ -2736,12 +3097,14 @@
 				D8D89D4D1F3C3A970003B7FD /* ViewController.swift */,
 				D8D89D4F1F3C3A970003B7FD /* Main.storyboard */,
 				D8D89D521F3C3A970003B7FD /* Assets.xcassets */,
+				185BDDA61FE9097E00C1A4DE /* New Group */,
 				D8D89D541F3C3A970003B7FD /* LaunchScreen.storyboard */,
 				D8D89D571F3C3A970003B7FD /* Info.plist */,
 				D8AA35BE1F5D48D400A8EC89 /* hubSwift.gif */,
 				D8D89DA31F3C472A0003B7FD /* wx_ThirdService.swift */,
 				D8D89DA51F3C47F00003B7FD /* debugModel.swift */,
 				D8FD0FC11F8A33AA00A03954 /* SQLiteManager.swift */,
+				18BCBEE61FE0FD1500FC05D6 /* MainTabBarController.swift */,
 				AE9DDF261FBEABCE00C5D643 /* NewLaunchADViewController.swift */,
 			);
 			path = healthAndBeautyUser;
@@ -2835,7 +3198,7 @@
 		D8D89D841F3C46C20003B7FD /* viewController */ = {
 			isa = PBXGroup;
 			children = (
-				185331D51FD6ADF2008C9121 /* FYH */,
+				189101F11FDF8A0B003C3569 /* FYH */,
 				D8D89D851F3C46C20003B7FD /* base */,
 				D8D89D891F3C46C20003B7FD /* login */,
 				D8D89D8D1F3C46C20003B7FD /* main */,
@@ -2933,6 +3296,8 @@
 		D8D89D8E1F3C46C20003B7FD /* model */ = {
 			isa = PBXGroup;
 			children = (
+				18895DDB1FEBB8DD00F4723F /* 广告 */,
+				185816CD1FEA00D2003E0A49 /* 积分商城 */,
 				AE31FA261FC7CF3C00B199AF /* 手术现场 */,
 				D82DDCFE1F9A049600733932 /* New Group */,
 				D8DB041E1F79007E00E27FC7 /* 日记案例 */,
@@ -2944,6 +3309,8 @@
 		D8D89D8F1F3C46C20003B7FD /* view */ = {
 			isa = PBXGroup;
 			children = (
+				187FB7171FECEB2C00F9ADA9 /* 广告 */,
+				185BDDA01FE9073000C1A4DE /* 积分商城 */,
 				AE31FA211FC7C7BC00B199AF /* 手术线场 */,
 				D8838E211F73CF29006D48CF /* 百科 */,
 				D8D7BA651F7272D9002667F6 /* 日记案例 */,
@@ -2958,6 +3325,7 @@
 		D8D89D901F3C46C20003B7FD /* viewController */ = {
 			isa = PBXGroup;
 			children = (
+				185BDD9D1FE9059300C1A4DE /* 积分商城 */,
 				D8D7BA2B1F72662C002667F6 /* 日记案例 */,
 				D86254AE1F4C0A57003C8B7C /* 手术动态 */,
 				D862549E1F4C0662003C8B7C /* 城市 */,
@@ -2983,6 +3351,8 @@
 		D8D89D921F3C46C20003B7FD /* model */ = {
 			isa = PBXGroup;
 			children = (
+				187D4B061FF32D6B00EC552F /* 积分订单 */,
+				187FB71E1FED0ACA00F9ADA9 /* 任务中心 */,
 				D8CD1D2D1FA06E2300F8B90B /* 收藏 */,
 				D8DBCA441F90AA6C0059F8F2 /* 我 */,
 				D8D3D0F71F468DF900F9FD50 /* 优惠券 */,
@@ -2999,6 +3369,7 @@
 		D8D89D931F3C46C20003B7FD /* view */ = {
 			isa = PBXGroup;
 			children = (
+				185612E71FF0DE7400B6758E /* 积分订单 */,
 				D8A103431F5538D50074BD41 /* 任务中心 */,
 				D86C573F1F53FC7600014F29 /* 收藏 */,
 				D86C57371F516DD700014F29 /* 我 */,
@@ -3016,6 +3387,7 @@
 		D8D89D941F3C46C20003B7FD /* viewController */ = {
 			isa = PBXGroup;
 			children = (
+				185612E81FF1013C00B6758E /* 积分订单 */,
 				D8621E071F550B0F00186DE8 /* 任务中心 */,
 				D86C573E1F53FC6E00014F29 /* 收藏 */,
 				D8D3D0F11F4686BD00F9FD50 /* 优惠券 */,
@@ -3290,8 +3662,10 @@
 				D898F54B1F908E2800AE5734 /* NewMineMe_detailsTableViewCell.xib in Resources */,
 				D85313C81F7CBC0000B2FC86 /* NewCreateNoteTimeTabCell.xib in Resources */,
 				AED5A7741FA70269001E9B58 /* NewShoppingCarViewController.xib in Resources */,
+				185816D61FEA1587003E0A49 /* FYHShowDoneView.xib in Resources */,
 				1843A2F11FDA9B7700E69C6C /* FYHRCDetailCell.xib in Resources */,
 				D822E3171F9DE313003D60E6 /* NewStoreDetailMainDetailTabCell.xib in Resources */,
+				185612E61FF0DE6C00B6758E /* FYHShowIntegralGoodsListCell.xib in Resources */,
 				D85313D21F7CCA7900B2FC86 /* NewTagCollecCell.xib in Resources */,
 				D86254AD1F4C0782003C8B7C /* hotCities.plist in Resources */,
 				AEB505111FCE839A003DBF71 /* NewSeting_ComplainViewController.xib in Resources */,
@@ -3299,6 +3673,7 @@
 				AE62B19D1FAC02A200315DD3 /* NewPaySuccessOrFailedViewController.xib in Resources */,
 				D8D89D531F3C3A970003B7FD /* Assets.xcassets in Resources */,
 				D8D7BA7A1F727ECA002667F6 /* xiala_icon_default@3x.png in Resources */,
+				184ED5A71FF1F93A00FBD0DC /* FYHShowMessagesCell.xib in Resources */,
 				D8D7BA751F727EBC002667F6 /* shangla_icon_default@2x.png in Resources */,
 				D8AA00041FA179C0003A381C /* NewReviewHeadTabCell.xib in Resources */,
 				D8D7BA0D1F72073E002667F6 /* BRCity.plist in Resources */,
@@ -3312,6 +3687,7 @@
 				D8D7BA761F727EBC002667F6 /* shangla_icon_default@3x.png in Resources */,
 				AE1B59A61FB2A9EE0017B28F /* NewMeDetailOrderViewController.xib in Resources */,
 				D8838E371F74BEEE006D48CF /* NewRegistViewController.xib in Resources */,
+				184ED5BF1FF23ABC00FBD0DC /* FYHMineShowNitifCell.xib in Resources */,
 				D8838E2B1F74B37D006D48CF /* NewLoginLocationViewController.xib in Resources */,
 				D8D89D511F3C3A970003B7FD /* Main.storyboard in Resources */,
 				D8AEF4ED1F9B2AF70033BEEA /* NewDoctorDetailTableViewCell.xib in Resources */,
@@ -3327,10 +3703,14 @@
 				AE40B1331FB6A13500ED4AD0 /* NewGoodsOrderDetailViewController.xib in Resources */,
 				1838896E1FD0F5DA00485A84 /* videoData.json in Resources */,
 				AE40B1391FB6DA0B00ED4AD0 /* NewAddEvaluateViewController.xib in Resources */,
+				187FB7261FED0E6A00F9ADA9 /* FYHTaskCenterHeadCell.xib in Resources */,
 				1843A2F91FDA9BDA00E69C6C /* FYHMyRecommendCell.xib in Resources */,
 				1843A2F51FDA9BA600E69C6C /* FYHDistributionDetailCell.xib in Resources */,
 				D8D7BA791F727ECA002667F6 /* xiala_icon_default@2x.png in Resources */,
 				D822E31F1F9DE812003D60E6 /* NewStoreDetailGoodsDetailTabCell.xib in Resources */,
+				185816DA1FEA3ECA003E0A49 /* FYHShowCJGooddsCell.xib in Resources */,
+				187FB71B1FECEB5D00F9ADA9 /* FYHMainShowADCell.xib in Resources */,
+				185816EE1FEA5E68003E0A49 /* FYHGoodsCollectionViewCell.xib in Resources */,
 				AEEB6CAB1FAD6D34007C408A /* NewSetPasswordViewController.xib in Resources */,
 				D8AA35BF1F5D48D400A8EC89 /* hubSwift.gif in Resources */,
 				AE0D84B71FB3F10000D00847 /* NewOrderDetailDoctorTableViewCell.xib in Resources */,
@@ -3340,11 +3720,16 @@
 				AEC1B5141FAAEE20000C6258 /* NewDontSelectBookTabCell.xib in Resources */,
 				D82DDCFB1F9A01E400733932 /* NewAllRewarderMenViewController.xib in Resources */,
 				184298F71FDBBE77003A852A /* FYHRewardCell.xib in Resources */,
+				186E18CB1FF375F500F7EB83 /* CXShearchStoryboard.storyboard in Resources */,
+				186E18CF1FF375F500F7EB83 /* CXSearchCollectionViewCell.xib in Resources */,
 				AEEB6CB91FADB88B007C408A /* NewMeDetailTableViewCell.xib in Resources */,
 				185331EB1FD6B9ED008C9121 /* DistributorCell2.xib in Resources */,
 				D8D7B9D21F71204E002667F6 /* NewNoteCreateBooksViewController.xib in Resources */,
 				AEC1B50C1FAAE4F9000C6258 /* NewLocationNillTabCell.xib in Resources */,
 				1859DBF01FD7E25A00D50619 /* PayHeadCell.xib in Resources */,
+				185816E61FEA5D78003E0A49 /* FYHIntegralHeadCell0.xib in Resources */,
+				18CF00421FDE781100E46E05 /* FYHAccountRecordCell.xib in Resources */,
+				184ED52C1FF1D96400FBD0DC /* FYHShowIntegralStateCell.xib in Resources */,
 				AEBDD44A1FA96EFA0047C85A /* NewRequireLocationTableViewCell.xib in Resources */,
 				D8EA1C451F9B36E6007C370F /* NewDoctorAppointtmentViewController.xib in Resources */,
 				AED5A7701FA6ED44001E9B58 /* NewShoppingCarTabCell.xib in Resources */,
@@ -3354,6 +3739,7 @@
 				185331EF1FD6BC2D008C9121 /* DistributorCell3.xib in Resources */,
 				AEBDD45B1FA9B10B0047C85A /* NewAddLocationViewController.xib in Resources */,
 				D8AA00081FA18190003A381C /* NewReviewDetailTabCell.xib in Resources */,
+				187FB72A1FED0E7B00F9ADA9 /* FYHTaskCenterShowCell.xib in Resources */,
 				AEBDD45F1FA9B3F70047C85A /* NewLocationListTabCell.xib in Resources */,
 				D8838E251F73CF5E006D48CF /* NewMain_BaiKeTabCell.xib in Resources */,
 				AE9610EA1FB943AD001F9246 /* AlipaySDK.bundle in Resources */,
@@ -3363,7 +3749,9 @@
 				AE31FA151FC7C09100B199AF /* NewNowPayViewController.xib in Resources */,
 				AEF2F4481FA806CA00F520B2 /* NewRequireOrderViewController.xib in Resources */,
 				D85313CC1F7CC45700B2FC86 /* NewCreateNoteLevelTabCell.xib in Resources */,
+				186E18C81FF375F500F7EB83 /* Image.xcassets in Resources */,
 				184299051FDBE126003A852A /* FYHRechargeCell.xib in Resources */,
+				185816EA1FEA5E4D003E0A49 /* FYHChoujiangCollectionViewCell.xib in Resources */,
 				D8EA1C4E1F9B3D7F007C370F /* NewDoctorProjectViewController.xib in Resources */,
 				D8E88CB31F7BAACC003295D6 /* NewNoteCreateViewController.xib in Resources */,
 			);
@@ -3425,8 +3813,10 @@
 				"${BUILT_PRODUCTS_DIR}/SDAutoLayout/SDAutoLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
+				"${BUILT_PRODUCTS_DIR}/WebViewJavascriptBridge/WebViewJavascriptBridge.framework",
 				"${BUILT_PRODUCTS_DIR}/ZFPlayer/ZFPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
@@ -3445,8 +3835,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDAutoLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebViewJavascriptBridge.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZFPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
@@ -3495,7 +3887,9 @@
 				D896644E1F8CBC5F00B26F2B /* YYAnimatedImageView.h in Sources */,
 				D896644F1F8CBC5F00B26F2B /* YYAnimatedImageView.m in Sources */,
 				D8280BA11F9F1E1400C0C60F /* NewStoreCommentTabCell.swift in Sources */,
+				184ED5BE1FF23ABC00FBD0DC /* FYHMineShowNitifCell.swift in Sources */,
 				AE62B19C1FAC02A200315DD3 /* NewPaySuccessOrFailedViewController.swift in Sources */,
+				185BDDE31FE9103B00C1A4DE /* FYHLuckyModel.m in Sources */,
 				D89664501F8CBC5F00B26F2B /* YYFrameImage.h in Sources */,
 				D89664511F8CBC5F00B26F2B /* YYFrameImage.m in Sources */,
 				1843A2F81FDA9BDA00E69C6C /* FYHMyRecommendCell.swift in Sources */,
@@ -3503,7 +3897,9 @@
 				AED7E65D1FB002CC005E9629 /* NewEditSelectTabTabCell.swift in Sources */,
 				1843A2FB1FDAA94C00E69C6C /* FYHRCViewController.swift in Sources */,
 				D89664521F8CBC5F00B26F2B /* YYImage.h in Sources */,
+				1854141F1FF090E700C92482 /* FYHGetFreeGoodsViewController.swift in Sources */,
 				D89664531F8CBC5F00B26F2B /* YYImage.m in Sources */,
+				185816E01FEA4289003E0A49 /* FYHConvertGoodsModel.swift in Sources */,
 				AE31FA141FC7C09100B199AF /* NewNowPayViewController.swift in Sources */,
 				D89664541F8CBC5F00B26F2B /* YYImageCoder.h in Sources */,
 				D89664551F8CBC5F00B26F2B /* YYImageCoder.m in Sources */,
@@ -3512,6 +3908,7 @@
 				D89664571F8CBC5F00B26F2B /* YYSpriteSheetImage.m in Sources */,
 				D89664581F8CBC5F00B26F2B /* YYImageCache.h in Sources */,
 				D89664591F8CBC5F00B26F2B /* YYImageCache.m in Sources */,
+				187FB7221FED0BA500F9ADA9 /* FYHTaskCenterShowModel.swift in Sources */,
 				D896645A1F8CBC5F00B26F2B /* YYWebImage.h in Sources */,
 				D896645B1F8CBC5F00B26F2B /* YYWebImageManager.h in Sources */,
 				D896645C1F8CBC5F00B26F2B /* YYWebImageManager.m in Sources */,
@@ -3522,12 +3919,14 @@
 				D896645E1F8CBC5F00B26F2B /* YYWebImageOperation.m in Sources */,
 				AEBDD4501FA9AE4F0047C85A /* NewStoreLocationModel.swift in Sources */,
 				1843A3011FDAAD7300E69C6C /* FYHRecommendViewController.swift in Sources */,
+				187FB71D1FED090700F9ADA9 /* FYHMissionCenterViewController.swift in Sources */,
 				D89664321F8CBC4B00B26F2B /* KSPhotoBrowser.h in Sources */,
 				D89664331F8CBC4B00B26F2B /* KSPhotoBrowser.m in Sources */,
 				AE8D07F71FB1AD3500891213 /* NewMeOrderControllerTabCell.swift in Sources */,
 				D89664341F8CBC4B00B26F2B /* KSPhotoItem.h in Sources */,
 				D89664351F8CBC4B00B26F2B /* KSPhotoItem.m in Sources */,
 				184298EF1FDB74A9003A852A /* FYHRCDetailModel.swift in Sources */,
+				18AD15101FE50E9300DCEB80 /* FYHNetWorkTools.swift in Sources */,
 				D89664361F8CBC4B00B26F2B /* KSPhotoView.h in Sources */,
 				D89664371F8CBC4B00B26F2B /* KSPhotoView.m in Sources */,
 				AEC1B50F1FAAEAE6000C6258 /* NewSelectDiscountsBookViewController.swift in Sources */,
@@ -3536,11 +3935,14 @@
 				D89664381F8CBC4B00B26F2B /* KSProgressLayer.h in Sources */,
 				D89664391F8CBC4B00B26F2B /* KSProgressLayer.m in Sources */,
 				D86C573D1F53B1D700014F29 /* NewMineMe_didTableViewCell.swift in Sources */,
+				18CF00411FDE781100E46E05 /* FYHAccountRecordCell.swift in Sources */,
 				D8B7739B1F74F5F000E81CE4 /* NewMain_BaiKe_detailModel.swift in Sources */,
 				D8380C5A1F4AC7BE00C6DB63 /* NewMain_freeViewController.swift in Sources */,
 				D8380C3B1F4837C500C6DB63 /* UIView+EasyFrame.m in Sources */,
 				D86DDBCE1F5E408F0052BE4B /* NewStoreCouponsModel.swift in Sources */,
+				185BDD9C1FE9055700C1A4DE /* LuckView.m in Sources */,
 				D822E3161F9DE313003D60E6 /* NewStoreDetailMainDetailTabCell.swift in Sources */,
+				183D6DDC1FDE24BF00D097BA /* OCTools.m in Sources */,
 				D8B1ECD81F3D42CA0037904F /* wx_GlobalFunctionSwiftFile.swift in Sources */,
 				AE40B1321FB6A13500ED4AD0 /* NewGoodsOrderDetailViewController.swift in Sources */,
 				D8380C161F46E70700C6DB63 /* NewStoreDetailModel.swift in Sources */,
@@ -3558,6 +3960,7 @@
 				D8380C511F4AA79C00C6DB63 /* Wx_CollectionViewHeader.swift in Sources */,
 				D8380C251F48214C00C6DB63 /* NewMainIconCollectionViewCell.swift in Sources */,
 				D8380C441F4A76A000C6DB63 /* JTSegmentControl.swift in Sources */,
+				18BCBEE71FE0FD1500FC05D6 /* MainTabBarController.swift in Sources */,
 				D85F19A41F429D7200ACCCD3 /* NewSeeting_ComplainViewController.swift in Sources */,
 				D8B7739D1F74F8C700E81CE4 /* NewMain_ProjectListModel.swift in Sources */,
 				AE2B4D4A1FC66ABC006B3CC9 /* TZAssetModel.m in Sources */,
@@ -3565,6 +3968,7 @@
 				185331DD1FD6AEDD008C9121 /* FYHDistributorViewController.swift in Sources */,
 				D8380C181F46EA8100C6DB63 /* NewStoreDetailHostitalView.swift in Sources */,
 				184298F31FDB7579003A852A /* FYHMyRecModel.swift in Sources */,
+				186E18CA1FF375F500F7EB83 /* CXSearchSectionModel.m in Sources */,
 				D8380C211F481D2100C6DB63 /* NewMainBannerCell.swift in Sources */,
 				D864882B1F4679E200590ED7 /* NewMineOrderLIstModel.swift in Sources */,
 				D8AEF4E91F9AF1670033BEEA /* NewRewardDetailDataModel.swift in Sources */,
@@ -3578,12 +3982,15 @@
 				1859DBE41FD79F8E00D50619 /* MemberCenterCell.swift in Sources */,
 				D8380C391F4837C500C6DB63 /* MLMSegmentManager.m in Sources */,
 				D8B1ECE41F3D54270037904F /* NewMainViewController.swift in Sources */,
+				186E18D01FF375F500F7EB83 /* CXTexeFileBgView.m in Sources */,
 				D86C95641F5A8A4800F10D58 /* NewFuJoggle.swift in Sources */,
 				D85F198B1F41454000ACCCD3 /* NewsStoreProjectListTableViewCell.swift in Sources */,
 				AE2B4D521FC66ABC006B3CC9 /* TZPhotoPreviewCell.m in Sources */,
 				185331DF1FD6AF5C008C9121 /* TheGlobalVariable.swift in Sources */,
+				185816ED1FEA5E68003E0A49 /* FYHGoodsCollectionViewCell.swift in Sources */,
 				D8F21EDA1F70B55900848F3A /* NewDenJoggle.swift in Sources */,
 				D8FACC811F7B8BFD0065B2A0 /* NewNoteAllMessageTabCell.swift in Sources */,
+				186E18D41FF37E8000F7EB83 /* FYHSearchViewController.swift in Sources */,
 				D8F954521FA2DE170054B27E /* NewDiscountBookTabCell.swift in Sources */,
 				D88232281F998BD000031357 /* NewNoteDetail_2Model.swift in Sources */,
 				D85F19B11F42EBF300ACCCD3 /* NewMineList_MessageOrOrderTableViewCell.swift in Sources */,
@@ -3597,9 +4004,11 @@
 				D85F19A61F42C23800ACCCD3 /* NewSetting_SuggestViewController.swift in Sources */,
 				184298F91FDBC01F003A852A /* FYHRewardViewController.swift in Sources */,
 				D88232261F998B2400031357 /* NewCBBNoteJoggle.swift in Sources */,
+				18CF003E1FDE667A00E46E05 /* FYHWithdrawTipVC.swift in Sources */,
 				D86C59471F5649F00039BBB3 /* NewMineJob_listTableViewCell.swift in Sources */,
 				D8D3D1331F46E13000F9FD50 /* ADView.m in Sources */,
 				D86C56DD1F4E7F5100014F29 /* NewMineOrder_detailTypeTableViewCell.swift in Sources */,
+				185816D21FEA010F003E0A49 /* FYHIntegralModel.swift in Sources */,
 				1843A2F41FDA9BA600E69C6C /* FYHDistributionDetailCell.swift in Sources */,
 				D8F21ED81F70B4A400848F3A /* wx_SVPHUB.swift in Sources */,
 				184298F61FDBBE77003A852A /* FYHRewardCell.swift in Sources */,
@@ -3610,6 +4019,8 @@
 				D841D6E11F459D3300C2C152 /* NewMineOrderListTableViewCell.swift in Sources */,
 				D8E88CB21F7BAACC003295D6 /* NewNoteCreateViewController.swift in Sources */,
 				AEF2F44B1FA81DF700F520B2 /* NewRequireListTabCell.swift in Sources */,
+				186E18CC1FF375F500F7EB83 /* CXDBHandle.m in Sources */,
+				186E18CD1FF375F500F7EB83 /* CXSearchController.m in Sources */,
 				1859DBDF1FD78C9800D50619 /* DistributorModel.swift in Sources */,
 				D85F199E1F4280B100ACCCD3 /* NewSettingListExitAccountTableViewCell.swift in Sources */,
 				D82712731F7500F4003797B9 /* NewMain_NoteListModel.swift in Sources */,
@@ -3631,7 +4042,9 @@
 				D8380C601F4AD9E300C6DB63 /* NewMain_searchViewController.swift in Sources */,
 				D8D7BA0E1F72073E002667F6 /* BaseView.m in Sources */,
 				AE40B13C1FB6E32700ED4AD0 /* NewAddEvaluateTabCell.swift in Sources */,
+				18CF00461FDE7AC600E46E05 /* FYHBsRecordViewController.swift in Sources */,
 				D841D6C71F4563A400C2C152 /* NewMineMessageViewController.swift in Sources */,
+				186E18D11FF375F500F7EB83 /* SelectCollectionLayout.m in Sources */,
 				D86C57411F53FC9A00014F29 /* NewMineCollectionViewController.swift in Sources */,
 				D8838E2A1F74B37D006D48CF /* NewLoginLocationViewController.swift in Sources */,
 				AE9612CE1FB96C85001F9246 /* JJCPayCodeTextField.m in Sources */,
@@ -3639,6 +4052,7 @@
 				D8AEF4E71F9ADB020033BEEA /* NewNoteRewardView.swift in Sources */,
 				AE62B1981FAB1E9C00315DD3 /* NewStorePayDetailViewController.swift in Sources */,
 				D8DF3A8C1F9477C000C42ED1 /* NewStoreListTabCell.swift in Sources */,
+				18CF00441FDE79AE00E46E05 /* FYHWRecordModel.swift in Sources */,
 				D8AEF4EC1F9B2AF70033BEEA /* NewDoctorDetailTableViewCell.swift in Sources */,
 				D8D3D1361F46E16800F9FD50 /* UIView+sizeModel.m in Sources */,
 				D8380C4F1F4AA55900C6DB63 /* Wx_titleCollectionViewCell.swift in Sources */,
@@ -3660,20 +4074,24 @@
 				AE2B4D251FC65D89006B3CC9 /* NewReturnListTableViewCell.swift in Sources */,
 				AE027FF51FB15444007EE587 /* NewMeOrderViewController.swift in Sources */,
 				AEEB6CB11FADB5A0007C408A /* NewEditMeViewController.swift in Sources */,
+				185816E21FEA5ACF003E0A49 /* FYHIntegralStoreViewController1.swift in Sources */,
 				AEC1B5131FAAEE20000C6258 /* NewDontSelectBookTabCell.swift in Sources */,
 				185331E61FD6B746008C9121 /* DistributorCell1.swift in Sources */,
 				D8D7BA0F1F72073E002667F6 /* BRDatePickerView.m in Sources */,
 				AE31FA341FC813F200B199AF /* NewMainADTableViewCell.swift in Sources */,
 				D85F199A1F41A51B00ACCCD3 /* NewSettingListModel.swift in Sources */,
 				AE40B1381FB6DA0B00ED4AD0 /* NewAddEvaluateViewController.swift in Sources */,
+				184ED5A61FF1F93A00FBD0DC /* FYHShowMessagesCell.swift in Sources */,
 				AE31FA181FC7C27D00B199AF /* NewNowPayGoodsTableViewCell.swift in Sources */,
 				AE9612CF1FB96C85001F9246 /* JJCPayCodeTextFieldCell.m in Sources */,
 				D8AA35BD1F5D42E900A8EC89 /* NewStoreRequireOrderListTableViewCell.swift in Sources */,
 				D82DDD001F9A04AD00733932 /* NewRewordListModel.swift in Sources */,
 				D8EA1C4C1F9B3CE0007C370F /* NewDoctorProjectViewController.swift in Sources */,
 				D898F54D1F909D1200AE5734 /* NewMainModel.swift in Sources */,
+				185816D91FEA3ECA003E0A49 /* FYHShowCJGooddsCell.swift in Sources */,
 				AE2B4D501FC66ABC006B3CC9 /* TZImageManager.m in Sources */,
 				1859DBF61FD7E9D700D50619 /* FYHPayModel.swift in Sources */,
+				187FB7251FED0E6A00F9ADA9 /* FYHTaskCenterHeadCell.swift in Sources */,
 				D8AA357A1F5D014000A8EC89 /* Wx_selectBtn.m in Sources */,
 				185331EE1FD6BC2D008C9121 /* DistributorCell3.swift in Sources */,
 				D85313D11F7CCA7900B2FC86 /* NewTagCollecCell.swift in Sources */,
@@ -3693,8 +4111,11 @@
 				D8AA35C11F5D4E7600A8EC89 /* NewStoreRequireOrderModel.swift in Sources */,
 				D83DC3331F54FC63006C9F6C /* NewMineCollection_productTableViewCell.swift in Sources */,
 				AED5A76F1FA6ED44001E9B58 /* NewShoppingCarTabCell.swift in Sources */,
+				187D4B081FF32DA300EC552F /* FYHIntergralGoodsModel.swift in Sources */,
+				187FB7291FED0E7B00F9ADA9 /* FYHTaskCenterShowCell.swift in Sources */,
 				1859DBDD1FD7890900D50619 /* APIUrls.swift in Sources */,
 				D86C573B1F53AFDE00014F29 /* NewMineMe_detailTableViewCell.swift in Sources */,
+				187FB7201FED0AF500F9ADA9 /* FYHTaskCenrtInfoModel.swift in Sources */,
 				D86C94981F5A3C8200F10D58 /* NewMainCaseListTableViewCell.swift in Sources */,
 				D82DDCF91F9A018700733932 /* NewAllRewarderMenViewController.swift in Sources */,
 				AE2B4D291FC66214006B3CC9 /* NewReturnPicTableViewCell.swift in Sources */,
@@ -3703,8 +4124,11 @@
 				D8D7BA721F727A8E002667F6 /* WXSelectTabCell.swift in Sources */,
 				D85F19A81F42C39300ACCCD3 /* NewSetting_ChangerViewController.swift in Sources */,
 				AE2B4D4B1FC66ABC006B3CC9 /* NSBundle+TZImagePicker.m in Sources */,
+				187FB71A1FECEB5D00F9ADA9 /* FYHMainShowADCell.swift in Sources */,
 				AEF2F44F1FA8818400F520B2 /* NewRequireOtherTableViewCell.swift in Sources */,
+				18BEC4261FF24BC800C13745 /* FYHShowInfoWithWebViewController.swift in Sources */,
 				AE31FA2A1FC7E49500B199AF /* HJImageBrowser.swift in Sources */,
+				185816E91FEA5E4D003E0A49 /* FYHChoujiangCollectionViewCell.swift in Sources */,
 				1843A2FD1FDAA9FC00E69C6C /* Base2ViewController.swift in Sources */,
 				D86C57321F510E2F00014F29 /* NewMineOrder_detailVarTableViewCell.swift in Sources */,
 				AEEB6CB41FADB7A6007C408A /* NewMeHeadTableViewCell.swift in Sources */,
@@ -3720,6 +4144,7 @@
 				D8DBCA461F90AA820059F8F2 /* NewMineMeModel.swift in Sources */,
 				D8380C471F4A8D2B00C6DB63 /* NewMain_BaiKeViewController.swift in Sources */,
 				D89BB70D1F78EC06007E2492 /* NewMain_Note_ListTabCell.swift in Sources */,
+				186E18CE1FF375F500F7EB83 /* CXSearchCollectionViewCell.m in Sources */,
 				D861C63E1F4BBCFB00852398 /* NewMain_DeleteAllTableViewCell.swift in Sources */,
 				AE2B4D491FC66ABC006B3CC9 /* TZVideoPlayerController.m in Sources */,
 				D818D68C1F89D4EE00B47235 /* NewCreateNoteLeaveTableViewCell.swift in Sources */,
@@ -3740,10 +4165,13 @@
 				D85C08C91F7B730A00996F49 /* NewDoctorMainPageViewController.swift in Sources */,
 				D8B1ECE61F3D54580037904F /* NewMineViewController.swift in Sources */,
 				D8EA1C431F9B36C0007C370F /* NewDoctorAppointtmentViewController.swift in Sources */,
+				184ED5C11FF23EC800FBD0DC /* FYHShowNotiModel.swift in Sources */,
 				D8DB04201F7900A500E27FC7 /* NewNote_DetailVCModel.swift in Sources */,
 				D86254A61F4C06D0003C8B7C /* RecentCitiesableViewCell.swift in Sources */,
 				D85C08D31F7B7F0F00996F49 /* NewDoctorSelectTabCell.swift in Sources */,
 				D841D6D71F457E1B00C2C152 /* NewMineMessageAssitModel.swift in Sources */,
+				185612EA1FF1017000B6758E /* FYHOrderForIntegralViewController.swift in Sources */,
+				18895DDD1FEBB8F900F4723F /* FYHSowMainADModel.swift in Sources */,
 				D859D3071F8DFAA600FA3A0E /* NewNoteRepeatModel.swift in Sources */,
 				AEC1B50B1FAAE4F9000C6258 /* NewLocationNillTabCell.swift in Sources */,
 				D8E307BF1F7F3C0200D61930 /* NewCreateNoteArticalModel.swift in Sources */,
@@ -3770,13 +4198,17 @@
 				AE2B4D511FC66ABC006B3CC9 /* TZPhotoPickerController.m in Sources */,
 				AE31FA1C1FC7C2BA00B199AF /* NewNowPayProjectTableViewCell.swift in Sources */,
 				D8D89D4C1F3C3A970003B7FD /* AppDelegate.swift in Sources */,
+				185612E51FF0DE6C00B6758E /* FYHShowIntegralGoodsListCell.swift in Sources */,
 				D86254A51F4C06D0003C8B7C /* HotCityTableViewCell.swift in Sources */,
 				D8380C2B1F48329600C6DB63 /* AMScrollingNavbarViewController.m in Sources */,
 				183889681FD0EC5900485A84 /* DetailViewController.swift in Sources */,
 				D841D6CA1F45645400C2C152 /* NewMineMessage_privateLetter_noticeTableViewCell.swift in Sources */,
+				185816E51FEA5D78003E0A49 /* FYHIntegralHeadCell0.swift in Sources */,
 				D8380C1A1F46ED4500C6DB63 /* NewStoreDetailMostTableViewCell.swift in Sources */,
 				183889671FD0EC5900485A84 /* DetailModel.swift in Sources */,
 				D8BBBBB91F7F7C7900A44A54 /* NewDoctorModel.swift in Sources */,
+				184ED52E1FF1DBC500FBD0DC /* FYHMineMessgeAllModel.swift in Sources */,
+				185816D41FEA157E003E0A49 /* FYHShowDoneView.swift in Sources */,
 				D8838E2E1F74BC8C006D48CF /* MD5.m in Sources */,
 				D86C57361F51184100014F29 /* NewMineOrder_detailControllerTableViewCell.swift in Sources */,
 				D8A103451F5538F30074BD41 /* NewMineJob_topTableViewCell.swift in Sources */,
@@ -3806,6 +4238,7 @@
 				D850DFE61F79FA2100B0340B /* NewNote_noteCharAndIMGTabCell.swift in Sources */,
 				AE31FA2E1FC7F58B00B199AF /* UIImageView+GetVideoFistPic.m in Sources */,
 				D8838E271F749FDC006D48CF /* NewMain_BaiKe_DetailViewController.swift in Sources */,
+				186E18D21FF375F500F7EB83 /* SelectCollectionReusableView.m in Sources */,
 				AE1B59AB1FB2DEE10017B28F /* NewOrderDetailOtherTabCell.swift in Sources */,
 				185331E11FD6B0BB008C9121 /* DistributorHeadView.swift in Sources */,
 				D8AA000A1FA182B7003A381C /* NewReviewingNoteAndPicTabCell.swift in Sources */,
@@ -3814,8 +4247,10 @@
 				AE0D84BA1FB3FF4300D00847 /* NewDrawbackViewController.swift in Sources */,
 				D8B1ECB41F3D3F050037904F /* wx_GlobalEnumSwiftFile.swift in Sources */,
 				AE0D84BD1FB45C9300D00847 /* NewGoodsOrderListModel.swift in Sources */,
+				185BDD9F1FE905DA00C1A4DE /* FYHIntegralStoreViewController.swift in Sources */,
 				D8280BA31F9F4DA000C0C60F /* NewChoseOrderModel.swift in Sources */,
 				D818D6961F89FA3E00B47235 /* XHStarRateView.m in Sources */,
+				184ED52B1FF1D96400FBD0DC /* FYHShowIntegralStateCell.swift in Sources */,
 				D822E31E1F9DE812003D60E6 /* NewStoreDetailGoodsDetailTabCell.swift in Sources */,
 				D86C956E1F5AB1C600F10D58 /* NewStoreShopCarModel.swift in Sources */,
 				D8D3D0F91F468E1400F9FD50 /* NewMineBookModel.swift in Sources */,
@@ -3827,6 +4262,9 @@
 				1843A3031FDAAE0A00E69C6C /* FYHDistributionViewController.swift in Sources */,
 				AE2B4D4D1FC66ABC006B3CC9 /* TZPhotoPreviewController.m in Sources */,
 				D85F19C91F442D7A00ACCCD3 /* NewMineNoteListTableViewCell.swift in Sources */,
+				18895DDA1FEB959A00F4723F /* FYHShowGetGoodsModel.swift in Sources */,
+				186E18C91FF375F500F7EB83 /* CXSearchModel.m in Sources */,
+				18895DD81FEB8FF900F4723F /* FYHShowMyAwardViewController.swift in Sources */,
 				D898F54A1F908E2800AE5734 /* NewMineMe_detailsTableViewCell.swift in Sources */,
 				D8D3D1391F46E17400F9FD50 /* UIColor+seting.m in Sources */,
 				184298FC1FDBC121003A852A /* FYHRewardModel.swift in Sources */,
@@ -4013,6 +4451,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Threadly",
 					"$(PROJECT_DIR)/healthAndBeautyUser/Frameworks/AliPay",
 				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				INFOPLIST_FILE = healthAndBeautyUser/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -4089,6 +4528,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Threadly",
 					"$(PROJECT_DIR)/healthAndBeautyUser/Frameworks/AliPay",
 				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				INFOPLIST_FILE = healthAndBeautyUser/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

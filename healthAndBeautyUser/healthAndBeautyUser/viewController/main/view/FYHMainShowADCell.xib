@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="152" id="KGk-i7-Jjw" customClass="FYHMainShowADCell" customModule="healthAndBeautyUser" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="152"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="151.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中秋活动" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29M-JU-0dT">
+                        <rect key="frame" x="16" y="16" width="343" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="oeR-MO-Osk"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.25716483159999998" green="0.25716483159999998" blue="0.25716483159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="13_banner_secondary_default" translatesAutoresizingMaskIntoConstraints="NO" id="kg1-aE-CMs">
+                        <rect key="frame" x="16" y="42" width="343" height="94"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="94" id="iBh-Uj-4Tg"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tga-3Q-SW1">
+                        <rect key="frame" x="0.0" y="150.5" width="375" height="1"/>
+                        <color key="backgroundColor" red="0.88803432642487046" green="0.88803432642487046" blue="0.88803432642487046" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="nuV-C5-yfl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="29M-JU-0dT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="G1q-fL-m8G"/>
+                    <constraint firstItem="Tga-3Q-SW1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="H49-AE-zUx"/>
+                    <constraint firstAttribute="bottom" secondItem="Tga-3Q-SW1" secondAttribute="bottom" id="PpY-iM-0Ag"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="kg1-aE-CMs" secondAttribute="trailing" id="ale-NN-vac"/>
+                    <constraint firstItem="29M-JU-0dT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="dsY-fw-LPW"/>
+                    <constraint firstItem="kg1-aE-CMs" firstAttribute="top" secondItem="29M-JU-0dT" secondAttribute="bottom" constant="8" id="fLw-Hk-T8z"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="kg1-aE-CMs" secondAttribute="bottom" constant="5" id="jph-db-7Eq"/>
+                    <constraint firstAttribute="trailing" secondItem="Tga-3Q-SW1" secondAttribute="trailing" id="mUx-HD-QQb"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="29M-JU-0dT" secondAttribute="trailing" id="wQz-qz-7TY"/>
+                    <constraint firstItem="kg1-aE-CMs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="z0U-NV-Umk"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="ADImage" destination="kg1-aE-CMs" id="A0i-PJ-xuy"/>
+                <outlet property="ADName" destination="29M-JU-0dT" id="Jrd-aa-ms0"/>
+            </connections>
+            <point key="canvasLocation" x="111.5" y="127"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="13_banner_secondary_default" width="178" height="91"/>
+    </resources>
+</document>

@@ -54,8 +54,18 @@ class NewNoteViewController: Wx_baseViewController {
                              rightBtn: buildRightBtnWithIMG(UIImage(named:"Establish_icon_default")!))
         buildUI()
         buildData()
+        
+        //  接收登录成功的通知
+        NotificationCenter.default.addObserver(self, selector: #selector(receiveNitification(nitofication:)), name: NSNotification.Name(rawValue: SuccessRefreshNotificationCenter_Login), object: nil)
+        //  接收退出登录的通知
+        NotificationCenter.default.addObserver(self, selector: #selector(receiveNitification(nitofication:)), name: NSNotification.Name(rawValue: SuccessRefreshNotificationCenter_LoginOut), object: nil)
+
     }
     
+    @objc func receiveNitification(nitofication:Notification) {
+        self.tableView.mj_header.beginRefreshing()
+    }
+
     override func rightClick() {
         
         if Defaults.hasKey("SESSIONID") {
@@ -64,7 +74,9 @@ class NewNoteViewController: Wx_baseViewController {
             navigationController?.pushViewController(nib, animated: true)
         }else {
             SVPwillShowAndHide("请登录")
-            present(NewLoginLocationViewController(), animated: true, completion: nil)
+            let login = NewLoginLocationViewController.init(nibName: "NewLoginLocationViewController", bundle: nil)
+            let loginVC = Wx_baseNaviViewController.init(rootViewController: login)
+            self.present(loginVC, animated: true, completion: nil)
             return
         }
     }
@@ -98,7 +110,9 @@ class NewNoteViewController: Wx_baseViewController {
             up["SESSIONID"] = Defaults["SESSIONID"].stringValue
         }else {
             SVPwillShowAndHide("请登录")
-            present(NewLoginLocationViewController(), animated: true, completion: nil)
+            let login = NewLoginLocationViewController.init(nibName: "NewLoginLocationViewController", bundle: nil)
+            let loginVC = Wx_baseNaviViewController.init(rootViewController: login)
+            self.present(loginVC, animated: true, completion: nil)
             return
         }
         

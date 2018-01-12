@@ -20,13 +20,25 @@ class NewMineMessage_assitTableViewCell: Wx_baseTableViewCell {
     
     private func didSetModel(_ model: NewMineMessageAssitModel) {
         
-        head.image = UIImage(named:model.head)
-        otherIMG.image = UIImage(named:"Selected")
+        head.kf.setImage(with:  StringToUTF_8InUrl(str:model.personal.photo))
+        otherIMG.image = UIImage(named:"zan_icon")
 
-        time.text = model.time
-        detail.text = model.detail
-        name.text = model.name
-        other.text = "赞了你的评论"
+        time.text = model.createDate
+//        detail.text = model.detail
+        name.text = model.personal.nickName
+        
+        if model.thumbType == 1 {
+            other.text = "赞了你的日记文章"
+        }else if model.thumbType == 2 {
+            other.text = "赞了你的手术"
+        }else{
+            other.text = "赞了你的评论"
+        }
+        _ = other.sd_layout()?
+            .topSpaceToView(head,GET_SIZE * 24)?
+            .leftSpaceToView(head,GET_SIZE * 24)?
+            .widthIs(getSizeOnString(other.text!, Int(GET_SIZE * 28)).width)?
+            .heightIs(GET_SIZE * 30)
     }
     
     let head = UIImageView()
@@ -81,7 +93,8 @@ class NewMineMessage_assitTableViewCell: Wx_baseTableViewCell {
         other.textAlignment = .left
         contentView.addSubview(other)
         _ = other.sd_layout()?
-            .topSpaceToView(head,GET_SIZE * 24)?
+//            .topSpaceToView(head,GET_SIZE * 8)?
+            .bottomSpaceToView(contentView,GET_SIZE * 8)?
             .leftSpaceToView(head,GET_SIZE * 24)?
             .widthIs(GET_SIZE * 180)?
             .heightIs(GET_SIZE * 30)
@@ -113,5 +126,21 @@ class NewMineMessage_assitTableViewCell: Wx_baseTableViewCell {
             .leftSpaceToView(contentView,0)?
             .widthIs(WIDTH)?
             .heightIs(0.5)
+        head.isUserInteractionEnabled = true
+        name.isUserInteractionEnabled = true
+
+        let tapGes = UITapGestureRecognizer.init(target: self, action: #selector(moveToBigImage(tap:)))
+        head.addGestureRecognizer(tapGes)
+        let tapGes1 = UITapGestureRecognizer.init(target: self, action: #selector(moveToBigImage(tap:)))
+        name.addGestureRecognizer(tapGes1)
+
     }
+    
+    @objc func moveToBigImage(tap:UITapGestureRecognizer) {
+        let me = newMineMeViewController()
+        me.id = _model!.personal.id
+        me.isMe = false
+        viewController()?.navigationController?.pushViewController(me, animated: true)
+    }
+    
 }

@@ -56,6 +56,8 @@ class NewMainCaseListTableViewCell: Wx_baseTableViewCell {
     }
     
     let img = UIImageView()
+    let freeMark = UIImageView()
+    
     
     let title = UILabel()
     let hospital = UILabel()
@@ -88,6 +90,16 @@ class NewMainCaseListTableViewCell: Wx_baseTableViewCell {
             .heightIs(GET_SIZE * 200)
         viewRadius(img, 5.0, 0.5, lineColor)
         
+        //角标
+        freeMark.image = #imageLiteral(resourceName: "is_free")
+        img.addSubview(freeMark)
+        _ = freeMark.sd_layout()?
+            .bottomEqualToView(img)?
+            .leftEqualToView(img)?
+            .widthIs(GET_SIZE * 50)?
+            .heightIs(GET_SIZE * 50)
+//        viewRadius(freeMark, 5.0, 0.5, lineColor)
+
         //标签
         title.textColor = darkText
         title.numberOfLines = 0

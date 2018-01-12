@@ -44,9 +44,11 @@ class NewDoctorMainPageViewController: Wx_baseViewController {
         table.register(UINib.init(nibName: "NewDoctorDetailTableViewCell",
                                   bundle: nil),
                        forCellReuseIdentifier: "NewDoctorDetailTableViewCell")
+        
         table.register(UINib.init(nibName: "NewDoctorMessageTabCell",
                                   bundle: nil),
                        forCellReuseIdentifier: "NewDoctorMessageTabCell")
+        
         table.register(UINib.init(nibName: "NewDoctorSelectTabCell",
                                   bundle: nil),
                        forCellReuseIdentifier: "NewDoctorSelectTabCell")
@@ -102,7 +104,6 @@ class NewDoctorMainPageViewController: Wx_baseViewController {
                 let doctorInfo = data["doctorInfo"]
                 
                 self.dateSource.isFollow = data["isFollow"].bool!
-                
                 self.dateSource.doctorName = doctorInfo["doctorName"].string!
                 self.dateSource.headImage = doctorInfo["headImage"].string!
                 self.dateSource.id = doctorInfo["id"].string!

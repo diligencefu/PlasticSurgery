@@ -24,6 +24,12 @@ class NewNoteListTableViewCell: Wx_baseTableViewCell {
         count.text = "共有\(model.count)日记"
         
         if model.isAllowWrite {
+            count.textColor = kGaryColor(num: 220)
+        }else{
+            count.textColor = kMainColor()
+        }
+        
+        if model.isAllowWrite {
             count.textColor = tabbarColor
         }
     }

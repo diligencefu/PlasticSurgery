@@ -35,7 +35,13 @@
 #import "UIImageView+GetVideoFistPic.h"
 
 #import "HBAlertPasswordView.h"                             //密码弹窗
+#import "OCTools.h"
 
+#import "LuckView.h"                                        //抽奖
+#import "FYHLuckyModel.h"                                        //抽奖
 
+#import "CXSearchController.h"             //搜索工具
+
+//#import "healthAndBeautyUser-swift.h"             //搜索
 
 #endif /* Bridge_Header_h */

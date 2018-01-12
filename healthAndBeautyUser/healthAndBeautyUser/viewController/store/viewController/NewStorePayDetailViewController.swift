@@ -55,6 +55,9 @@ class NewStorePayDetailViewController: Wx_baseViewController {
     
     var textField : JJCPayCodeTextField? = nil
 
+    var wherCome = 10
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -67,6 +70,68 @@ class NewStorePayDetailViewController: Wx_baseViewController {
         buildData()
         buildCenter()
     }
+    
+    
+    override func pop() {
+        
+//        guard let nav = self.navigationController else { return }
+//        var is_contain = false
+//        for c in nav.childViewControllers.reversed() {
+//            if c is NewShoppingCarViewController {
+//                is_contain = true
+//                break
+//            }
+//        }
+        
+        let alert = UIAlertController.init(title: "提示", message: "支付尚未完成，退出后可到“我的订单”中完成付款！", preferredStyle: .alert)
+        
+        let action1 = UIAlertAction.init(title: "确定退出", style: .destructive) { (alertAction) in
+            self.popAction()
+        }
+        let action2 = UIAlertAction.init(title: "取消", style: .cancel) { (alertAction) in
+            return
+        }
+        
+        alert.addAction(action1)
+        alert.addAction(action2)
+        
+        self.present(alert, animated: true, completion: nil)
+
+        
+        
+//        需要进行细节判断
+        
+        
+    }
+    
+    func popAction(){
+        for VC in (self.navigationController?.childViewControllers)! {
+            
+            if VC.isKind(of: NewShoppingCarViewController.self){
+                wherCome = 0
+                self.navigationController?.popToViewController(VC, animated: true)
+                return
+            }
+        }
+        
+        if wherCome == 10 {
+            for VC in (self.navigationController?.childViewControllers)! {
+                
+                if VC.isKind(of: NewStoresDetailViewController.self){
+                    wherCome = 1
+                    self.navigationController?.popToViewController(VC, animated: true)
+                    return
+                }
+            }
+        }
+        
+        if wherCome == 10 {
+            self.navigationController?.popViewController(animated: true)
+        }
+
+    }
+    
+    
     
     //MARK: - 通知中心
     func buildCenter() {

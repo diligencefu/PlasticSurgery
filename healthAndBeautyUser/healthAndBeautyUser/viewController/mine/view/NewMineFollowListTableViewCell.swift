@@ -77,7 +77,60 @@ class NewMineFollowListTableViewCell: Wx_baseTableViewCell {
             self.follow.setTitleColor(getColorWithNotAlphe(0xB2B2B2), for: .normal)
             self.follow.layer.borderColor = getColorWithNotAlphe(0xB2B2B2).cgColor
         }
+        self.follow.isHidden = false
     }
+    
+    
+    func setValuesForNewMineFollowListTableViewCell(model:NewMineFollowListModel) {
+        if model.isUser {
+            
+            icon.kf.setImage(with: StringToUTF_8InUrl(str: model.photo))
+            name.text = model.nickName
+            age.text = model.age + "岁"
+            city.text = "用户"
+            let sizes = getSizeOnLabel(name)
+            _ = name.sd_layout()?
+                .bottomSpaceToView(age,2)?
+                .leftSpaceToView(icon,6)?
+                .widthIs(sizes.width)?
+                .heightIs(GET_SIZE * 30)
+            if model.gender == "1" {
+                sex.image = UIImage(named:"na")
+            }else {
+                sex.image = UIImage(named:"nv")
+            }
+            _ = sex.sd_layout()?
+                .centerYEqualToView(name)?
+                .leftSpaceToView(name,GET_SIZE * 10)?
+                .widthIs(GET_SIZE * 28)?
+                .heightIs(GET_SIZE * 28)
+        }else {
+            icon.kf.setImage(with: StringToUTF_8InUrl(str: model.headImage))
+            name.text = model.doctorName
+            age.text = model.currentPosition + "-" + model.education
+            city.text = model.doctorPrensent
+            let sizes = getSizeOnLabel(name)
+            _ = name.sd_layout()?
+                .bottomSpaceToView(age,2)?
+                .leftSpaceToView(icon,6)?
+                .widthIs(sizes.width)?
+                .heightIs(GET_SIZE * 30)
+            if model.sex == "1" {
+                sex.image = UIImage(named:"na")
+            }else {
+                sex.image = UIImage(named:"nv")
+            }
+            _ = sex.sd_layout()?
+                .centerYEqualToView(name)?
+                .leftSpaceToView(name,GET_SIZE * 10)?
+                .widthIs(GET_SIZE * 28)?
+                .heightIs(GET_SIZE * 28)
+        }
+        self.follow.isHidden = true
+    }
+    
+    
+    
     
     let icon = UIImageView()
     
@@ -135,7 +188,7 @@ class NewMineFollowListTableViewCell: Wx_baseTableViewCell {
             .heightIs(GET_SIZE * 48)
         follow.setTitleColor(tabbarColor, for: .normal)
         follow.layer.borderColor = tabbarColor.cgColor
-        follow.addTarget(self, action: #selector(followController), for: .touchUpInside)
+        follow.addTarget(self, action: #selector(followAction), for: .touchUpInside)
         
         age.textColor = darkText
         age.font = UIFont.systemFont(ofSize: GET_SIZE * 26)
@@ -253,4 +306,29 @@ class NewMineFollowListTableViewCell: Wx_baseTableViewCell {
             SVPwillShowAndHide("请检查您的网路")
         }
     }
+    
+    func followAction() {
+        
+        if _model!.isFollow {
+            
+            let alert = UIAlertController.init(title: "提示", message: "确定要取消关注吗？", preferredStyle: .alert)
+            
+            let action1 = UIAlertAction.init(title: "确定", style: .destructive) { (alertAction) in
+                self.followController()
+            }
+            let action2 = UIAlertAction.init(title: "取消", style: .cancel) { (alertAction) in
+                return
+            }
+            
+            alert.addAction(action1)
+            alert.addAction(action2)
+            
+            viewController()?.present(alert, animated: true, completion: nil)
+            
+        }else{
+            followController()
+        }
+    }
+
+    
 }

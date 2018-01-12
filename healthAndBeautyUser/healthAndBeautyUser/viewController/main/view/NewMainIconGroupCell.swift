@@ -12,6 +12,10 @@ class iconModel : NSObject {
     
     var title = String()
     var img = String()
+    
+    
+    
+    
 }
 
 class NewMainIconGroupCell: Wx_baseTableViewCell,
@@ -19,7 +23,12 @@ class NewMainIconGroupCell: Wx_baseTableViewCell,
                             UICollectionViewDataSource,
                             UICollectionViewDelegateFlowLayout {
 //    03_zhengxingbaike_icon_default2@2x        04_rijianli_icon_default1@2x    05_zuixinyouhui_icon_default@2x    06_mianfeizhengxing_icon_default@2x    07_jifenshangcheng_icon_default@2x    08_shoushuxianchang_icon_default@2x.png    09_shuhouzixun_icon_default@2x    10_renwuzhongxin_icon_default@2x
-    func buildData() {
+    
+    
+    var gotoFreeBlock:((String)->())?  //声明闭包
+
+    
+    func buildDatas() {
         
         let strArr = ["整形百科","日记案例","免费整形","手术现场","积分商城","任务中心"]
         let imgArr = ["03_zhengxingbaike_icon_default2",
@@ -37,6 +46,13 @@ class NewMainIconGroupCell: Wx_baseTableViewCell,
         }
         collectionView.reloadData()
     }
+    
+    
+    func setValuesForNewMainIconGroupCell(icons:[iconModel]) {
+        collectionDateSource = icons
+        collectionView.reloadData()
+    }
+    
     
     //collectionView
     //
@@ -126,10 +142,14 @@ class NewMainIconGroupCell: Wx_baseTableViewCell,
             viewController()?.navigationController?.pushViewController(tmp, animated: true)
             break
         case "免费整形":
-            let tmp = NewMain_freeViewController()
-            viewController()?.navigationController?.pushViewController(tmp, animated: true)
+            if gotoFreeBlock != nil {
+                gotoFreeBlock!("1")
+            }
             break
         case "积分商城":
+            if gotoFreeBlock != nil {
+                gotoFreeBlock!("2")
+            }
             break
         case "手术现场":
             let tmp = NewMain_operationViewController()
@@ -140,7 +160,7 @@ class NewMainIconGroupCell: Wx_baseTableViewCell,
 
             break
         case "任务中心":
-            let tmp = NewMineJobViewController()
+            let tmp = FYHMissionCenterViewController()
             viewController()?.navigationController?.pushViewController(tmp, animated: true)
             break
         default:

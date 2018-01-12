@@ -173,7 +173,7 @@ class NewMineList_MessageOrOrderTableViewCell: Wx_baseTableViewCell {
             .topSpaceToView(contentView,GET_SIZE * 30)?
             .leftSpaceToView(contentView,GET_SIZE * 30)?
             .widthIs(3)?
-            .heightIs(GET_SIZE * 32)
+            .heightIs(16)
         
         name.textColor = lightText
         name.font = UIFont.systemFont(ofSize: GET_SIZE * 32)

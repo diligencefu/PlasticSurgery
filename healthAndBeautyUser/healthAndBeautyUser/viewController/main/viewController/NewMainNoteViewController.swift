@@ -332,7 +332,9 @@ class NewMainNoteViewController: Wx_baseViewController {
     }
     
     func hideTableView() {
-        
+        let selectBtn = self.topView.viewWithTag(self.currentIndex+400) as! UIButton
+        selectBtn.isSelected = false
+
         isShowTop = false
 
         buildData(id, pageNo, sortType)
@@ -378,6 +380,7 @@ class NewMainNoteViewController: Wx_baseViewController {
         hideTableView()
     }
 }
+
 
 extension NewMainNoteViewController : UITableViewDelegate {
     
